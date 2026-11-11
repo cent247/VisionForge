@@ -1,0 +1,70 @@
+{
+  "source": "https://images-api.nasa.gov/search?nasa_id=GSFC_20180124_m12825_ISS_Airglow",
+  "items": [
+    {
+      "href": "https://images-assets.nasa.gov/video/GSFC_20180124_m12825_ISS_Airglow/collection.json",
+      "data": [
+        {
+          "center": "GSFC",
+          "date_created": "2018-01-24T00:00:00Z",
+          "description": "The Global-scale Observations of the Limb and Disk, or GOLD, mission is designed to explore the nearest reaches of space. Capturing never-before-seen images of Earth\u2019s upper atmosphere, GOLD explores in unprecedented detail our space environment \u2014 which is home to astronauts, radio signals used to guide airplanes and ships, as well as satellites that provide communications and GPS systems. The more we know about the fundamental physics of this region of space, the more we can protect our assets there. Gathering observations from geostationary orbit above the Western Hemisphere, GOLD measures the temperature and composition of neutral gases in Earth\u2019s thermosphere. This part of the atmosphere co-mingles with the ionosphere, which is made up of charged particles. Both the Sun from above and terrestrial weather from below can change the types, numbers, and characteristics of the particles found here \u2014 and GOLD helps track those changes.  Activity in this region is responsible for a variety of key space weather events. GOLD scientists are particularly interested in the cause of dense, unpredictable bubbles of charged gas that appear over the equator and tropics, sometimes causing communication problems. As we discover the very nature of the Sun-Earth interaction in this region, the mission could ultimately lead to ways to improve forecasts of such space weather and mitigate its effects.",
+          "description_508": "Bright swaths of red and green, known as airglow, are visible in this time-lapse view of Earth's limb captured from the International Space Station. Airglow occurs when gases in the upper atmosphere become charged by the Sun's radiation, emitting light. By measuring the light from airglow, ICON and GOLD will learn a lot about the neutral and charged particles in the upper atmosphere.",
+          "keywords": [
+            "Magnetosphere Particles",
+            "Ionosphere",
+            "Thermosphere",
+            "Sun",
+            "Magnetosphere Dynamics",
+            "Heliophysics Infographic",
+            "ICON",
+            "GOLD",
+            "Interface to Space"
+          ],
+          "location": "Goddard Space Flight Center",
+          "media_type": "video",
+          "nasa_id": "GSFC_20180124_m12825_ISS_Airglow",
+          "secondary_creator": "Joy Ng, Karen Fox, Genna Duberstein, Kathalina Tran, Sarah Frazier, Tom Bridgman, Chris Meaney, Mary P. Hrybyk-Keith",
+          "title": "GOLD Resources: ISS Airglow"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20180124_m12825_ISS_Airglow/GSFC_20180124_m12825_ISS_Airglow~large.jpg",
+          "rel": "alternate",
+          "render": "image",
+          "width": 800,
+          "size": 30000,
+          "height": 450
+        },
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20180124_m12825_ISS_Airglow/GSFC_20180124_m12825_ISS_Airglow~medium.jpg",
+          "rel": "alternate",
+          "render": "image",
+          "width": 400,
+          "size": 11000,
+          "height": 225
+        },
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20180124_m12825_ISS_Airglow/GSFC_20180124_m12825_ISS_Airglow~small.jpg",
+          "rel": "alternate",
+          "render": "image",
+          "width": 200,
+          "size": 4600,
+          "height": 112
+        },
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20180124_m12825_ISS_Airglow/GSFC_20180124_m12825_ISS_Airglow~thumb.jpg",
+          "rel": "preview",
+          "render": "image",
+          "width": 300,
+          "size": 7200,
+          "height": 168
+        },
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20180124_m12825_ISS_Airglow/GSFC_20180124_m12825_ISS_Airglow.vtt",
+          "rel": "captions"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "method": "Linux cross-build; NSIS intermediate uninstaller extracted by upstream UninstallerReader instead of executed under Wine",
+  "windowsRuntimeTested": false,
+  "extractions": [
+    {
+      "installer": "VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe",
+      "uninstaller": "VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.__uninstaller.exe",
+      "bytes": 176948,
+      "method": "static extraction; not executed"
+    }
+  ],
+  "buildPassed": true,
+  "files": [
+    "/workspace/scratch/e1abafcae699/restored/visionforge/candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe.blockmap",
+    "/workspace/scratch/e1abafcae699/restored/visionforge/candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe",
+    "/workspace/scratch/e1abafcae699/restored/visionforge/candidate-release/VisionForge-INTERNAL-CANDIDATE-Portable-0.1.0-x64.exe"
+  ]
+}

@@ -1,0 +1,40 @@
+  • electron-builder  version=26.18.0 os=6.18.57
+  • loaded configuration  file=/workspace/scratch/e1abafcae699/restored/visionforge/electron-builder.yml
+  • executing @electron/rebuild  electronVersion=45.3.0 arch=x64 buildFromSource=false workspaceRoot=/workspace/scratch/e1abafcae699/restored/visionforge projectDir=./ appDir=./
+  • installing native dependencies  arch=x64
+  • completed installing native dependencies
+  • packaging       platform=win32 arch=x64 electron=45.3.0 appOutDir=candidate-release/win-unpacked
+  • downloaded      label=electron progress=100%
+  • downloaded electron zip extracted successfully  output=/workspace/scratch/e1abafcae699/restored/visionforge/candidate-release/win-unpacked
+  • searching for node modules  pm=npm searchDir=/workspace/scratch/e1abafcae699/restored/visionforge
+  • duplicate dependency references  dependencies=["react@18.3.1","react@18.3.1","loose-envify@1.4.0","loose-envify@1.4.0","react@18.3.1"]
+  • updating asar integrity executable resource  executablePath=candidate-release/win-unpacked/VisionForge.exe
+  • executable resource editing and code signing skipped — signAndEditExecutable is false. To skip only code signing while keeping icon and metadata applied, use signExecutable: false instead.  exe=candidate-release/win-unpacked/VisionForge.exe
+  • building        target=nsis file=candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe archs=x64 oneClick=false perMachine=false
+  • default Electron icon is used  reason=application icon is not set
+  • downloaded      label=7zip-linux-x64.tar.gz progress=100%
+  • downloaded      label=nsis-3.0.4.1.7z progress=100%
+  • downloaded      label=nsis-resources-3.4.1.7z progress=100%
+  • no code signing certificate configured, signing is skipped  path=candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.__uninstaller.exe
+  • no code signing certificate configured, signing is skipped  path=candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe
+  • building block map  blockMapFile=candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe.blockmap
+  • building        target=portable file=candidate-release/VisionForge-INTERNAL-CANDIDATE-Portable-0.1.0-x64.exe archs=x64
+  • no code signing certificate configured, signing is skipped  path=candidate-release/VisionForge-INTERNAL-CANDIDATE-Portable-0.1.0-x64.exe
+{
+  "method": "Linux cross-build; NSIS intermediate uninstaller extracted by upstream UninstallerReader instead of executed under Wine",
+  "windowsRuntimeTested": false,
+  "extractions": [
+    {
+      "installer": "VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe",
+      "uninstaller": "VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.__uninstaller.exe",
+      "bytes": 171316,
+      "method": "static extraction; not executed"
+    }
+  ],
+  "buildPassed": true,
+  "files": [
+    "/workspace/scratch/e1abafcae699/restored/visionforge/candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe.blockmap",
+    "/workspace/scratch/e1abafcae699/restored/visionforge/candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe",
+    "/workspace/scratch/e1abafcae699/restored/visionforge/candidate-release/VisionForge-INTERNAL-CANDIDATE-Portable-0.1.0-x64.exe"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "steps": [
+    {
+      "name": "generate-real-neural-narration-through-explicit-application-service",
+      "status": "passed"
+    },
+    {
+      "name": "import-review-assemble-original-script-footage-and-measured-timed-captions",
+      "status": "passed",
+      "details": {
+        "visualClips": 22,
+        "captions": 36,
+        "duration": 160.6545416666667
+      }
+    },
+    {
+      "name": "add-mix-effects-titles-save-and-reopen-complex-project",
+      "status": "passed"
+    },
+    {
+      "name": "render-and-play-authoritative-documentary-preview",
+      "status": "passed"
+    },
+    {
+      "name": "export-documentary-through-actual-application",
+      "status": "passed"
+    }
+  ],
+  "project": "/workspace/scratch/e1abafcae699/restored/visionforge/production/night-side/Night-Side-1794427972516",
+  "output": "/workspace/scratch/e1abafcae699/restored/visionforge/production/night-side/Night-Side.mp4",
+  "completed": true
+}

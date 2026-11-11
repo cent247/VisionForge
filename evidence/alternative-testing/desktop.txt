@@ -1,0 +1,12 @@
+create-import-offset-audio-save
+single-clock-rendered-playback-and-seek-into-audio-tail
+desktop-preview-export-105-decoded-frames-identical
+visual-end-trim-and-undo
+timeline-edit-invalidates-preview
+edit-and-delete-keyframe-controls
+editable-overlay-and-undo
+save-and-reopen-edited-project
+short-relink-rejected-with-original-media-preserved
+missing-media-relinked-through-validated-ipc
+newer-autosave-recovered-through-application
+damaged-saved-file-recovered-and-restored-through-application

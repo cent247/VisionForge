@@ -1,0 +1,69 @@
+{
+  "source": "https://images-api.nasa.gov/search?nasa_id=GSFC_20170412_Lights_m12573_EarthAtNight",
+  "items": [
+    {
+      "href": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/collection.json",
+      "data": [
+        {
+          "album": [
+            "Earth At Night"
+          ],
+          "center": "GSFC",
+          "date_created": "2017-04-12T00:00:00Z",
+          "description": "NASA scientists have just released the first new global map of Earth at night since 2012. This nighttime look at our home planet, dubbed the Black Marble, provides researchers with a unique perspective of human activities around the globe. By studying Earth at night, researchers can investigate how cities expand, monitor light intensity to estimate energy use and economic activity, and aid in disaster response.",
+          "description_508": "NASA scientists have just released the first new global map of Earth at night since 2012. This nighttime look at our home planet, dubbed the Black Marble, provides researchers with a unique perspective of human activities around the globe. By studying Earth at night, researchers can investigate how cities expand, monitor light intensity to estimate energy use and economic activity, and aid in disaster response.",
+          "keywords": [
+            "Night Lights",
+            "Night",
+            "VIIRS",
+            "Earth",
+            "Suomi"
+          ],
+          "location": "Goddard Space Flight Center",
+          "media_type": "video",
+          "nasa_id": "GSFC_20170412_Lights_m12573_EarthAtNight",
+          "secondary_creator": "Kathryn Mersmann, Joshua Stevens, Mike Carlowicz, Kate Ramsayer, Miguel Roman",
+          "title": "Lights of Human Activity Shine in NASA's Image of Earth at Night"
+        }
+      ],
+      "links": [
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/GSFC_20170412_Lights_m12573_EarthAtNight~large.jpg",
+          "rel": "alternate",
+          "render": "image",
+          "width": 800,
+          "size": 43000,
+          "height": 450
+        },
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/GSFC_20170412_Lights_m12573_EarthAtNight~medium.jpg",
+          "rel": "alternate",
+          "render": "image",
+          "width": 400,
+          "size": 16000,
+          "height": 225
+        },
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/GSFC_20170412_Lights_m12573_EarthAtNight~small.jpg",
+          "rel": "alternate",
+          "render": "image",
+          "width": 200,
+          "size": 5900,
+          "height": 112
+        },
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/GSFC_20170412_Lights_m12573_EarthAtNight~thumb.jpg",
+          "rel": "preview",
+          "render": "image",
+          "width": 300,
+          "size": 9600,
+          "height": 168
+        },
+        {
+          "href": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/GSFC_20170412_Lights_m12573_EarthAtNight.vtt",
+          "rel": "captions"
+        }
+      ]
+    }
+  ]
+}

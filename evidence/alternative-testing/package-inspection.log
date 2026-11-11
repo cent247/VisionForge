@@ -1,0 +1,10 @@
+archive integrity VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe
+archive integrity VisionForge-INTERNAL-CANDIDATE-Portable-0.1.0-x64.exe
+embedded application archive extracts and passes CRC
+application executable is AMD64 PE
+embedded uninstaller is present as a PE executable
+packaged main/preload/renderer match the tested build
+first-party developer tests and environment files are excluded from application archive
+FFmpeg/FFprobe and license match verified bundled manifest
+caption font and font license are bundled
+portable embeds the same application, AMD64 runtime, verified tools and caption font as installer

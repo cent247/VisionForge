@@ -1,0 +1,18 @@
+archive integrity VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe
+archive integrity VisionForge-INTERNAL-CANDIDATE-Portable-0.1.0-x64.exe
+embedded application archive extracts and passes CRC
+application executable is AMD64 PE
+embedded uninstaller is present as a PE executable
+packaged main/preload/renderer match the tested build
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(!names.some(n=>n.includes('/tests/')||n.includes('/.env')))
+
+    at /workspace/scratch/e1abafcae699/restored/visionforge/scripts/verify-windows-package.cjs:8:469 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

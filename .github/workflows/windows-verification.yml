@@ -36,24 +36,47 @@ jobs:
         run: npm test 2>&1 | Tee-Object evidence/windows-unit-tests.txt
       - run: npm run build
       - name: Source Electron desktop workflow
-        run: node tests/parity-desktop.cjs
+        id: source_desktop
+        shell: pwsh
+        run: |
+          Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
+          node tests/parity-desktop.cjs
       - name: Preserve source desktop evidence
         if: always()
         shell: pwsh
         run: |
           if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-source-desktop.json }
       - name: Build internal Windows installer and unpacked application
-        run: npx electron-builder --win nsis --x64 --publish never -c.win.signExecutable=false
+        run: node scripts/build-windows-native.cjs
       - name: Packaged executable desktop workflow
+        id: packaged_desktop
         shell: pwsh
         run: |
+          Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
           $env:VF_TEST_EXECUTABLE = "$pwd\release\win-unpacked\VisionForge.exe"
           node tests/parity-desktop.cjs
       - name: Preserve packaged desktop evidence
-        if: always()
+        if: always() && steps.packaged_desktop.outcome != 'skipped'
         shell: pwsh
         run: |
           if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-packaged-desktop.json }
+      - name: Install internal candidate silently
+        id: install_check
+        run: ./scripts/windows-install-check.ps1 install
+      - name: Installed executable desktop workflow
+        id: installed_desktop
+        shell: pwsh
+        run: |
+          Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
+          node tests/parity-desktop.cjs
+      - name: Preserve installed desktop evidence
+        if: always() && steps.installed_desktop.outcome != 'skipped'
+        shell: pwsh
+        run: |
+          if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-installed-desktop.json }
+      - name: Uninstall internal candidate
+        if: always() && steps.install_check.outcome == 'success'
+        run: ./scripts/windows-install-check.ps1 uninstall
       - uses: actions/upload-artifact@v4
         if: always()
         with:

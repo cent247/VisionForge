@@ -1,0 +1,34 @@
+{
+  "durationSeconds": 160.666667,
+  "fullDecodePassed": true,
+  "previewExportFramesIdentical": true,
+  "frames": 4820,
+  "audioTimingMethod": "10ms RMS envelopes,8s source windows,expected2.4s narration offset; \u00b1300ms search. Sampled timing, not exhaustive playback or waveform identity.",
+  "audioTimingSamples": [
+    {
+      "sourceSeconds": 10,
+      "lagSeconds": -0.01,
+      "envelopeCorrelation": 0.9783192755482061
+    },
+    {
+      "sourceSeconds": 50,
+      "lagSeconds": 0.0,
+      "envelopeCorrelation": 0.9727263487055783
+    },
+    {
+      "sourceSeconds": 90,
+      "lagSeconds": -0.01,
+      "envelopeCorrelation": 0.9765507083666649
+    },
+    {
+      "sourceSeconds": 140,
+      "lagSeconds": -0.01,
+      "envelopeCorrelation": 0.97871763703839
+    }
+  ],
+  "sampledAudioTimingPassed": true,
+  "integratedLufs": -16.61,
+  "truePeakDb": -1.88,
+  "subtitleStreams": 1,
+  "passed": true
+}

@@ -1,0 +1,94 @@
+{
+  "staticInspectionPassed": true,
+  "windowsRuntimeTested": false,
+  "installer": {
+    "bytes": 220936003,
+    "machine": "14c",
+    "sha256": "443e1738107e312a83b61cf35a9fbdd2329bdcdce12c363733cd6d846ce17e72"
+  },
+  "portable": {
+    "bytes": 198882096,
+    "machine": "14c",
+    "sha256": "d3cbe82050ed8031a8bcb383953129cb9041d86d0cecef559da47a4ed2bc452d"
+  },
+  "checks": [
+    {
+      "name": "archive integrity VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe",
+      "status": "passed",
+      "details": {
+        "bytes": 220936003,
+        "machine": "14c",
+        "sha256": "443e1738107e312a83b61cf35a9fbdd2329bdcdce12c363733cd6d846ce17e72"
+      }
+    },
+    {
+      "name": "archive integrity VisionForge-INTERNAL-CANDIDATE-Portable-0.1.0-x64.exe",
+      "status": "passed",
+      "details": {
+        "bytes": 198882096,
+        "machine": "14c",
+        "sha256": "d3cbe82050ed8031a8bcb383953129cb9041d86d0cecef559da47a4ed2bc452d"
+      }
+    },
+    {
+      "name": "embedded application archive extracts and passes CRC",
+      "status": "passed"
+    },
+    {
+      "name": "application executable is AMD64 PE",
+      "status": "passed",
+      "details": {
+        "bytes": 249270272,
+        "machine": "8664",
+        "sha256": "9bb9cd173514e914d5b964e0a1301a471134b956289ea58180523d96c07eb54a"
+      }
+    },
+    {
+      "name": "embedded uninstaller is present as a PE executable",
+      "status": "passed",
+      "details": {
+        "bytes": 176948,
+        "machine": "14c",
+        "sha256": "2cad892ae13c8007baecf91544cc2fd087a9a43b09157c97b5461b1d0c2a6c24"
+      }
+    },
+    {
+      "name": "packaged main/preload/renderer match the tested build",
+      "status": "passed"
+    },
+    {
+      "name": "first-party developer tests and environment files are excluded from application archive",
+      "status": "passed",
+      "details": {
+        "thirdPartyTestFiles": 199,
+        "note": "Public dependency test sources are permitted; they are not project fixtures or credentials."
+      }
+    },
+    {
+      "name": "FFmpeg/FFprobe and license match verified bundled manifest",
+      "status": "passed",
+      "details": [
+        {
+          "file": "ffmpeg.exe",
+          "bytes": 165848576,
+          "sha256": "cd82140337e162f7e93d140f788c3c32c1f6f5d966bfcb845369a14bf13c8b4c",
+          "machine": "AMD64"
+        },
+        {
+          "file": "ffprobe.exe",
+          "bytes": 165647360,
+          "sha256": "fad63852aa46ad1c8152849414f23dfb3407b3d19edba3d0946bb9e82f554cd6",
+          "machine": "AMD64"
+        }
+      ]
+    },
+    {
+      "name": "caption font and font license are bundled",
+      "status": "passed"
+    },
+    {
+      "name": "portable embeds the same application, AMD64 runtime, verified tools and caption font as installer",
+      "status": "passed"
+    }
+  ]
+}

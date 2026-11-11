@@ -1,0 +1,110 @@
+
+7-Zip (z) 24.09 (x64) : Copyright (c) 1999-2024 Igor Pavlov : 2024-11-28
+ 64-bit locale=C.UTF-8 Threads:9 OPEN_MAX:16384, ASM
+
+Scanning the drive for archives:
+1 file, 162634157 bytes (156 MiB)
+
+Listing archive: candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe
+
+--
+Path = candidate-release/VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe
+Type = Nsis
+Physical Size = 162634157
+Method = Deflate
+Solid = -
+Headers Size = 215574
+Embedded Stub Size = 59904
+SubType = NSIS-3 Unicode
+
+----------
+Path = $PLUGINSDIR/System.dll
+Size = 
+Packed Size = 6931
+Modified = 
+Attributes = 
+Method = Deflate
+Solid = -
+Offset = 0
+
+Path = $PLUGINSDIR/UAC.dll
+Size = 
+Packed Size = 8018
+Modified = 
+Attributes = 
+Method = Deflate
+Solid = -
+Offset = 6935
+
+Path = $PLUGINSDIR/StdUtils.dll
+Size = 
+Packed Size = 45608
+Modified = 
+Attributes = 
+Method = Deflate
+Solid = -
+Offset = 14957
+
+Path = $PLUGINSDIR/nsDialogs.dll
+Size = 
+Packed Size = 4684
+Modified = 
+Attributes = 
+Method = Deflate
+Solid = -
+Offset = 60569
+
+Path = $PLUGINSDIR/modern-wizard.bmp
+Size = 
+Packed Size = 1899
+Modified = 2019-06-17 14:21:30.0000000
+Attributes = 
+Method = Deflate
+Solid = -
+Offset = 65257
+
+Path = $PLUGINSDIR/nsExec.dll
+Size = 
+Packed Size = 3299
+Modified = 
+Attributes = 
+Method = Deflate
+Solid = -
+Offset = 67160
+
+Path = $PLUGINSDIR/app-64.7z
+Size = 162065492
+Packed Size = 162065492
+Modified = 2026-11-11 17:42:54.0000000
+Attributes = 
+Method = Copy
+Solid = -
+Offset = 70463
+
+Path = $PLUGINSDIR/nsis7z.dll
+Size = 
+Packed Size = 242382
+Modified = 
+Attributes = 
+Method = Deflate
+Solid = -
+Offset = 162135959
+
+Path = $R0/Uninstall VisionForge.exe
+Size = 
+Packed Size = 146232
+Modified = 2026-11-11 17:43:06.0000000
+Attributes = 
+Method = Deflate
+Solid = -
+Offset = 162378345
+
+Path = $PLUGINSDIR/WinShell.dll
+Size = 
+Packed Size = 1080
+Modified = 
+Attributes = 
+Method = Deflate
+Solid = -
+Offset = 162524581
+
