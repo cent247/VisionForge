@@ -1,0 +1,8 @@
+node_modules/
+out/
+release/
+candidate-release/
+test-build/
+test-store/
+.env
+*.log

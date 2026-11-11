@@ -1,0 +1,20 @@
+import type {ProjectDocument,ImportedMedia} from './project';
+declare global {interface Window {visionForge:{
+ requestPlan(path:string,p:ProjectDocument,script:string,c:{endpoint:string;model:string;key?:string}):Promise<unknown>;
+ requestSpeech(path:string,text:string,voice:string,c:{endpoint:string;model:string;key?:string}):Promise<ImportedMedia>;
+ requestCaptions(path:string,relative:string,c:{endpoint:string;model:string;key?:string}):Promise<string>;
+ autosaveProject(p:{projectPath:string;project:ProjectDocument}):Promise<{ok:boolean}>;
+ preparePreview(projectPath:string,project:ProjectDocument):Promise<string>;
+ cancelPreview():Promise<void>;
+ cancelExport():Promise<{ok:boolean}>;
+ newProject():Promise<{project:ProjectDocument;projectPath:string;recovered?:boolean}|null>;
+ openProject():Promise<{project:ProjectDocument;projectPath:string;recovered?:boolean}|null>;
+ saveProject(p:{projectPath:string;project:ProjectDocument}):Promise<{ok:boolean;updatedAt:string}>;
+ importMedia(path:string):Promise<ImportedMedia[]>;
+ createImage(projectPath:string,data:string):Promise<ImportedMedia>;
+ relinkMedia(projectPath:string,relative:string,project:ProjectDocument):Promise<{durationSeconds:number|null;importedAt:string}|null>;
+ mediaUrl(projectPath:string,relative:string):Promise<string>;
+ exportVideo(projectPath:string,project:ProjectDocument):Promise<{canceled:boolean;output?:string}>;
+ onExportProgress(fn:(message:string)=>void):()=>void;
+ }}}
+export {};

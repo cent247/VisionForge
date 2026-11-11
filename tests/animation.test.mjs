@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {valueAt,fadeAt,expressionAt} from '../src/shared/animation.mjs';
+test('keyframe interpolation holds endpoints and interpolates positions',()=>{const f=[{timeSeconds:1,x:-0.2},{timeSeconds:3,x:0.4}];assert.equal(valueAt(f,0,'x'),-0.2);assert.ok(Math.abs(valueAt(f,2,'x')-0.1)<1e-10);assert.equal(valueAt(f,4,'x'),0.4);assert.match(expressionAt(f,'x'),/if\(lt\(t/);});
+test('fade envelope matches timeline endpoints',()=>{const c={durationSeconds:4,fadeSeconds:1};assert.equal(fadeAt(c,0),0);assert.equal(fadeAt(c,0.5),0.5);assert.equal(fadeAt(c,2),1);assert.equal(fadeAt(c,4),0);});

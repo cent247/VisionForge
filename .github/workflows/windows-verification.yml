@@ -1,0 +1,64 @@
+name: Windows source and packaged-app verification
+on:
+  push:
+    branches: [main, visionforge-development]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: windows-2022
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - name: Fetch and verify Windows media binaries
+        run: python scripts/fetch-windows-tools.py tool-stage
+      - name: Configure media binaries
+        shell: pwsh
+        run: |
+          Copy-Item tool-stage/verified/* resources/tools/win-x64/ -Force
+          "$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          "VISIONFORGE_TOOLS=$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      - run: npm run typecheck
+      - name: Automated media and storage checks
+        run: npm test 2>&1 | Tee-Object evidence/windows-unit-tests.txt
+      - run: npm run build
+      - name: Source Electron desktop workflow
+        run: node tests/parity-desktop.cjs
+      - name: Preserve source desktop evidence
+        if: always()
+        shell: pwsh
+        run: |
+          if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-source-desktop.json }
+      - name: Build internal Windows installer and unpacked application
+        run: npx electron-builder --win nsis --x64 --publish never -c.win.signExecutable=false
+      - name: Packaged executable desktop workflow
+        shell: pwsh
+        run: |
+          $env:VF_TEST_EXECUTABLE = "$pwd\release\win-unpacked\VisionForge.exe"
+          node tests/parity-desktop.cjs
+      - name: Preserve packaged desktop evidence
+        if: always()
+        shell: pwsh
+        run: |
+          if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-packaged-desktop.json }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-verification-evidence
+          path: |
+            evidence/*.json
+            evidence/windows-unit-tests.txt
+            tool-stage/verified/MANIFEST.json
+            release/*.exe
+            release/*.yml
+          retention-days: 14
