@@ -21,6 +21,8 @@ jobs:
       - name: Create evidence directory
         run: New-Item -ItemType Directory -Force evidence
       - run: npm ci
+      - name: Install Electron runtime explicitly
+        run: node node_modules/electron/install.js
       - name: Fetch and verify Windows media binaries
         run: python scripts/fetch-windows-tools.py tool-stage
       - name: Configure media binaries
