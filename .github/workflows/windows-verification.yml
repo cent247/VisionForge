@@ -2,7 +2,6 @@ name: Windows source and packaged-app verification
 on:
   push:
     branches: [main, visionforge-development]
-  pull_request:
   workflow_dispatch:
 permissions:
   contents: read
@@ -19,6 +18,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Create evidence directory
+        run: New-Item -ItemType Directory -Force evidence
       - run: npm ci
       - name: Fetch and verify Windows media binaries
         run: python scripts/fetch-windows-tools.py tool-stage
