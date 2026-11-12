@@ -28,6 +28,8 @@ jobs:
         with:
           python-version: '3.12'
       - run: New-Item -ItemType Directory -Force evidence
+      - name: Install developer-only validation dependency
+        run: python -m pip install numpy==2.3.5
       - run: npm ci
       - run: node node_modules/electron/install.js
       - run: python scripts/fetch-windows-tools.py tool-stage
@@ -47,8 +49,6 @@ jobs:
         run: python scripts/prepare-windows-documentary.py
       - name: Assemble, preview, save, reopen and export using the installed editor
         run: node tests/windows-documentary.cjs
-      - name: Install developer-only validation dependency
-        run: python -m pip install numpy==2.3.5
       - name: Validate actual application export
         run: python scripts/validate-documentary.py production/night-side/windows
       - name: Pack actual saved project and media
