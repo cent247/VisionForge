@@ -140,6 +140,7 @@ def run(args):
     time.sleep(1)
   if qmp is None:raise RuntimeError('QMP unavailable')
   report['tpmBackend']=qmp.command('query-tpm')
+  (evidence/'host-platform.json').write_text(json.dumps({'acceleration':report['acceleration'],'tpmBackend':report['tpmBackend'],'isoSha256':iso_sha,'requestedTarget':args.target,'physicalHardwareTest':False},indent=2))
   next_capture=0;capture=0
   while time.monotonic()-started<args.timeout_minutes*60:
    elapsed=time.monotonic()-started

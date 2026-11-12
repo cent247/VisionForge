@@ -42,7 +42,19 @@ jobs:
         run: |
           installer=$(find client-candidate/release -maxdepth 1 -name '*.exe' -print -quit)
           test -n "$installer"
-          python3 scripts/windows-client-evaluation.py --installer "$installer" --work "$RUNNER_TEMP/vf-windows10-client" --target windows10 --timeout-minutes 90
+          mkdir -p evidence/client-evaluation
+          nohup python3 scripts/windows-client-evaluation.py --installer "$installer" --work "$RUNNER_TEMP/vf-windows10-client" --target windows10 --timeout-minutes 90 > evidence/client-evaluation/session.log 2>&1 < /dev/null &
+          echo $! > evidence/client-evaluation/host.pid
+      - name: Initial installation checkpoint
+        run: python3 scripts/wait-client-evaluation.py --minutes 3
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows10-x64-initial-checkpoint
+          path: evidence/client-evaluation/
+          retention-days: 7
+      - name: Wait for client acceptance
+        run: python3 scripts/wait-client-evaluation.py --minutes 95 --final
       - uses: actions/upload-artifact@v4
         if: always()
         with:
