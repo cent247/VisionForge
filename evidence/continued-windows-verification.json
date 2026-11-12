@@ -1,0 +1,305 @@
+{
+  "run": "https://github.com/cent247/VisionForge/actions/runs/43196669781",
+  "testedRevision": "39bd0fe97c71bf616c70b30af49d1cfcb07884c7",
+  "jobs": [
+    {
+      "id": 131109277099,
+      "name": "server-2022-x64",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Create evidence directory",
+          "conclusion": "success"
+        },
+        {
+          "name": "Record actual Windows platform",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci",
+          "conclusion": "success"
+        },
+        {
+          "name": "Record dependency audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install Electron runtime explicitly",
+          "conclusion": "success"
+        },
+        {
+          "name": "Fetch and verify Windows media binaries",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure media binaries",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify bundled runtime notices",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run typecheck",
+          "conclusion": "success"
+        },
+        {
+          "name": "Automated media and storage checks",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Source Electron desktop workflow",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve source desktop evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build internal Windows installer and unpacked application",
+          "conclusion": "success"
+        },
+        {
+          "name": "Packaged executable desktop workflow",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve packaged desktop evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install internal candidate silently",
+          "conclusion": "success"
+        },
+        {
+          "name": "Installed executable desktop workflow",
+          "conclusion": "success"
+        },
+        {
+          "name": "Installed security regression",
+          "conclusion": "success"
+        },
+        {
+          "name": "Installed keyboard and stock UI regressions",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve installed desktop evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Uninstall internal candidate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "id": 131109277428,
+      "name": "windows-11-arm-x64-emulated",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Create evidence directory",
+          "conclusion": "success"
+        },
+        {
+          "name": "Record actual Windows platform",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm ci",
+          "conclusion": "success"
+        },
+        {
+          "name": "Record dependency audit",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install Electron runtime explicitly",
+          "conclusion": "success"
+        },
+        {
+          "name": "Fetch and verify Windows media binaries",
+          "conclusion": "success"
+        },
+        {
+          "name": "Configure media binaries",
+          "conclusion": "success"
+        },
+        {
+          "name": "Verify bundled runtime notices",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run typecheck",
+          "conclusion": "success"
+        },
+        {
+          "name": "Automated media and storage checks",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run npm run build",
+          "conclusion": "success"
+        },
+        {
+          "name": "Source Electron desktop workflow",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve source desktop evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Build internal Windows installer and unpacked application",
+          "conclusion": "success"
+        },
+        {
+          "name": "Packaged executable desktop workflow",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve packaged desktop evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Install internal candidate silently",
+          "conclusion": "success"
+        },
+        {
+          "name": "Installed executable desktop workflow",
+          "conclusion": "success"
+        },
+        {
+          "name": "Installed security regression",
+          "conclusion": "success"
+        },
+        {
+          "name": "Installed keyboard and stock UI regressions",
+          "conclusion": "success"
+        },
+        {
+          "name": "Preserve installed desktop evidence",
+          "conclusion": "success"
+        },
+        {
+          "name": "Uninstall internal candidate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-python@v5",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "logExcerpts": [
+    {
+      "id": 131109277099,
+      "excerpts": [
+        "2026-11-12T10:02:39.9719544Z ℹ tests 49\r",
+        "2026-11-12T10:02:39.9720445Z ℹ pass 48\r",
+        "2026-11-12T10:02:39.9721262Z ℹ fail 0\r",
+        "2026-11-12T10:02:39.9723123Z ℹ skipped 1\r",
+        "2026-11-12T10:05:29.4755728Z 11 packaged license texts verified\r",
+        "2026-11-12T10:05:30.8590818Z Enter selects a native timeline clip button and updates selection state\r",
+        "2026-11-12T10:05:30.8591884Z Space selects focused clip without starting preview playback\r",
+        "2026-11-12T10:05:30.8593411Z Keyboard focus has a visible outline\r",
+        "2026-11-12T10:05:32.5774607Z no automatic requests; explicit UI search reaches main-process fixture\r",
+        "2026-11-12T10:05:32.5775760Z explicit download imports real MP4 and saves credit/hash without key; CDN receives no key\r",
+        "2026-11-12T10:05:32.5777054Z finishing an old-project download cannot add media to the newly selected project\r",
+        "2026-11-12T10:05:32.5777851Z session key can be cleared explicitly\r"
+      ]
+    },
+    {
+      "id": 131109277428,
+      "excerpts": [
+        "2026-11-12T10:05:08.4264309Z ℹ tests 49\r",
+        "2026-11-12T10:05:08.4269107Z ℹ pass 48\r",
+        "2026-11-12T10:05:08.4269312Z ℹ fail 0\r",
+        "2026-11-12T10:05:08.4269711Z ℹ skipped 1\r",
+        "2026-11-12T10:09:16.0467041Z 11 packaged license texts verified\r",
+        "2026-11-12T10:09:18.7159943Z Enter selects a native timeline clip button and updates selection state\r",
+        "2026-11-12T10:09:18.7160509Z Space selects focused clip without starting preview playback\r",
+        "2026-11-12T10:09:18.7161481Z Keyboard focus has a visible outline\r",
+        "2026-11-12T10:09:21.9086957Z no automatic requests; explicit UI search reaches main-process fixture\r",
+        "2026-11-12T10:09:21.9087586Z explicit download imports real MP4 and saves credit/hash without key; CDN receives no key\r",
+        "2026-11-12T10:09:21.9088184Z finishing an old-project download cannot add media to the newly selected project\r",
+        "2026-11-12T10:09:21.9088650Z session key can be cleared explicitly\r"
+      ]
+    }
+  ],
+  "limits": "Windows Server 2022 x64 and Windows11 ARM64/x64 emulation; not clean Intel/AMD Windows11 or Windows10/device acceptance. Stock API/CDN responses are fixtures."
+}

@@ -1,0 +1,845 @@
+{
+  "sourceStageCount": 134,
+  "matchedCacheAliases": 127,
+  "missing": [],
+  "stages": [
+    {
+      "stage": "10-mingw-std-threads",
+      "repo": "https://github.com/meganz/mingw-std-threads.git",
+      "declaredCommit": "c931bac289dd431f1dd30fc4a5d1a7be36668073",
+      "cachedSource": "10-mingw-std-threads_f6fe5dc5a067e90cd8b37a748b33962ac2eb09f3b486b287265803070dbf02d2.tar.xz"
+    },
+    {
+      "stage": "10-mingw",
+      "repo": "https://git.code.sf.net/p/mingw-w64/mingw-w64.git",
+      "declaredCommit": "7213d719fe344553aa24fef7cc7dedee4940d594",
+      "cachedSource": "10-mingw_24cbc680568383841bd222adc2837abac54dbaae10a48d693b1db6b5dfbf1a66.tar.xz"
+    },
+    {
+      "stage": "10-xorg-macros",
+      "repo": "https://gitlab.freedesktop.org/xorg/util/macros.git",
+      "declaredCommit": "ea1e15a4909ac8b03b2c5a08ac3810b385985157",
+      "cachedSource": "10-xorg-macros_4cc4d5b80fc71eb608dd47d9a2e05d5d724e1d7f93cb06a56141d73e90108378.tar.xz"
+    },
+    {
+      "stage": "15-base",
+      "repo": null,
+      "declaredCommit": null,
+      "cachedSource": null
+    },
+    {
+      "stage": "20-libiconv",
+      "repo": "https://git.savannah.gnu.org/git/libiconv.git",
+      "declaredCommit": "b5a1735e02bf43ee6e490fcf9395e8abc8d32432",
+      "cachedSource": "20-libiconv_5cfdda273e0d90c8ebbd56ec488ed825d5a08629242946e5c803e904ec4799e9.tar.xz"
+    },
+    {
+      "stage": "20-zlib",
+      "repo": "https://github.com/madler/zlib.git",
+      "declaredCommit": "9d314c341b2ce16e01ae44e27ec3dd2f32aa58fd",
+      "cachedSource": "20-zlib_3920a76da49c086b9f37354e0bb0a6a510044659df4998517794e604d2902f09.tar.xz"
+    },
+    {
+      "stage": "25-fftw3",
+      "repo": "https://github.com/FFTW/fftw3.git",
+      "declaredCommit": "a7b679c528330cf6258253d6dcf5ec90552e6c93",
+      "cachedSource": "25-fftw3_1581349d67a82ca37f45cb6245c51643a2a241f600236a7b0d4708d86e5268df.tar.xz"
+    },
+    {
+      "stage": "25-fribidi",
+      "repo": "https://github.com/fribidi/fribidi.git",
+      "declaredCommit": "d2f3e1f4946e7cef9789e1c3ebdb4a60d4314c7f",
+      "cachedSource": "25-fribidi_e258538a3d99f7f5a112e5382876cae8e91ea462d6e64d9473b0e1b977b60dd3.tar.xz"
+    },
+    {
+      "stage": "25-gmp",
+      "repo": "https://github.com/BtbN/gmplib.git",
+      "declaredCommit": "5c3e9a9d52b697cab7b7d26a53972a3bf922d59a",
+      "cachedSource": "25-gmp_58d2f27cc7551d6c55d8c20a0a6564124ec31c9a1d7994140e784d6e6b010e6d.tar.xz"
+    },
+    {
+      "stage": "25-libogg",
+      "repo": "https://github.com/xiph/ogg.git",
+      "declaredCommit": "06a5e0262cdc28aa4ae6797627a783b5010440f0",
+      "cachedSource": "25-libogg_bdea5ee518d129340be457dcc11c2cef63053ac3c827e71311caff1dd3c43339.tar.xz"
+    },
+    {
+      "stage": "25-libpng",
+      "repo": "https://github.com/glennrp/libpng.git",
+      "declaredCommit": "0b0876829d77db0827a8cc2c4326f63be22b2aa1",
+      "cachedSource": "25-libpng_9229c4b3cd9d77ac3410e77a349c41b3ce2754474d4f80e3dfce30fa209b6c59.tar.xz"
+    },
+    {
+      "stage": "25-libxml2",
+      "repo": "https://github.com/GNOME/libxml2.git",
+      "declaredCommit": "c79c9612fcc77b06b0d16f35fd363d938bdbbf5e",
+      "cachedSource": "25-libxml2_57dbeec36fae049656e42f3007be0e79ba29833d7ce414357967b6c443bf01f2.tar.xz"
+    },
+    {
+      "stage": "25-openssl",
+      "repo": "https://github.com/openssl/openssl.git",
+      "declaredCommit": "openssl-3.6.5",
+      "cachedSource": "25-openssl_8c4985fba3e65ef5a4af4c0669169d8efe76f316f31578ac3c55e270e722d2c1.tar.xz"
+    },
+    {
+      "stage": "25-xz",
+      "repo": "https://github.com/tukaani-project/xz.git",
+      "declaredCommit": "299eb5c3f597f107fd6019bf156885ac8bfaa5ea",
+      "cachedSource": "25-xz_a01bf7bd3df3bddf8aa5b83716d96d1c7b26cd444fd44c44a84297e13803e712.tar.xz"
+    },
+    {
+      "stage": "45-brotli",
+      "repo": "https://github.com/google/brotli.git",
+      "declaredCommit": "2e2bcf17ae7115d84ef6588d9a3651cc987d73e7",
+      "cachedSource": "45-brotli_da008dd34ecc38730c8326e365080f6e8df7d5e3318f9baa11640013a3c2a3c3.tar.xz"
+    },
+    {
+      "stage": "25-freetype",
+      "repo": "https://gitlab.freedesktop.org/freetype/freetype.git",
+      "declaredCommit": "4ba7c3d82ab8b3cc80b869337d2c2b1913c5e415",
+      "cachedSource": "25-freetype_5a16600613e9e439bee5dc9b264bc7bf21441e14826bf85b2d5e6741b0e34a63.tar.xz"
+    },
+    {
+      "stage": "35-fontconfig",
+      "repo": "https://gitlab.freedesktop.org/fontconfig/fontconfig.git",
+      "declaredCommit": "b25ffeabd15b76f86c0c6736f6df2f1b89858010",
+      "cachedSource": "35-fontconfig_7457daafc87c14bca377a8e6d45dfc39c72808aa06d2fe580e40b48023d4d1e1.tar.xz"
+    },
+    {
+      "stage": "45-harfbuzz",
+      "repo": "https://github.com/harfbuzz/harfbuzz.git",
+      "declaredCommit": "75d8ac5d2313842550174eaab0cbaf653c8f2f77",
+      "cachedSource": "45-harfbuzz_bda4eaadc94e47205060109ae13e139ce86865c80d7166a6a99a65fceb75607d.tar.xz"
+    },
+    {
+      "stage": "50-freetype",
+      "repo": "https://gitlab.freedesktop.org/freetype/freetype.git",
+      "declaredCommit": "4ba7c3d82ab8b3cc80b869337d2c2b1913c5e415",
+      "cachedSource": "50-freetype_5a16600613e9e439bee5dc9b264bc7bf21441e14826bf85b2d5e6741b0e34a63.tar.xz"
+    },
+    {
+      "stage": "45-lcms2",
+      "repo": "https://github.com/mm2/Little-CMS.git",
+      "declaredCommit": "1112313b3784ced9297d8c0ee076aba17499827a",
+      "cachedSource": "45-lcms2_27eacdf84d36c11c81718d5dd6d380178c11eaff50511b1b8526eb3aa4924635.tar.xz"
+    },
+    {
+      "stage": "45-libffi",
+      "repo": "https://github.com/libffi/libffi.git",
+      "declaredCommit": "bc553867367246d140cd156f060bd0409f57f157",
+      "cachedSource": "45-libffi_4926a5ddb533e7af1ceb6847462394f09f68adb6ad0e7ec5408d79e5ab3fe73a.tar.xz"
+    },
+    {
+      "stage": "45-libsamplerate",
+      "repo": "https://github.com/libsndfile/libsamplerate.git",
+      "declaredCommit": "0844c208f683527c08ea8a80acc13b398aa9c8bf",
+      "cachedSource": "45-libsamplerate_0810498d6a2fa7146ea7d224b33501c0e4ea37740e12902f1ffa9ab432f4213c.tar.xz"
+    },
+    {
+      "stage": "45-libudfread",
+      "repo": "https://code.videolan.org/videolan/libudfread.git",
+      "declaredCommit": "b0bc6957e7e07d5f35391f210596d9eb71cffdd9",
+      "cachedSource": "45-libudfread_fd3762aa44b177492e9294237da9af64f7c2a22b97658e6e2a5395d1ae3a13c0.tar.xz"
+    },
+    {
+      "stage": "45-libunibreak",
+      "repo": "https://github.com/adah1972/libunibreak.git",
+      "declaredCommit": "f8172fe771ef620112247cadfb876aecaa4f769e",
+      "cachedSource": "45-libunibreak_0f3522905b8edfa966bc7d7eec5ed92793b7962f5f40ff31d885a8cb515688d7.tar.xz"
+    },
+    {
+      "stage": "45-libvorbis",
+      "repo": "https://github.com/xiph/vorbis.git",
+      "declaredCommit": "1b75110b5a2754ba1931d82dd83cb822b266a21d",
+      "cachedSource": "45-libvorbis_0ab43e5711b2585b0c19dd71023f5852d755c633bda0215caad53dc63c62a644.tar.xz"
+    },
+    {
+      "stage": "45-opencl",
+      "repo": "https://github.com/KhronosGroup/OpenCL-Headers.git",
+      "declaredCommit": "82f60316cc142e7b21dc1d8983b26de18858fbd9",
+      "cachedSource": "45-opencl_2d69f824d43ae4eefcd36e1d9acfc34c521c761d6a3354893f4ab04265b257ff.tar.xz"
+    },
+    {
+      "stage": "45-pcre2",
+      "repo": "https://github.com/PCRE2Project/pcre2.git",
+      "declaredCommit": "be940c4eaec0bc4117e06e8f14e56bf82089be6b",
+      "cachedSource": "45-pcre2_ef588edc992e8e97993b1c2e1761d0b951dc5aec4d0c2fece1d4f1fd1efeeb55.tar.xz"
+    },
+    {
+      "stage": "45-pixman",
+      "repo": "https://gitlab.freedesktop.org/pixman/pixman.git",
+      "declaredCommit": "e7fd44140fe6edef507d54bdbc25c09543ffc936",
+      "cachedSource": "45-pixman_011ae6c7826bf26de4d16616ff8d675e32921c2fed22a82b7d9d0819af80d62e.tar.xz"
+    },
+    {
+      "stage": "45-pulseaudio",
+      "repo": "https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git",
+      "declaredCommit": "77d25a1e613095bdf87a1d13b65e7c330565077a",
+      "cachedSource": "45-pulseaudio_75fc5468c2f6f4d4b273e1e1ee3e15bfeca5d31f131e21e4724c56b5484089c9.tar.xz"
+    },
+    {
+      "stage": "45-vmaf",
+      "repo": "https://github.com/Netflix/vmaf.git",
+      "declaredCommit": "f712fa7564fe49b12991d83920b83573af2ae063",
+      "cachedSource": "45-vmaf_1c44f97a1bcafb8dbc51f7d96a30afcda407e079ba7375fa0dc9cf63f26117ae.tar.xz"
+    },
+    {
+      "stage": "10-xcbproto",
+      "repo": "https://gitlab.freedesktop.org/xorg/proto/xcbproto.git",
+      "declaredCommit": "cf7e2581b613802f2f8ec2a4b50a6a20aad4bf52",
+      "cachedSource": "10-xcbproto_aecb3156bc10c1a8bae6c1bb11f21b8d7f768876cddde7302804c9e8ffba7484.tar.xz"
+    },
+    {
+      "stage": "10-xproto",
+      "repo": "https://gitlab.freedesktop.org/xorg/proto/xorgproto.git",
+      "declaredCommit": "6d3907b6d5dc4aa7d7ee6ee5d7d8714e7466630b",
+      "cachedSource": "10-xproto_1aeee7bbb0cf339d20d6f7dfc16ea02f54348663e781781e624ebec374c85e41.tar.xz"
+    },
+    {
+      "stage": "10-xtrans",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxtrans.git",
+      "declaredCommit": "79f6b0bfe2170496e8c37626043d009f4cd3f1e1",
+      "cachedSource": "10-xtrans_b41af1c6913f15c4007f45375796b3cfe701cce8003bc6a1682f8f6952fea4c2.tar.xz"
+    },
+    {
+      "stage": "20-libxau",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxau.git",
+      "declaredCommit": "be1daeb909f1d678e7859ac1555e90b4e768d5c4",
+      "cachedSource": "20-libxau_8144e82dbddb1c5a8ac1ef670f5a78a7474aaf2dd418aebb50e572e40dbc5244.tar.xz"
+    },
+    {
+      "stage": "30-libxcb",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxcb.git",
+      "declaredCommit": "d4e07bab5729c7d7cc3d2b95568cd9a661a53c4f",
+      "cachedSource": "30-libxcb_e78cc0b6487fa3ecc322f0597baffacca986ff88601f35dce32807d12d845013.tar.xz"
+    },
+    {
+      "stage": "40-libx11",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libx11.git",
+      "declaredCommit": "b8d5a7046a98a244ee8ca3c9c07fd617c800dde2",
+      "cachedSource": "40-libx11_b505e74d9601ae59f1f15a8b305b11f51757460e2418d0a70922c48f99b001c1.tar.xz"
+    },
+    {
+      "stage": "50-libxext",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxext.git",
+      "declaredCommit": "508f8adca2540ff8926ac8456cb1c553a8caae76",
+      "cachedSource": "50-libxext_63e9942f10f8639169486c0c50997c583892b495d6aa9608c99f22bec8f9cbb6.tar.xz"
+    },
+    {
+      "stage": "50-libxfixes",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxfixes.git",
+      "declaredCommit": "55bb2d1d57d43e0595ce45393f26eb433d75a7cc",
+      "cachedSource": "50-libxfixes_b0399b879cf10da97be556a7d224dc7e04f3caad8b63a46fcc683e8507fb1495.tar.xz"
+    },
+    {
+      "stage": "50-libxi",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxi.git",
+      "declaredCommit": "9ea632ab9dce9ad6630ef7db9d1850ea3d0a2419",
+      "cachedSource": "50-libxi_8c237b64d4df28813193f8d9f49bd551d6ef4ad38d65a2bf2e63a1ffab70f7a5.tar.xz"
+    },
+    {
+      "stage": "50-libxinerama",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxinerama.git",
+      "declaredCommit": "d7162b962710bc724b41cabab4e7cea303c4b541",
+      "cachedSource": "50-libxinerama_ba0cdf4b001e4bcb597ff1724ca04a818f15665b64bf9241c52047031c063f79.tar.xz"
+    },
+    {
+      "stage": "50-libxrender",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxrender.git",
+      "declaredCommit": "f30d654658ebf17d41141ed3ec2abf607d8a512e",
+      "cachedSource": "50-libxrender_6daa5951899da7b943fa38de6d89b8a445f9e66f8cb03fd24da11c48449ad04b.tar.xz"
+    },
+    {
+      "stage": "50-libxscrnsaver",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxscrnsaver.git",
+      "declaredCommit": "3f753e7a4050db083474444ae91cc17a849eaa4d",
+      "cachedSource": "50-libxscrnsaver_5c9dcd646e93ff51cbd135d4e0985d88853f250ce626ab0889723b8bee770e3d.tar.xz"
+    },
+    {
+      "stage": "50-libxxf86vm",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxxf86vm.git",
+      "declaredCommit": "c76fde6bffcc87e5dd98d8196bb01a299bdc3236",
+      "cachedSource": "50-libxxf86vm_03e86e2ea8e466bee1b235888c6ce6a6239689b2dd3d8f1f2a8c2f1ce5abdadc.tar.xz"
+    },
+    {
+      "stage": "60-libglvnd",
+      "repo": "https://gitlab.freedesktop.org/glvnd/libglvnd.git",
+      "declaredCommit": "c046a760d845416e98ac4128757b2b356c47fdaa",
+      "cachedSource": "60-libglvnd_b5decd6ef0d35071d5ef435a736000a7c2dfe94707206653267c61e11630c960.tar.xz"
+    },
+    {
+      "stage": "60-libxcursor",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxcursor.git",
+      "declaredCommit": "15efad7ccd035f5d1ddc8d437e047569d1775fa7",
+      "cachedSource": "60-libxcursor_899caf3541ff1f0fdf3a60cbc483877819b6bc6b8fc6d56ae9863dd95d5b4a45.tar.xz"
+    },
+    {
+      "stage": "60-libxrandr",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxrandr.git",
+      "declaredCommit": "8a4ba1974bcf07057cf891128d86ae1ab5303574",
+      "cachedSource": "60-libxrandr_76ce7ef426d59979a255619444de369567889d5bfe2af130ef77700c096230fc.tar.xz"
+    },
+    {
+      "stage": "60-libxv",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libxv.git",
+      "declaredCommit": "f315ec50fcad9bdbaed46c3e78dc5e7fe209f933",
+      "cachedSource": "60-libxv_cda840dfd0f852c6535789148438618900c0a214b03a010c02ff1364a5499e02.tar.xz"
+    },
+    {
+      "stage": "99-finalize",
+      "repo": null,
+      "declaredCommit": null,
+      "cachedSource": null
+    },
+    {
+      "stage": "45-xxhash",
+      "repo": "https://github.com/Cyan4973/xxHash.git",
+      "declaredCommit": "61fd0fece2ebafc5bd9b573050e0c046c4e48d28",
+      "cachedSource": "45-xxhash_12b7c72fb58040129c224e71cea6c025839691752bc2e3389cd00dfafea74549.tar.xz"
+    },
+    {
+      "stage": "45-zstd",
+      "repo": "https://github.com/facebook/zstd.git",
+      "declaredCommit": "49cf51799ea051457f57243527aa2058f999f005",
+      "cachedSource": "45-zstd_5630d1ec461c3296b7ce125ec1d2ddf9ac6d8b0a6e1e2f4995f9f93055d1a72d.tar.xz"
+    },
+    {
+      "stage": "40-vulkan-headers",
+      "repo": "https://github.com/KhronosGroup/Vulkan-Headers.git",
+      "declaredCommit": "v1.4.366",
+      "cachedSource": "40-vulkan-headers_ddc81d38d56ba4bdf4cec0219b9dde05a50af605e8990123796161c660bd920b.tar.xz"
+    },
+    {
+      "stage": "45-vulkan-loader",
+      "repo": "https://github.com/BtbN/Vulkan-Shim-Loader.git",
+      "declaredCommit": "65b3936528cd92eb4ea3de485d03f858a3850484",
+      "cachedSource": "45-vulkan-loader_56e5e75c96fa35dcef2f78ab98d16220825d237aac6b9b79c26a6ea58278a6ec.tar.xz"
+    },
+    {
+      "stage": "50-shaderc",
+      "repo": "https://github.com/google/shaderc.git",
+      "declaredCommit": "2737994b552137a85545f956e303d620e6ff232c",
+      "cachedSource": "50-shaderc_9fb6f90fcb980db57cbd05768906a6f0a9bee84abfaf01d6dfc33df488260939.tar.xz"
+    },
+    {
+      "stage": "55-spirv-cross",
+      "repo": "https://github.com/KhronosGroup/SPIRV-Cross.git",
+      "declaredCommit": "300681bbcb8365a8d1eacdacdbdd0249bbf1d6b1",
+      "cachedSource": "55-spirv-cross_8d2467aa644979698d20d36671060a6c0f6eac3782721527906bea5975e26af7.tar.xz"
+    },
+    {
+      "stage": "60-spirv-headers",
+      "repo": "https://github.com/KhronosGroup/SPIRV-Headers.git",
+      "declaredCommit": "fbf86836a9b1966586faf7be7bb8a6440e156d62",
+      "cachedSource": "60-spirv-headers_54cdecdd2165d64c7e2d86331e8fb9ae3d9623b6592f28fd7b5c764a96afd1b2.tar.xz"
+    },
+    {
+      "stage": "99-enable",
+      "repo": null,
+      "declaredCommit": null,
+      "cachedSource": null
+    },
+    {
+      "stage": "50-amf",
+      "repo": "https://github.com/GPUOpen-LibrariesAndSDKs/AMF.git",
+      "declaredCommit": "57ee0cfb0e1a08d9041f77435653794c1b012be0",
+      "cachedSource": "50-amf_0a3d21afc1753f7c9484a2ede293000bc3129fbdd3dcd942ebe98ff7c59c9fed.tar.xz"
+    },
+    {
+      "stage": "50-aom",
+      "repo": "https://aomedia.googlesource.com/aom",
+      "declaredCommit": "9ace39e02a34992b83fc7f7f2bfbbd2e79348c74",
+      "cachedSource": "50-aom_e96855aca62dfb199d85f4f6d6436f2379001ade93153a16ed1ec9828f163436.tar.xz"
+    },
+    {
+      "stage": "50-avisynth",
+      "repo": "https://github.com/AviSynth/AviSynthPlus.git",
+      "declaredCommit": "523370a39933e2f9c208a5d74c1d35d43d177a76",
+      "cachedSource": "50-avisynth_1f4a5aef725b195786f21b2f600141272aa5e84dcb9941dae4a255ba3d0edae8.tar.xz"
+    },
+    {
+      "stage": "50-chromaprint",
+      "repo": "https://github.com/acoustid/chromaprint.git",
+      "declaredCommit": "3b38c100022bdfb49be7797c4828a476f1621d55",
+      "cachedSource": "50-chromaprint_79d7c7c976ae5fe8caf2f98804282f4517c7e7366a05287d4a46893593abe42e.tar.xz"
+    },
+    {
+      "stage": "50-dav1d",
+      "repo": "https://code.videolan.org/videolan/dav1d.git",
+      "declaredCommit": "b8b2d726b4b78a2fb174cb45baff441b5969672c",
+      "cachedSource": "50-dav1d_2533f9856042f3f39dc8cda2e58311c24d27c3421fdd6e11af9860c4b9b301ae.tar.xz"
+    },
+    {
+      "stage": "50-davs2",
+      "repo": "https://github.com/pkuvcl/davs2.git",
+      "declaredCommit": "b41cf117452e2d73d827f02d3e30aa20f1c721ac",
+      "cachedSource": "50-davs2_a2d3a5d05dbd810e7a33f41ca77f70f1775ab8318ffe3e1b365105e8ad813d7e.tar.xz"
+    },
+    {
+      "stage": "30-libdvdcss",
+      "repo": "https://code.videolan.org/videolan/libdvdcss.git",
+      "declaredCommit": "811ce97a1d4d1c9d936f4b2707f533a9ef768251",
+      "cachedSource": "30-libdvdcss_8e6c469595eeef1d2ca7962b68faabe5531518009472d449f700665a616bc66c.tar.xz"
+    },
+    {
+      "stage": "40-libdvdread",
+      "repo": "https://code.videolan.org/videolan/libdvdread.git",
+      "declaredCommit": "0f30df53125b564ef45903714403ce0a1e6c5e9e",
+      "cachedSource": "40-libdvdread_05480a48c37dea2502d831aa7dd0b71c28c6d32cfabf95e0cbb16512fe45d8f0.tar.xz"
+    },
+    {
+      "stage": "50-libdvdnav",
+      "repo": "https://code.videolan.org/videolan/libdvdnav.git",
+      "declaredCommit": "8147ccd35e5aae4afdd21171cf7b6b4d8f179d28",
+      "cachedSource": "50-libdvdnav_20088474345356fbabc64ef14250d1f5ed698d04d2facb7d73dddfc9ace7b684.tar.xz"
+    },
+    {
+      "stage": "50-fdk-aac",
+      "repo": "https://github.com/mstorsjo/fdk-aac.git",
+      "declaredCommit": "c41c3c7516ea8d0d78a53b96b30bed3a29745cc6",
+      "cachedSource": "50-fdk-aac_2347e0e93e897a22fcc45b01b5405c0af5aa770d6de284fa5bd00e60f77564cb.tar.xz"
+    },
+    {
+      "stage": "50-ffnvcodec",
+      "repo": "https://github.com/FFmpeg/nv-codec-headers.git",
+      "declaredCommit": "f2053071ea93137255b6dcf42e9b4c9e0965a44e",
+      "cachedSource": "50-ffnvcodec_cb0ed43b23374c3bfc7beedfb32a54f07d7c9e226849ff5b3fe68525c052dbb1.tar.xz"
+    },
+    {
+      "stage": "50-frei0r",
+      "repo": "https://github.com/dyne/frei0r.git",
+      "declaredCommit": "618dde79716fab4e428a05e6476325b9e6f5b063",
+      "cachedSource": "50-frei0r_4e5d48859e5046fe3d6eae5276456bffa385e66641ad8bbb32f46a8babe3db02.tar.xz"
+    },
+    {
+      "stage": "50-gme",
+      "repo": "https://github.com/libgme/game-music-emu.git",
+      "declaredCommit": "f68963b1de0633149b05732113d3c3113c6f63a1",
+      "cachedSource": "50-gme_a777e130690856e910357309c2a2ece4423a149328c5a5780012b7d4ad3641ff.tar.xz"
+    },
+    {
+      "stage": "50-kvazaar",
+      "repo": "https://github.com/ultravideo/kvazaar.git",
+      "declaredCommit": "1f11f9ae33ef0cbe48a7d335b7144af1ecfe8092",
+      "cachedSource": "50-kvazaar_46c0cdef9594b8c304dbff6ad4a7a1226dc9764e056489ef17cbf0475bb07d8d.tar.xz"
+    },
+    {
+      "stage": "50-lcevcdec",
+      "repo": "https://github.com/v-novaltd/LCEVCdec.git",
+      "declaredCommit": "741fb7c869cf61012f7dcebfcd9e56981198c78b",
+      "cachedSource": "50-lcevcdec_f5d80ac2702c700db08d56adc3cced6d3eca48acc3fef9ad56e76bd562db3a8d.tar.xz"
+    },
+    {
+      "stage": "50-libaribb24",
+      "repo": "https://github.com/nkoriyama/aribb24.git",
+      "declaredCommit": "5e9be272f96e00f15a2f3c5f8ba7e124862aec38",
+      "cachedSource": "50-libaribb24_3dd74ffb861f7ef9133dab074b9845408d84ebc49db9aee5d91829efba6d52ce.tar.xz"
+    },
+    {
+      "stage": "50-libaribcaption",
+      "repo": "https://github.com/xqq/libaribcaption.git",
+      "declaredCommit": "37dde0f32652c32aa98bf92278944d1cfb2e7354",
+      "cachedSource": "50-libaribcaption_c339ab3c771c8ab4d6cd1b47e60e40d6ed627ea3dcfd99c0470fcc32e96121ad.tar.xz"
+    },
+    {
+      "stage": "50-libass",
+      "repo": "https://github.com/libass/libass.git",
+      "declaredCommit": "f61db567e6593df3470e91594bcd4ad2d0473aff",
+      "cachedSource": "50-libass_8d32f6ca9b508226966e8a676c7e47ed5a6ad66bd2caab05a6738c80d45feaab.tar.xz"
+    },
+    {
+      "stage": "50-libbluray",
+      "repo": "https://code.videolan.org/videolan/libbluray.git",
+      "declaredCommit": "f33a738fd7bb8b5e1148b0a5424778db7342450b",
+      "cachedSource": "50-libbluray_edca5ac1903759355a7f260560ca11c21a5a92043cc4e8226d71a9e5ca997dfe.tar.xz"
+    },
+    {
+      "stage": "40-libpsl",
+      "repo": "https://github.com/rockdaboot/libpsl.git",
+      "declaredCommit": "620d51d13351e8f3cb724471032246592c9bbd69",
+      "cachedSource": "40-libpsl_25c7f294f3928958c5700581a31fafa50a7a7dc87825c57f7b94e68f324d82e6.tar.xz"
+    },
+    {
+      "stage": "40-nghttp2",
+      "repo": "https://github.com/nghttp2/nghttp2.git",
+      "declaredCommit": "3baf9561e09f7ac8b0dce6e84132ce3909309ef0",
+      "cachedSource": "40-nghttp2_cd4ce193c19622160095f36f25fb73918a0795badf51752c3df046f62bdeb6af.tar.xz"
+    },
+    {
+      "stage": "40-nghttp3",
+      "repo": "https://github.com/ngtcp2/nghttp3.git",
+      "declaredCommit": "ac11a456eb9d76e55fd6c1626727111cd29d5459",
+      "cachedSource": "40-nghttp3_349900c9fbaeb49bbcda63d1ccc7a41fba3f35e4091e1efa63142741543cd0f5.tar.xz"
+    },
+    {
+      "stage": "40-ngtcp2",
+      "repo": "https://github.com/ngtcp2/ngtcp2.git",
+      "declaredCommit": "20da63db12a3e7fd2a3ae1a9f15be3cadd3f2695",
+      "cachedSource": "40-ngtcp2_1b86753fc02a4b1e19da48f3dd330909f119374e5c6559cc6f82c3a327333de0.tar.xz"
+    },
+    {
+      "stage": "50-libcurl",
+      "repo": "https://github.com/curl/curl.git",
+      "declaredCommit": "bc677a8f16a51e728136eff130509cfac57aad19",
+      "cachedSource": "50-libcurl_1831735e4de0363d550ce63f143ec99436e3d8efbd61e080a118f0ec86d487d9.tar.xz"
+    },
+    {
+      "stage": "50-libjxl",
+      "repo": "https://github.com/libjxl/libjxl.git",
+      "declaredCommit": "e47d2a2b5bb418f2947ce07f36cb048861db3820",
+      "cachedSource": "50-libjxl_7c56642fa32eaa425d25a962f3a67e917ce2ba5eeadf689754e94c71b716a19d.tar.xz"
+    },
+    {
+      "stage": "50-libmp3lame",
+      "repo": "https://svn.code.sf.net/p/lame/svn/trunk/lame",
+      "declaredCommit": null,
+      "cachedSource": "50-libmp3lame_414ea17768b396fc4638b6867888ca5f013f3a92a1bce2c003dbe6986a94118c.tar.xz"
+    },
+    {
+      "stage": "50-libopus",
+      "repo": "https://github.com/xiph/opus.git",
+      "declaredCommit": "a8b2545eec71e0f53ecead2d583e7b6baa42684d",
+      "cachedSource": "50-libopus_5e1564aea58d4cd56d8e4c0df78118a05343c637bbd1b0da95faa04b4f0edb2b.tar.xz"
+    },
+    {
+      "stage": "50-libplacebo",
+      "repo": "https://code.videolan.org/videolan/libplacebo.git",
+      "declaredCommit": "275f7dea27924cdd34ab2e6c20e448b6bc4fab65",
+      "cachedSource": "50-libplacebo_aa3eb0352b4bd00dc4bc648525a49c86927164dae57126696bf798b2f6f29d0b.tar.xz"
+    },
+    {
+      "stage": "40-mbedtls",
+      "repo": "https://github.com/ARMmbed/mbedtls.git",
+      "declaredCommit": "v4.2.0",
+      "cachedSource": "40-mbedtls_8dd146455b388b9a7236d83bb2904ff89bba41fa28da9af8a310fc01f4ff1b53.tar.xz"
+    },
+    {
+      "stage": "50-librist",
+      "repo": "https://code.videolan.org/rist/librist.git",
+      "declaredCommit": "47ad5513d1aa0adb692d78f635512e7fa123f06e",
+      "cachedSource": "50-librist_14396bbf9b7e8ab45e7e6a56d2cb299f382d405f7ff63f95c6cfe252c0abf321.tar.xz"
+    },
+    {
+      "stage": "10-glib",
+      "repo": "https://github.com/GNOME/glib.git",
+      "declaredCommit": "50b938a3e8f5154a25b5af3dd8b9dd8b2ccba7c3",
+      "cachedSource": "10-glib_e8fabe008acef0d582fa2f400f8d038bfdefdb020a5305be521640905d286c93.tar.xz"
+    },
+    {
+      "stage": "20-cairo",
+      "repo": "https://gitlab.freedesktop.org/cairo/cairo.git",
+      "declaredCommit": "74755964edef651691d5cd36ff140108298e4e6e",
+      "cachedSource": "20-cairo_b460be039dc49e1a252ad8a1ed08863785f51cdb1156ceb585ca590d4f98beea.tar.xz"
+    },
+    {
+      "stage": "30-pango",
+      "repo": "https://github.com/GNOME/pango.git",
+      "declaredCommit": "68e981d243d50e03f3df12fb400f31647ef570d2",
+      "cachedSource": "30-pango_0e38f603f51c8bd47e78e2c9a7b6e3d2ccaefae3f859cdcd1f745b256b6c4dde.tar.xz"
+    },
+    {
+      "stage": "99-librsvg",
+      "repo": "https://github.com/GNOME/librsvg.git",
+      "declaredCommit": "0c074d0a25adefd65843067306f9bc1fb609f68f",
+      "cachedSource": "99-librsvg_13350adcab840c02279f23f917e44cd2cd91dce9f2ddfe0d84370925c37c1eb3.tar.xz"
+    },
+    {
+      "stage": "50-libssh",
+      "repo": "https://gitlab.com/libssh/libssh-mirror.git",
+      "declaredCommit": "9de02f3d01ba16d06f46c0c4d27aa08d8deeecee",
+      "cachedSource": "50-libssh_42574f0c3419e24b6661ec8965fffdce0de52640816a32d8a031f2969d8082b0.tar.xz"
+    },
+    {
+      "stage": "50-libtheora",
+      "repo": "https://github.com/xiph/theora.git",
+      "declaredCommit": "28fd5ec77f0ad0e07a371cef1047828116f6bd8a",
+      "cachedSource": "50-libtheora_c5b1505081f2493a61c94a64ef8eef6de9b851447fab834bd5f9b6e35ee1d008.tar.xz"
+    },
+    {
+      "stage": "50-libvpx",
+      "repo": "https://chromium.googlesource.com/webm/libvpx",
+      "declaredCommit": "900b2a52b69e9d4ab72eb855c365da1100c50eb1",
+      "cachedSource": "50-libvpx_c47989190526d404154d9be2855d1ee7ebc0a144957c1dbe7df36b85d9b8c450.tar.xz"
+    },
+    {
+      "stage": "50-libwebp",
+      "repo": "https://chromium.googlesource.com/webm/libwebp",
+      "declaredCommit": "1844042d1ca751e62e61df7617dba19c98588339",
+      "cachedSource": "50-libwebp_fddc711fb703733c0d17a383eefe593d6ad9ce367832f1770e4ee5ca942bc8c0.tar.xz"
+    },
+    {
+      "stage": "50-libzmq",
+      "repo": "https://github.com/zeromq/libzmq.git",
+      "declaredCommit": "46493370217ac135246617fa2f6ac819d8b61bfc",
+      "cachedSource": "50-libzmq_e68f6ea67cc2e84e0b320f3a4b5538dc90d97142264dc310dd8bbcb5f989d9e2.tar.xz"
+    },
+    {
+      "stage": "96-lv2",
+      "repo": "https://github.com/lv2/lv2.git",
+      "declaredCommit": "3c57dae600a5ad8d05acd53ee3490f7d91cb7be6",
+      "cachedSource": "96-lv2_1833e554a5a1760aa41062569225bbb9856f09f3c23d37301074d82a17b0624e.tar.xz"
+    },
+    {
+      "stage": "96-serd",
+      "repo": "https://github.com/drobilla/serd.git",
+      "declaredCommit": "b621b0bc790d1e8102d3138ead16b974ddda8432",
+      "cachedSource": "96-serd_85b62adf2841ea334e53cfaa67c987132eccf786c439583d021b39de09bb3f70.tar.xz"
+    },
+    {
+      "stage": "96-zix",
+      "repo": "https://github.com/drobilla/zix.git",
+      "declaredCommit": "17d632393f5addb6fa24dda2927b96515407cca7",
+      "cachedSource": "96-zix_21e780c9ab8c0f8067c36bb53b76fcabc2dd828153b3f1ab082ed44281f62d13.tar.xz"
+    },
+    {
+      "stage": "97-sord",
+      "repo": "https://github.com/drobilla/sord.git",
+      "declaredCommit": "4b5232bb91e7f2f1b84df384494d073fabbcd312",
+      "cachedSource": "97-sord_6ef433b3c59e64a645002e31f929dfec02cbd979f0d70b5373173e1ca217125d.tar.xz"
+    },
+    {
+      "stage": "98-sratom",
+      "repo": "https://github.com/lv2/sratom.git",
+      "declaredCommit": "9e8ee84eed502e6030ce8bb49694fd28542b08fc",
+      "cachedSource": "98-sratom_a7e01a157b247bfecbce4a5c63016fa503ddd5703ffc208af3f81805a7d30535.tar.xz"
+    },
+    {
+      "stage": "99-lilv",
+      "repo": "https://github.com/lv2/lilv.git",
+      "declaredCommit": "4b8f30055fa5cb4134a2eb45fc1555bc04289314",
+      "cachedSource": "99-lilv_0543a3c15e7971c2371260e51aad5ead6ffbc7a539de39540a906ebf944d829d.tar.xz"
+    },
+    {
+      "stage": "50-onevpl",
+      "repo": "https://github.com/intel/libvpl.git",
+      "declaredCommit": "674d015bcb294bc39fa276e99a652ea045423e82",
+      "cachedSource": "50-onevpl_c67accd07bdf24795034753f097eec4331f1a1174ce643cf5bcf94cb26ddd5e4.tar.xz"
+    },
+    {
+      "stage": "50-openal",
+      "repo": "https://github.com/kcat/openal-soft.git",
+      "declaredCommit": "4a52288b772d1722713675f71bb30f321e78fd80",
+      "cachedSource": "50-openal_75621c86ba55c9432100695ec76dc2b90eaa72f49cc6d5542930d03390d13cde.tar.xz"
+    },
+    {
+      "stage": "50-openapv",
+      "repo": "https://github.com/AcademySoftwareFoundation/openapv.git",
+      "declaredCommit": "b4ff69856b4c3e8849df431ee3db54fd535f9bf3",
+      "cachedSource": "50-openapv_88de83e9d056a62b91a068ecb025fb15111482ffa583943495f4a55ba4926a43.tar.xz"
+    },
+    {
+      "stage": "50-opencore-amr",
+      "repo": "https://git.code.sf.net/p/opencore-amr/code",
+      "declaredCommit": "7dba8c32238418ce0b316a852b2224df586ca896",
+      "cachedSource": "50-opencore-amr_5d7ec3b8ffdd0f32309a659256916e3286724f08acf0f625a4b4f1f9c17ebf7c.tar.xz"
+    },
+    {
+      "stage": "50-openh264",
+      "repo": "https://github.com/cisco/openh264.git",
+      "declaredCommit": "1bca62311e447fd9c39fc93de2c4b96cd5ce971c",
+      "cachedSource": "50-openh264_a190744ec7bc191b9c0665346cb53732657397a33da8e7f6399d135ad681dc9d.tar.xz"
+    },
+    {
+      "stage": "50-openjpeg",
+      "repo": "https://github.com/uclouvain/openjpeg.git",
+      "declaredCommit": "8314119b067c0fc77834731168daaebd379fdb12",
+      "cachedSource": "50-openjpeg_b35ab3ef10d52ce49eb8146e05af61e7560bf3b18aa2dd750cb5b083079caac4.tar.xz"
+    },
+    {
+      "stage": "50-openmpt",
+      "repo": "https://github.com/OpenMPT/openmpt.git",
+      "declaredCommit": "3ee3c8000b45886703816fd027369ab6ad6fc6cb",
+      "cachedSource": "50-openmpt_afcc3bca4fd32a596b1caa9087dc6ce2d3ab7391690a1bdf959935bae3b33bf4.tar.xz"
+    },
+    {
+      "stage": "50-rav1e",
+      "repo": "https://github.com/xiph/rav1e.git",
+      "declaredCommit": "31435de9d76fddd38f6dcc31d4014574cebb2092",
+      "cachedSource": "50-rav1e_b2d3a4caec12576416c156eb16b4f83433caf3dc3a8270ed0bfe4fb74098dd54.tar.xz"
+    },
+    {
+      "stage": "50-rubberband",
+      "repo": "https://github.com/breakfastquay/rubberband.git",
+      "declaredCommit": "e4296ac80b1170018a110bc326fd0d45a0eb27d6",
+      "cachedSource": "50-rubberband_5d3ca7b4a1f4c07ead3f23ba9c7a3736384a9394a34e41bf70a78075e0ed9593.tar.xz"
+    },
+    {
+      "stage": "50-schannel",
+      "repo": null,
+      "declaredCommit": null,
+      "cachedSource": null
+    },
+    {
+      "stage": "50-sdl",
+      "repo": "https://github.com/libsdl-org/SDL.git",
+      "declaredCommit": "8acf7cfc0f88717e5c036f60f0314bfcafe39189",
+      "cachedSource": "50-sdl_e9ff25aac373919ff283eb8f4017c116008ac8c210c77a99a78d22713792cd0a.tar.xz"
+    },
+    {
+      "stage": "50-snappy",
+      "repo": "https://github.com/google/snappy.git",
+      "declaredCommit": "946606459314e55d029c85f9a8c46f8809467f0f",
+      "cachedSource": "50-snappy_321fc33fe352fb12cdc2e61068884fd17af73bdbdf1592ca3f509a9fbe7dc318.tar.xz"
+    },
+    {
+      "stage": "50-soxr",
+      "repo": "https://git.code.sf.net/p/soxr/code",
+      "declaredCommit": "945b592b70470e29f917f4de89b4281fbbd540c0",
+      "cachedSource": "50-soxr_d24c000584012b62b406f09325af85575932219b972b87ab3e2b1037bdc97c6a.tar.xz"
+    },
+    {
+      "stage": "50-srt",
+      "repo": "https://github.com/Haivision/srt.git",
+      "declaredCommit": "9f2390232a8256ed4c72a5418c2b2777c49ad737",
+      "cachedSource": "50-srt_f64348f866a4d03ceeb59882c4d76f42ca632dc4ffc6b4f4d2d643a24d6e124a.tar.xz"
+    },
+    {
+      "stage": "50-svtav1",
+      "repo": "https://github.com/AOMediaCodec/SVT-AV1.git",
+      "declaredCommit": "ad11d76a6c9cb05ec49d166cf20ec5d286715dc1",
+      "cachedSource": "50-svtav1_a7da0045b9bf240ed2983e976118a282915250bd1042883caed4c3ad4cf4b956.tar.xz"
+    },
+    {
+      "stage": "50-twolame",
+      "repo": "https://github.com/njh/twolame.git",
+      "declaredCommit": "6fced852d4d5cfad58cf9dbe3ea619b08e87d398",
+      "cachedSource": "50-twolame_b034b56f3c8caa730922980b6e8aca15c6f3b46e3fa98d3229c337aeb7858f71.tar.xz"
+    },
+    {
+      "stage": "50-uavs3d",
+      "repo": "https://github.com/uavs3/uavs3d.git",
+      "declaredCommit": "0e20d2c291853f196c68922a264bcd8471d75b68",
+      "cachedSource": "50-uavs3d_f5c1983f0fc2360d5846298e08a8f89f2f345caa3beb83100ca9b48eff5ded6b.tar.xz"
+    },
+    {
+      "stage": "30-libpciaccess",
+      "repo": "https://gitlab.freedesktop.org/xorg/lib/libpciaccess.git",
+      "declaredCommit": "38e6f15f839fba2c49982e7ad61cde681fd5d4d6",
+      "cachedSource": "30-libpciaccess_7e6e74a7ea243214bf8b5e16e9bdfe5b22f577c4daba8ee93b59b3e5dfa8c1ad.tar.xz"
+    },
+    {
+      "stage": "40-libdrm",
+      "repo": "https://gitlab.freedesktop.org/mesa/drm.git",
+      "declaredCommit": "b97cbde15c5c3abfe44d78e8f57139e50f612fec",
+      "cachedSource": "40-libdrm_8704cddf087daeac8ce3e20f4802cf55e5a3484345df1107c0d3a8c92495176e.tar.xz"
+    },
+    {
+      "stage": "50-libva",
+      "repo": "https://github.com/intel/libva.git",
+      "declaredCommit": "f052e984e0c8bf10784198cc311b23c567b1367f",
+      "cachedSource": "50-libva_12e3a5b0a3669406b4688f3654f98f2f2973e69b901b6d9e933d6a616f59f300.tar.xz"
+    },
+    {
+      "stage": "99-finalize",
+      "repo": null,
+      "declaredCommit": null,
+      "cachedSource": null
+    },
+    {
+      "stage": "50-vapoursynth",
+      "repo": "https://github.com/vapoursynth/vapoursynth.git",
+      "declaredCommit": "R81",
+      "cachedSource": "50-vapoursynth_a86486f12498c8da7869e3dc656d5b8b516a40f3bf81fd78f1829ab6241619f0.tar.xz"
+    },
+    {
+      "stage": "50-vidstab",
+      "repo": "https://github.com/georgmartius/vid.stab.git",
+      "declaredCommit": "e2445c4081658318223762a696eb1c645c2d7168",
+      "cachedSource": "50-vidstab_4775a069821691e584b2eb878047d58081f140d98fc8d3c759766f099723179e.tar.xz"
+    },
+    {
+      "stage": "50-vvenc",
+      "repo": "https://github.com/fraunhoferhhi/vvenc.git",
+      "declaredCommit": "0e7508b811bbea3cd510956ddb3193f3a4c93684",
+      "cachedSource": "50-vvenc_fe9ba1507b97792ce10f332e8bbfa31a02b4eca31e28739dd0ded31f750d6dd9.tar.xz"
+    },
+    {
+      "stage": "50-whisper",
+      "repo": "https://github.com/ggml-org/whisper.cpp.git",
+      "declaredCommit": "231638a0717b7822784297e5980965ffcec05810",
+      "cachedSource": "50-whisper_5dd72ab250fdc3faad8644f602d742e75b46882802657159b2a9739d95197495.tar.xz"
+    },
+    {
+      "stage": "50-x264",
+      "repo": "https://code.videolan.org/videolan/x264.git",
+      "declaredCommit": "0480cb05fa188d37ae87e8f4fd8f1aea3711f7ee",
+      "cachedSource": "50-x264_7aee4cf46b7c0eff1a5ad3d23ae43a29562065ef2866a4a883d7ad2db0fb755d.tar.xz"
+    },
+    {
+      "stage": "50-x265",
+      "repo": "https://github.com/Multicorewareinc/x265.git",
+      "declaredCommit": "5143a2a00ad0cc600831654a248b96ec7307eb4a",
+      "cachedSource": "50-x265_4f62c3a4d4f92a0b7156f9dadf00f2d69d48b2e5672894def14919159bbda398.tar.xz"
+    },
+    {
+      "stage": "50-xavs2",
+      "repo": "https://github.com/pkuvcl/xavs2.git",
+      "declaredCommit": "eae1e8b9d12468059bdd7dee893508e470fa83d8",
+      "cachedSource": "50-xavs2_983aacbab6d33318bf9c4742b41a1ed9d42afc12a0493ba97d07404a99734009.tar.xz"
+    },
+    {
+      "stage": "50-xvid",
+      "repo": "https://svn.xvid.org/trunk/xvidcore",
+      "declaredCommit": null,
+      "cachedSource": "50-xvid_03619a39e7e15a372b56fc954435c35668ed47258d7e7d3f2e47ba521e3b884f.tar.xz"
+    },
+    {
+      "stage": "50-zimg",
+      "repo": "https://github.com/sekrit-twc/zimg.git",
+      "declaredCommit": "67e0603271c080e22c8429856dd4a8a56587e61e",
+      "cachedSource": "50-zimg_7ac9b5905a13db62bae8b61a2a7b3806f25a5f3e173cc0c6c79edf9f38d8b437.tar.xz"
+    },
+    {
+      "stage": "50-zvbi",
+      "repo": "https://github.com/zapping-vbi/zvbi",
+      "declaredCommit": "34bb6f660c5c1bacd4a66cc7b22311e4ca3c1ab5",
+      "cachedSource": "50-zvbi_b774b157c947fa3919367a434944b1908990616353e31f7ffd2949bc5fb3d7ab.tar.xz"
+    },
+    {
+      "stage": "55-rustdedup",
+      "repo": null,
+      "declaredCommit": null,
+      "cachedSource": null
+    },
+    {
+      "stage": "zz-final",
+      "repo": null,
+      "declaredCommit": null,
+      "cachedSource": null
+    }
+  ],
+  "scope": "All 127 source-download stage definitions in the pinned supplier recipe have recovered cache aliases; seven no-op configuration stages require no download. This is source-presence coverage, not a dependency rebuild or full legal/packaging review.",
+  "configurationOnlyStages": [
+    {
+      "path": "15-base.sh",
+      "body": "return 0"
+    },
+    {
+      "path": "45-x11/99-finalize.sh",
+      "body": "return 0"
+    },
+    {
+      "path": "47-vulkan/99-enable.sh",
+      "body": "true"
+    },
+    {
+      "path": "50-schannel.sh",
+      "body": "true"
+    },
+    {
+      "path": "50-vaapi/99-finalize.sh",
+      "body": "true"
+    },
+    {
+      "path": "55-rustdedup.sh",
+      "body": "return 0"
+    },
+    {
+      "path": "zz-final.sh",
+      "body": "return 0"
+    }
+  ],
+  "downloadStageCount": 127,
+  "downloadStagesCovered": 127,
+  "unmatchedDownloadStages": []
+}

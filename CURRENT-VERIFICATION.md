@@ -6,6 +6,16 @@ Successful matrix run: https://github.com/cent247/VisionForge/actions/runs/43139
 Tested revision: `d782ad37f58e5dc09dcdef05b0be6b409c3fa857`  
 Development PR: https://github.com/cent247/VisionForge/pull/1
 
+## Latest continuation — stock, keyboard and source recovery
+
+Current source adds optional explicit Pexels VIDEO search and selected MP4 import, bounded provider/download requests, saved creator/source/hash provenance and protection against late responses after project switching. Keys remain in session and are excluded from saved project metadata and CDN requests. Real Pexels authentication/quota/CDN acceptance remains open without a live credential; provider responses in tests were fixtures. See evidence/stock-review.md.
+
+Integrated Linux verification passed 49 automated tests, the 13-check editor workflow, security regression, seven keyboard checks and four stock UI checks. Timeline clips now support native keyboard selection, named controls, visible focus and status announcements. Media inspection and compositor input protocols are restricted to local files/pipes; an adversarial playlist triggered no network requests. Active cancellation of a 60-second 720p timeline at 57% of composition and 17% of caption encoding preserved the previous export, removed staging files and allowed a fully decoded retry. Physical power-loss/abrupt-app-termination and broad assistive-technology acceptance are not established.
+
+Windows rerun: https://github.com/cent247/VisionForge/actions/runs/43196669781 (tested revision 39bd0fe97c71bf616c70b30af49d1cfcb07884c7). Both Windows Server 2022 x64 and Windows 11 ARM/x64-emulation passed the source/packaged/installed editor, security/license and new installed keyboard/stock UI workflows, plus installation/uninstallation. Each automated suite recorded 48 passes, zero failures and one skipped privileged symlink fixture. Evidence: evidence/continued-windows-verification.json. Initial run 43195814366 found a stock-test save synchronization race; the test now waits for the editor's save-complete acknowledgement before reading the file. That failed run is not counted as a pass.
+
+Source recovery succeeded: https://github.com/cent247/VisionForge/actions/runs/43196339870. Recovered supplier recipe commit c9fe5114060e507409f7ee07edfd82efaf25d767, FFmpeg source c179411bbb2864cc71323d3055acda25d5c2aace, and the 2,243,239,670-byte supplier cache matching SHA256 078e955870c12f8c73d3e4a8e23da975b61d1f6edc6b28a09dab18a7a16beb16. Inspection recorded 129 source archives and 129 active cache aliases; recovered x264/libass Git heads match the pinned recipes. All 127 source-download stage definitions have matching recovered cache aliases; seven configuration-only stages perform no source download (evidence/source-stage-coverage.json). Source candidates are split into six ordered segments with a separate records archive; all seven files have been saved persistently. The records archive contains reconstruction instructions and source hashes. This closes discovery/recovery of those inputs, not the review of every configured component/build/runtime prerequisite or durable public source delivery alongside the final installer. See evidence/media-source-recovery.json and evidence/source-inspection.json.
+
 ## Latest parallel review — Linux and hosted Windows reruns passed
 
 The subsequent security fixes pass `npm run verify` on Linux: 45 automated tests, 13 desktop workflow checks, and the dedicated Electron security regression. The overlay import now checks canonical media containment and exclusive creation; preview caches reject redirected directories and non-regular entries. Production renderer CSP and default permission denial are enabled. This targeted review does not establish a comprehensive security audit or protection from concurrent hostile filesystem races.
@@ -54,9 +64,12 @@ NIGHT SIDE was assembled, saved/reopened, previewed and exported through VisionF
 
 ## Remaining gates
 
+The remaining x64 client-OS test environment is not connected. Official Windows 11 Enterprise x64 evaluation media is reachable, but Microsoft lists registration and legitimate evaluation installation/activation handling as prerequisites. No registration, account use, terms acceptance or guest installation was performed. QEMU software emulation is technically possible without KVM; it would still not establish physical hardware/device acceptance. The available older Windows 10 evaluation link identifies 21H2 rather than the required 22H2. Details and official references: evidence/windows-evaluation-qemu-route.md.
+
+
 - Clean Windows 10 x64 and native Intel/AMD Windows 11 client acceptance, physical audio/display/device and native interactive-dialog checks, and privileged path/reparse-point coverage. Supplier minimum Windows 10 22H2; earlier versions are not covered.
 - Final GPL corresponding-source/build-dependency redistribution review, complete license notices and comprehensive security review.
-- Broader long-project/preview-performance/memory, physical full-disk/power-loss, malformed-media, usability/accessibility and live-provider acceptance. Preview requires rendered preparation, some editing controls remain basic, and remote stock search is not implemented.
+- Broader long-project/preview-performance/memory, physical full-disk/power-loss, malformed-media, usability/accessibility and live-provider acceptance. Preview requires rendered preparation, some editing controls remain basic, and live-provider acceptance is still open; optional remote stock video search/import is now implemented.
 - Final accepted installer and installation/user-guide validation. No owner dependency installation, troubleshooting or interim testing is requested.
 
 Earlier failed setup, API-rate-limit and seek attempts remain recorded. They are not passes. The old failed run's packaged JSON copied from source is invalid as packaged evidence. Current source/packaged/installed results are captured separately.
