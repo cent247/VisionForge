@@ -1,6 +1,21 @@
 # VisionForge workflow guide
 
-Installation is held pending release acceptance. These steps describe implemented workflows, not a request to install an intermediate build.
+## Install the Windows test build
+
+Download the test archive while signed into the GitHub account with repository access:
+https://github.com/cent247/VisionForge/actions/runs/43196669781/artifacts/13933956031
+
+Extract the ZIP, open `release`, and run `VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe`. This unsigned development build is offered for your trial; final Windows 10/11 x64 acceptance and release review remain open. Do not disable Windows security controls if installation is blocked. The expected installer SHA256 is `cbf3eecda878bfa68a425fdb7d637ff6d2248ba337cd06e848a7aaf50fdb87f7`.
+
+PowerShell can verify it with `Get-FileHash .\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe -Algorithm SHA256`.
+
+Editing, local media import, captions, and export do not need an AI subscription. AI model weights are not bundled. Optional hosted AI and Pexels features need their own configured service access. The successful local Kokoro test was a developer service test, not an included Windows speech engine.
+
+## First trial
+
+Use a short copy of your own video. Create a new project in a writable folder, import the video, add it to the timeline, trim it, add a text overlay, and update the preview. Save, close, reopen, then export a short MP4. Check picture, sound, text, duration, and seeking in the exported file. Keep the entire project folder, including `media`, when moving a project. Record the action and exact error if anything fails.
+
+## Editing workflows
 
 1. Create a project and import video/images/audio. Files are copied into the project media folder after validation. Save/Open preserve timeline, captions and script/storyboard drafts; newer autosave recovery is offered. Relink validates replacements against existing clip bounds before publication. Damaged saved documents can offer a validated autosave; explicitly save after recovery.
 2. Add tracks/clips. Drag clips between compatible tracks; snapping, zoom, splitting, ripple deletion and undo/redo are available. Drag the edge handles inward to trim, or use numeric controls. Source video sound is included unless muted. Use gain, fades, speed, crop/color/position controls, capture keyframes and edit/delete their values.
