@@ -1,7 +1,5 @@
-# Preview seek correction
+# Preview seek regression
 
-A Windows source/packaged seek intermittently returned to the previous playback clock. Diagnostics from run 43132146364 show requested seek completion timed out with UI/video both at 0.288603s, paused and fully buffered, despite a 3.5s movie. Changing effect timing alone did not fix it.
+Intermittent Windows seek failures remain recorded. Run 43132651605 passed source and unpacked desktop checks but the installed copy failed a repeated seek; it is not a full acceptance pass. Artifact 13904994940 shows a paused, fully buffered 3.5s movie and input/video at 0.388565s after an expected 2.8s seek. The earlier layout-timing change alone failed and is not counted as a repair.
 
-Explicit user seek requests are now stored separately from media timeupdate feedback. The preview only seeks when that request changes (or a new preview loads); playback ticks update the displayed clock without issuing another seek. Decode errors are reported. The five-cycle play/pause/seek regression, other 12 desktop checks, TypeScript/build and 44 Linux tests pass in evidence/explicit-seek-verification.txt. Hosted Windows verification of this revision is pending.
-
-The media downloader now uses the recorded archive URL/SHA256/size plus individual executable hashes directly. A real download/extraction/hash check passes locally (evidence/pinned-tool-check.json). Supplier metadata API rate limits caused another failed attempt; no account token is needed or used. Changed supplier bytes fail validation instead of silently refreshing tools.
+User seek intent is separate from playback ticks. The numeric input now retains an editing draft while focused, so clock feedback cannot rewrite it during editing. Diagnostics record requested seek and revision as well as actual time and input value. The desktop regression now performs 20 play/pause/seek cycles in each source, unpacked and installed run. Linux TypeScript/build, 44 tests and all 13 desktop checks pass; the standalone 20-cycle execution also passes (evidence/seek-20-cycles.txt). Hosted Windows verification of this newest change is pending.

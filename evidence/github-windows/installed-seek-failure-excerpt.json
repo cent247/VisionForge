@@ -1,0 +1,16 @@
+{
+  "runId": 43132651605,
+  "artifactId": 13904994940,
+  "sourceEntry": "evidence/windows-installed-desktop.json",
+  "state": {
+    "playhead": "0.38856528",
+    "video": {
+      "currentTime": 0.388565,
+      "duration": 3.5,
+      "paused": true,
+      "seeking": false,
+      "readyState": 4
+    }
+  },
+  "error": "TimeoutError: page.waitForFunction: Timeout 30000ms exceeded."
+}
