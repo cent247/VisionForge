@@ -1,9 +1,14 @@
-# Windows documentary reproduction — prepared, not passed
+# Windows documentary reproduction — passed; release acceptance remains open
 
-A dedicated Windows Server 2022 x64 workflow will freshly import and assemble NIGHT SIDE through the installed Windows editor's UI, save/reopen, render/play preview, and export the >=120s MP4. The existing original Kokoro narration is reused as an imported asset; new speech generation or recognition is not claimed. NASA footage is downloaded with the source archive's recorded byte counts/SHA256s. Original music is generated as a source asset, then mixed by the app. Caption timing is measured synthesis timing, not ASR.
+Successful run: https://github.com/cent247/VisionForge/actions/runs/43142851730
+Tested revision: dd5419768c63504cea2f87b3a007daf63d6bd36f
 
-Only source preparation and output validation happen outside the application. Final scene assembly, captions/effects, preview and MP4 export use the actual installed editor. The app child PATH remains restricted to Windows directories through the existing harness. A successful movie run must pass full decoding, preview/export frame agreement, sampled narration alignment, loudness and caption-stream checks, and pack its actual saved project/media. No Windows movie result is claimed before the workflow completes.
+The installed Windows Server 2022 x64 application freshly imported and assembled NIGHT SIDE, saved/reopened its project, rendered and played preview, and exported the final movie using bundled FFmpeg/FFprobe and fonts. Its child executable search path was restricted to Windows directories.
 
-Narration SHA256: 843ff21cb6bf2ca6d0b4366dfdf7f56b48786dc474515d7d2b42bbe504c70a72. This is the original recording from the documented Linux application speech-service workflow, shared with the project's original educational script. Source/credit/license records accompany the recipe. The app release remains held for the other acceptance gates.
+The film is 160.666667 seconds, with 22 visual clips, 36 captions, imported original Kokoro narration, music, titles and effects. Narration was reused, not synthesized in this Windows run. Caption timing follows measured synthesis utterance bounds, not ASR.
 
-Execution requested for the pinned Windows documentary recipe; result remains pending until the workflow passes.
+Validation passed full decoding, all 4,820 matching decoded preview/export frames, one subtitle stream, and four sampled narration windows within 10ms. Integrated loudness was -16.6 LUFS and true peak -1.88 dBTP. Sampled timing does not establish exhaustive listening quality.
+
+Evidence is retained in evidence/github-windows/documentary-success. Source/credit/provenance records accompany the project recipe.
+
+This closes the hosted Windows documentary reproduction gate only. Clean Windows 10 and native Intel/AMD Windows 11 acceptance, physical device/audio and human listening review, licensing/security review, broader reliability/performance and accessibility/usability, live providers/remote stock, and final accepted installer/documentation remain open. The installer is not an owner-ready release.
