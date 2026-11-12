@@ -3,6 +3,7 @@ on:
   push:
     branches: [main, visionforge-development]
     paths:
+      - '.gitattributes'
       - 'src/**'
       - 'tests/**'
       - '!tests/windows-documentary.cjs'

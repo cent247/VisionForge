@@ -1,0 +1,73 @@
+{
+  "coreAutocrlf": true,
+  "method": "git add then remove working tree then checkout-index; byte compare every generated legal file",
+  "filesChecked": 13,
+  "passed": true,
+  "files": [
+    {
+      "path": "resources/legal/README.txt",
+      "bytes": 579,
+      "sha256": "83f7e0199648a0cadcc60f837413a7e8666f64725a357ed03b17ed311dc8e097"
+    },
+    {
+      "path": "resources/legal/runtime-dependencies.json",
+      "bytes": 3343,
+      "sha256": "aa956ad96ddd8270fb9e40d0dc87c3ced69acc352db4b2cf1f2e47567f1aca22"
+    },
+    {
+      "path": "resources/legal/packages/zustand/LICENSE",
+      "bytes": 1070,
+      "sha256": "c1e6e266563517467b1bf874817d23e426f3149252bd7d42758cd697514b8417"
+    },
+    {
+      "path": "resources/legal/packages/react/LICENSE",
+      "bytes": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": "resources/legal/packages/csstype/LICENSE",
+      "bytes": 1062,
+      "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e"
+    },
+    {
+      "path": "resources/legal/packages/zod/LICENSE",
+      "bytes": 1072,
+      "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+    },
+    {
+      "path": "resources/legal/packages/js-tokens/LICENSE",
+      "bytes": 1103,
+      "sha256": "2213d91c606205c71eb051a199478cdc2adde945893404d7f1421436dd6d5cc1"
+    },
+    {
+      "path": "resources/legal/packages/lucide-react/LICENSE",
+      "bytes": 880,
+      "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+    },
+    {
+      "path": "resources/legal/packages/scheduler/LICENSE",
+      "bytes": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": "resources/legal/packages/loose-envify/LICENSE",
+      "bytes": 1100,
+      "sha256": "4eb7543b08d955a6d23fcc224601d43ff566e775be918805e26210d7f6eb4893"
+    },
+    {
+      "path": "resources/legal/packages/react-dom/LICENSE",
+      "bytes": 1086,
+      "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+    },
+    {
+      "path": "resources/legal/packages/@types/react/LICENSE",
+      "bytes": 1141,
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+    },
+    {
+      "path": "resources/legal/packages/@types/prop-types/LICENSE",
+      "bytes": 1141,
+      "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+    }
+  ]
+}

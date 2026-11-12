@@ -1,0 +1,2 @@
+# License bytes and their manifest hashes must survive Windows autocrlf checkout.
+resources/legal/** -text
