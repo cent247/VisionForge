@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {mkdtemp,mkdir,rm,writeFile,readFile,symlink} from 'node:fs/promises';
+import {mkdtemp,mkdir,rm,writeFile,readFile,symlink,rename} from 'node:fs/promises';
 import {join} from 'node:path';
 import {tmpdir} from 'node:os';
 import {execFileSync} from 'node:child_process';
@@ -20,3 +20,5 @@ test('export cannot overwrite project data or imported media',()=>fixture(async(
 
 test('caption rendering works in a project folder containing spaces and an apostrophe',()=>fixture(async(dir,file,p)=>{p.captions=[{id:'c',startSeconds:0,endSeconds:2.5,text:'Quoted project path caption'}];const output=join(dir,'finished movie.mp4');await render.exportVideo(file,p,output,()=>{});const info=JSON.parse(execFileSync('ffprobe',['-v','error','-show_streams','-of','json',output]));assert.equal(info.streams.filter(s=>s.codec_type==='subtitle').length,1);assert.ok(await render.probe(output)>=3);},"VisionForge's quoted project "));
 test('a2x speed change preserves narration pitch while shortening duration',()=>fixture(async(dir,file,p)=>{p.tracks=[{...p.tracks[0],clips:[{...p.tracks[0].clips[0],startSeconds:0,durationSeconds:.5,speed:2}]}];const output=join(dir,'faster.mp4');await render.exportVideo(file,p,output,()=>{});const audio=pcm(output).slice(640,3360);let crossings=0;for(let i=1;i<audio.length;i++)if(audio[i-1]<=0&&audio[i]>0)crossings++;const hz=crossings/(audio.length/8000);assert.ok(Math.abs(hz-440)<8,'Expected440Hz preserved, measured'+hz);assert.ok(Math.abs(await render.probe(output)-.5)<.06);}));
+
+test('preview and export reject an external media-folder symlink or Windows junction',()=>fixture(async(dir,file,p)=>{const outside=await mkdtemp(join(tmpdir(),'vf-outside-'));try{await rename(join(dir,'media'),join(outside,'media'));await symlink(join(outside,'media'),join(dir,'media'),process.platform==='win32'?'junction':'dir');const output=join(dir,'out.mp4');await writeFile(output,'existing-completed-export');await assert.rejects(render.exportVideo(file,p,output,()=>{}),/Media folder escapes project/);await assert.rejects(preview.preparePreview(file,p,()=>{}),/Media folder escapes project/);assert.equal(await readFile(output,'utf8'),'existing-completed-export');}finally{await rm(join(dir,'media'),{force:true});await rm(outside,{recursive:true,force:true});}}));

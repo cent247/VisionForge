@@ -1,3 +1,4 @@
+import {projectMediaRoot} from './media';
 import {persistProject,readProject,recoverableAutosave,readProjectOrAutosave} from './project-storage';
 import {requestPlan,requestSpeech,requestCaptions,ServiceConfig} from './services';
 import {preparePreview} from './preview';
@@ -24,7 +25,7 @@ async function mediaPath(projectPath:string, relative:string){
  const root=resolve(dirname(checkPath(projectPath)),'media');
  const target=resolve(dirname(projectPath),relative);
  if(!target.startsWith(root+sep))throw new Error('Invalid media path');
- const actualRoot=await realpath(root),actual=await realpath(target);if(!actual.startsWith(actualRoot+sep))throw new Error('Media path escapes the project folder');return actual;
+ const actualRoot=await projectMediaRoot(projectPath),actual=await realpath(target);if(!actual.startsWith(actualRoot+sep))throw new Error('Media path escapes the project folder');return actual;
 }
 function handle(channel:string,fn:(event:IpcMainInvokeEvent,...args:any[])=>any){ipcMain.handle(channel,(event,...args)=>{if(!BrowserWindow.fromWebContents(event.sender)||event.senderFrame!==event.sender.mainFrame)throw new Error('Untrusted IPC sender');return fn(event,...args);});}
 function createWindow(){
