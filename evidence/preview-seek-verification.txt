@@ -1,0 +1,43 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 test:desktop
+> npm run build && node tests/parity-desktop.cjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 build
+> electron-vite build
+
+vite v6.4.6 building SSR bundle for production...
+transforming...
+✓ 14 modules transformed.
+rendering chunks...
+out/main/index.js  44.61 kB
+✓ built in 217ms
+vite v6.4.6 building SSR bundle for production...
+transforming...
+✓ 1 modules transformed.
+rendering chunks...
+out/preload/index.js  1.74 kB
+✓ built in 14ms
+vite v6.4.6 building for production...
+transforming...
+✓ 1588 modules transformed.
+rendering chunks...
+../../out/renderer/index.html                   0.36 kB
+../../out/renderer/assets/index-XZgDFuz7.css    7.05 kB
+../../out/renderer/assets/index-CTVKvzkj.js   303.51 kB
+✓ built in 1.82s
+create-import-offset-audio-save
+single-clock-rendered-playback-and-seek-into-audio-tail
+repeated-play-pause-seek-retains-requested-position
+desktop-preview-export-105-decoded-frames-identical
+visual-end-trim-and-undo
+timeline-edit-invalidates-preview
+edit-and-delete-keyframe-controls
+editable-overlay-and-undo
+save-and-reopen-edited-project
+short-relink-rejected-with-original-media-preserved
+missing-media-relinked-through-validated-ipc
+newer-autosave-recovered-through-application
+damaged-saved-file-recovered-and-restored-through-application
