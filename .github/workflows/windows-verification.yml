@@ -21,6 +21,8 @@ jobs:
       - name: Create evidence directory
         run: New-Item -ItemType Directory -Force evidence
       - run: npm ci
+      - name: Record dependency audit
+        run: npm audit --json | Out-File evidence/windows-dependency-audit.json -Encoding utf8
       - name: Install Electron runtime explicitly
         run: node node_modules/electron/install.js
       - name: Fetch and verify Windows media binaries

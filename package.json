@@ -32,6 +32,10 @@
     "typescript": "^5.7.2",
     "vite": "^6.0.7"
   },
-  "description": "Local video editing application \u2014 development checkpoint",
-  "author": "VisionForge"
+  "description": "Local video editing application — development checkpoint",
+  "author": "VisionForge",
+  "overrides": {
+    "minimatch@10.2.6": "11.0.1",
+    "minimatch@9.0.9": "11.0.1"
+  }
 }
