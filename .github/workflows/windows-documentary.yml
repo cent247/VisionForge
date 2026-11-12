@@ -1,0 +1,75 @@
+name: Genuine Windows documentary export
+on:
+  push:
+    branches: [visionforge-development]
+    paths:
+      - '.github/workflows/windows-documentary.yml'
+      - 'tests/windows-documentary.cjs'
+      - 'scripts/prepare-windows-documentary.py'
+      - 'scripts/pack-windows-documentary.py'
+      - 'scripts/validate-documentary.py'
+      - 'production/night-side/**'
+      - 'WINDOWS-DOCUMENTARY-STATUS.md'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  documentary:
+    runs-on: windows-2022
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          architecture: x64
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: New-Item -ItemType Directory -Force evidence
+      - run: npm ci
+      - run: node node_modules/electron/install.js
+      - run: python scripts/fetch-windows-tools.py tool-stage
+      - name: Configure developer fixture and validation tools
+        shell: pwsh
+        run: |
+          Copy-Item tool-stage/verified/* resources/tools/win-x64/ -Force
+          "$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - run: node scripts/build-windows-native.cjs
+      - name: Install Windows editor
+        id: install
+        run: ./scripts/windows-install-check.ps1 install
+      - name: Prepare original documentary media
+        run: python scripts/prepare-windows-documentary.py
+      - name: Assemble, preview, save, reopen and export using the installed editor
+        run: node tests/windows-documentary.cjs
+      - name: Install developer-only validation dependency
+        run: python -m pip install numpy==2.3.5
+      - name: Validate actual application export
+        run: python scripts/validate-documentary.py production/night-side/windows
+      - name: Pack actual saved project and media
+        run: python scripts/pack-windows-documentary.py
+      - name: Uninstall editor
+        if: always() && steps.install.outcome == 'success'
+        run: ./scripts/windows-install-check.ps1 uninstall
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-documentary-evidence
+          path: |
+            production/night-side/windows/evidence/
+            evidence/windows-installer.json
+          retention-days: 14
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: windows-documentary-film-and-project
+          path: |
+            production/night-side/windows/Night-Side.mp4
+            production/night-side/windows/Night-Side-Windows-Project.zip
+          compression-level: 0
+          retention-days: 14

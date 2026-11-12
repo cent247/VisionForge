@@ -2,6 +2,18 @@ name: Windows source and packaged-app verification
 on:
   push:
     branches: [main, visionforge-development]
+    paths:
+      - 'src/**'
+      - 'tests/**'
+      - '!tests/windows-documentary.cjs'
+      - 'package*.json'
+      - 'resources/**'
+      - 'build/**'
+      - 'electron*'
+      - 'scripts/build-windows-native.cjs'
+      - 'scripts/fetch-windows-tools.py'
+      - 'scripts/windows-install-check.ps1'
+      - '.github/workflows/windows-verification.yml' 
   workflow_dispatch:
 permissions:
   contents: read
