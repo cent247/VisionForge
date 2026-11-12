@@ -16,6 +16,7 @@ try {
     $tpmSpec = (Get-CimInstance -Namespace 'root/cimv2/security/microsofttpm' -ClassName Win32_Tpm).SpecVersion
     $secureBoot = Confirm-SecureBootUEFI
     $record.platform = @{caption=$os.Caption; version=$os.Version; build=$os.BuildNumber; architecture=$os.OSArchitecture; processorArchitecture=$env:PROCESSOR_ARCHITECTURE; secureBoot=$secureBoot; tpmPresent=$tpm.TpmPresent; tpmSpec=$tpmSpec}
+    if ($config.targetBuild -and $os.BuildNumber -ne $config.targetBuild) { throw "Unexpected client OS build: $($os.BuildNumber)" }
     if ($env:PROCESSOR_ARCHITECTURE -ne 'AMD64') { throw 'Guest must be x64 Windows' }
     if (!$secureBoot -or !$tpm.TpmPresent -or $tpmSpec -notmatch '2\.0') { throw 'Secure Boot and TPM2 guest verification failed' }
     $record.evaluation = @(Get-CimInstance SoftwareLicensingProduct | Where-Object { $_.Name -like 'Windows*' -and $_.Description -like '*TIMEBASED_EVAL*' } | Select-Object Name,Description,LicenseStatus,GracePeriodRemaining)

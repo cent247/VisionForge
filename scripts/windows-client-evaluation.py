@@ -9,6 +9,15 @@ from xml.sax.saxutils import escape
 REPO=Path(__file__).resolve().parents[1]
 ISO_URL='https://software-static.download.prss.microsoft.com/dbazure/26300.9457.260913-1737.26h2_ge_release_svc_refresh_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso'
 ISO_SHA='bc3f24086ebadc94489066b5ad78089e2cf5c3491e90e790bb81a2b199c10e38'
+ISO_BYTES=8225329152
+WINDOWS10={
+ 'url':'https://go.microsoft.com/fwlink/p/?LinkID=2195400&clcid=0x409&country=US&culture=en-us',
+ 'sha256':'69efac1df9ec8066341d8c9b62297ddece0e6b805533fdb6dd66bc8034fba27a',
+ 'bytes':5344178176,
+ 'updates':[
+  {'file':'KB5015878-x64.msu','url':'https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2022/07/windows10.0-kb5015878-x64_3dc7b300371db8672f7fa3b32d4481dccec082b3.msu','sha256':'16a9b53219e0021afcb5daf1fcf4dc2b68e10d6df7a5d78a7ca33c6ac03ed21b'},
+  {'file':'KB5015684-x64.msu','url':'https://catalog.s.download.windowsupdate.com/c/upgr/2022/07/windows10.0-kb5015684-x64_523c039b86ca98f2d818c4e6706e2cc94b634c4a.msu','sha256':'cc1a32fff2700b70c2e6c1a70485f2c0b9c12374f420f13e764850b0a8bf7c89'}
+ ]}
 NODE_VERSION='24.22.2'
 INSTALLER_SHA='cbf3eecda878bfa68a425fdb7d637ff6d2248ba337cd06e848a7aaf50fdb87f7'
 
@@ -20,7 +29,7 @@ def digest(path):
 def download(url,path):
  if not path.exists():urllib.request.urlretrieve(url,path)
 
-def prepare(work,installer):
+def prepare(work,installer,target='windows11'):
  payload=work/'payload';payload.mkdir(parents=True,exist_ok=True)
  if digest(installer)!=INSTALLER_SHA:raise ValueError('Pinned tested installer mismatch')
  shutil.copyfile(installer,payload/'installer.exe')
@@ -37,10 +46,18 @@ def prepare(work,installer):
  private=work/'private';private.mkdir(mode=0o700,exist_ok=True)
  password=secrets.token_hex(16)+'aA!7';token=secrets.token_hex(32)
  config={'baseUrl':'http://10.0.2.2:28080','reportToken':token,'installerSha256':INSTALLER_SHA,'nodeSha256':node_sha}
+ config['targetBuild']='19045' if target=='windows10' else '26300'
+ if target=='windows10':
+  config['updates']=WINDOWS10['updates']
+  for update in config['updates']:
+   download(update['url'],payload/update['file'])
+   if digest(payload/update['file'])!=update['sha256']:raise ValueError('Microsoft update package hash mismatch')
  (private/'guest-config.json').write_text(json.dumps(config))
  shutil.copyfile(REPO/'scripts/windows-client-guest.ps1',private/'guest-start.ps1')
+ if target=='windows10':shutil.copyfile(REPO/'scripts/windows10-evaluation-updates.ps1',private/'guest-updates.ps1')
  (private/'vf-seed.marker').write_text('Isolated evaluation setup')
  first="powershell.exe -NoProfile -ExecutionPolicy RemoteSigned -Command &quot;$d=Get-PSDrive -PSProvider FileSystem | Where-Object {Test-Path (Join-Path $_.Root 'vf-seed.marker')} | Select-Object -First 1; if($d){Start-Process powershell.exe -ArgumentList @('-NoProfile','-ExecutionPolicy','RemoteSigned','-File',(Join-Path $d.Root 'guest-start.ps1'))}&quot;"
+ if target=='windows10':first=first.replace('guest-start.ps1','guest-updates.ps1')
  component='processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS"'
  xml=f'''<?xml version="1.0" encoding="utf-8"?>
 <unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
@@ -66,12 +83,14 @@ def prepare(work,installer):
   <component name="Microsoft-Windows-Shell-Setup" {component}>
    <OOBE><HideEULAPage>true</HideEULAPage><HideOnlineAccountScreens>true</HideOnlineAccountScreens><HideWirelessSetupInOOBE>true</HideWirelessSetupInOOBE><ProtectYourPC>3</ProtectYourPC></OOBE>
    <UserAccounts><LocalAccounts><LocalAccount wcm:action="add"><Name>VFTestAdmin</Name><Group>Administrators</Group><Password><Value>{escape(password)}</Value><PlainText>true</PlainText></Password></LocalAccount></LocalAccounts></UserAccounts>
-   <AutoLogon><Enabled>true</Enabled><Username>VFTestAdmin</Username><LogonCount>3</LogonCount><Password><Value>{escape(password)}</Value><PlainText>true</PlainText></Password></AutoLogon>
+   <AutoLogon><Enabled>true</Enabled><Username>VFTestAdmin</Username><LogonCount>5</LogonCount><Password><Value>{escape(password)}</Value><PlainText>true</PlainText></Password></AutoLogon>
    <FirstLogonCommands><SynchronousCommand wcm:action="add"><Order>1</Order><Description>Run isolated application acceptance</Description><CommandLine>{first}</CommandLine></SynchronousCommand></FirstLogonCommands>
   </component>
  </settings>
 </unattend>'''
  (private/'Autounattend.xml').write_text(xml)
+ import xml.etree.ElementTree as ET
+ ET.fromstring(xml)
  subprocess.run(['xorriso','-as','mkisofs','-quiet','-J','-R','-V','VFSEED','-o',str(work/'seed.iso'),str(private)],check=True)
  for file in private.iterdir():file.chmod(0o600)
  (work/'seed.iso').chmod(0o600)
@@ -89,10 +108,11 @@ class QMP:
 
 def run(args):
  work=args.work.resolve();work.mkdir(parents=True,exist_ok=True);evidence=REPO/'evidence/client-evaluation';evidence.mkdir(parents=True,exist_ok=True)
- payload,token=prepare(work,args.installer.resolve())
- iso=work/'Windows11-Enterprise-Evaluation-x64.iso';download(ISO_URL,iso)
- if iso.stat().st_size!=8225329152 or digest(iso)!=ISO_SHA:raise ValueError('Microsoft-published evaluation ISO hash mismatch')
- report={'passed':False,'isoSha256':ISO_SHA,'installerSha256':INSTALLER_SHA,'osTest':'Windows11 Enterprise evaluation x64 VM','physicalHardwareTest':False,'events':[]}
+ payload,token=prepare(work,args.installer.resolve(),args.target)
+ iso=work/(args.target+'-Enterprise-Evaluation-x64.iso');url=WINDOWS10['url'] if args.target=='windows10' else ISO_URL;iso_sha=WINDOWS10['sha256'] if args.target=='windows10' else ISO_SHA;iso_bytes=WINDOWS10['bytes'] if args.target=='windows10' else ISO_BYTES
+ download(url,iso)
+ if iso.stat().st_size!=iso_bytes or digest(iso)!=iso_sha:raise ValueError('Microsoft-published evaluation ISO hash mismatch')
+ report={'passed':False,'isoSha256':iso_sha,'installerSha256':INSTALLER_SHA,'osTest':args.target+' Enterprise evaluation x64 VM','physicalHardwareTest':False,'events':[],'updateInputs':WINDOWS10['updates'] if args.target=='windows10' else []}
  class Handler(http.server.SimpleHTTPRequestHandler):
   def __init__(self,*a,**k):super().__init__(*a,directory=str(payload),**k)
   def log_message(self,*a):pass
@@ -148,4 +168,4 @@ def run(args):
   tpm.terminate();tpm.wait(timeout=15);server.shutdown();log.close();tlog.close()
 
 if __name__=='__main__':
- parser=argparse.ArgumentParser();parser.add_argument('--installer',type=Path,required=True);parser.add_argument('--work',type=Path,required=True);parser.add_argument('--timeout-minutes',type=int,default=90);run(parser.parse_args())
+ parser=argparse.ArgumentParser();parser.add_argument('--installer',type=Path,required=True);parser.add_argument('--work',type=Path,required=True);parser.add_argument('--target',choices=['windows10','windows11'],default='windows11');parser.add_argument('--timeout-minutes',type=int,default=90);run(parser.parse_args())
