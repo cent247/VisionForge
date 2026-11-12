@@ -1,0 +1,45 @@
+name: Windows x64 evaluation client acceptance
+on:
+  push:
+    branches: [visionforge-development]
+    paths: ['scripts/windows-client-evaluation.py', 'scripts/windows-client-guest.ps1', '.github/workflows/windows-client-evaluation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  windows11-x64:
+    runs-on: ubuntu-latest
+    timeout-minutes: 115
+    steps:
+      - uses: actions/checkout@v4
+      - name: Free unused runner SDK space
+        run: |
+          sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
+          df -h .
+      - name: Install VM tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 qemu-utils ovmf swtpm xorriso
+          if [ -e /dev/kvm ]; then sudo chmod a+rw /dev/kvm; fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci --ignore-scripts
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 43196669781
+          name: windows-verification-evidence-server-2022-x64
+          path: client-candidate
+      - name: Install official evaluation and test actual Windows x64 client
+        run: |
+          installer=$(find client-candidate/release -maxdepth 1 -name '*.exe' -print -quit)
+          test -n "$installer"
+          python3 scripts/windows-client-evaluation.py --installer "$installer" --work "$RUNNER_TEMP/vf-windows-client" --timeout-minutes 90
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows11-x64-evaluation-evidence
+          path: evidence/client-evaluation/
+          retention-days: 30
