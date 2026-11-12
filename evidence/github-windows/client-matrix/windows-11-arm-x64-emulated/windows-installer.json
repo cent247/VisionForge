@@ -1,0 +1,11 @@
+{
+  "installExitCode": 0,
+  "uninstallTested": true,
+  "installer": "VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe",
+  "hostArchitecture": "Arm64",
+  "installedExecutableFound": true,
+  "installerSha256": "D75079CC4FD8EB8AD0C88D6394D46EA82523EAAB07AA99A18F2ADF1117F06BE2",
+  "platform": "Microsoft Windows 11 Enterprise",
+  "applicationArchitecture": "x64",
+  "uninstallExitCode": 0
+}

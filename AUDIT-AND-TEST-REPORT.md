@@ -1,3 +1,7 @@
+# Latest Windows client update
+
+CURRENT-VERIFICATION.md is authoritative: run 43139240640 passed Windows Server 2022 x64 and Windows 11 Enterprise ARM64 x64-emulation, including packaged runtime PATH isolation, installer/desktop/export/uninstall. Native Intel/AMD Windows 11 and Windows 10 remain untested. Older status statements below are historical.
+
 # Current report
 
 See CURRENT-VERIFICATION.md for the successful current Windows run, 44 Linux tests, 43 passed/1 skipped Windows tests, 39 desktop step executions, install/uninstall results, zero npm advisories and remaining release gates. The following material is retained historical audit context; its earlier status statements are superseded.

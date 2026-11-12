@@ -1,6 +1,6 @@
 # Known issues — owner installation handoff remains held
 
-- Hosted Windows Server 2022 native build/install/source+packaged+installed desktop/export/uninstall now pass. Windows 10/11 client-edition and hardware device acceptance remains untested. See GITHUB-TESTING-STATUS.md.
+- Windows Server 2022 x64 and Windows 11 Enterprise ARM64 with the x64 app under emulation now pass build/install/source+packaged+installed workflows/export/uninstall. Packaged app PATH isolation also passes. Clean Windows 10 x64 and native Intel/AMD Windows 11/device acceptance remain untested. See CURRENT-VERIFICATION.md.
 - The media supplier supports Windows10 22H2 minimum; earlier Windows10 is not covered. Actual compatibility is untested.
 - Media archive/executable hashes are verified; final dependency/security/notices/corresponding-source review remains open. Current Linux and Windows npm audits report zero known advisories after dependency overrides; this does not complete a security review.
 - Rendered preview preparation can be slow. Large/long projects, hardware behavior and performance need broader acceptance.
