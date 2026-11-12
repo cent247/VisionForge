@@ -30,6 +30,9 @@ async function mediaPath(projectPath:string, relative:string){
 function handle(channel:string,fn:(event:IpcMainInvokeEvent,...args:any[])=>any){ipcMain.handle(channel,(event,...args)=>{if(!BrowserWindow.fromWebContents(event.sender)||event.senderFrame!==event.sender.mainFrame)throw new Error('Untrusted IPC sender');return fn(event,...args);});}
 function createWindow(){
  const win=new BrowserWindow({width:1480,height:920,minWidth:1080,minHeight:700,webPreferences:{preload:join(here,'../preload/index.js'),contextIsolation:true,nodeIntegration:false,sandbox:true}});
+ win.webContents.session.setPermissionRequestHandler((_contents,_permission,callback)=>callback(false));
+ win.webContents.session.setPermissionCheckHandler(()=>false);
+ if(!process.env.ELECTRON_RENDERER_URL)win.webContents.session.webRequest.onHeadersReceived((details,callback)=>callback({responseHeaders:{...details.responseHeaders,'Content-Security-Policy':["default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: vfmedia:; media-src vfmedia:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"]}}));
  const senderId=win.webContents.id;win.on('closed',()=>{exportsInProgress.get(senderId)?.abort();previewsInProgress.get(senderId)?.abort();});
  win.webContents.setWindowOpenHandler(() => ({action:'deny'}));
  win.webContents.on('will-navigate', e => e.preventDefault());
@@ -48,7 +51,7 @@ handle('media:import',async(_e,projectPath:string)=>{
  const file=checkPath(projectPath);const r=await dialog.showOpenDialog({properties:['openFile','multiSelections'],filters:[{name:'Media',extensions:['mp4','mov','mkv','webm','avi','mp3','wav','m4a','aac','png','jpg','jpeg','webp']}]});if(r.canceled)return[];
  return importFiles(file,r.filePaths);
 });
-handle('media:image',async(_e,projectPath:string,data:string)=>{checkPath(projectPath);if(typeof data!=='string'||data.length>12000000||!data.startsWith('data:image/png;base64,'))throw new Error('Invalid overlay image');const id=randomUUID(),relativePath=`media/${id}.png`;await writeFile(join(dirname(projectPath),relativePath),Buffer.from(data.slice(22),'base64'));return{id,name:'Text overlay',relativePath,mediaType:'image',durationSeconds:null,importedAt:new Date().toISOString()};});
+handle('media:image',async(_e,projectPath:string,data:string)=>{checkPath(projectPath);if(typeof data!=='string'||data.length>12000000||!data.startsWith('data:image/png;base64,'))throw new Error('Invalid overlay image');const payload=Buffer.from(data.slice(22),'base64');if(payload.length<24||payload.subarray(0,8).toString('hex')!=='89504e470d0a1a0a')throw new Error('Invalid PNG overlay');const root=await projectMediaRoot(projectPath);const id=randomUUID(),relativePath=`media/${id}.png`;await writeFile(join(root,id+'.png'),payload,{flag:'wx'});return{id,name:'Text overlay',relativePath,mediaType:'image',durationSeconds:null,importedAt:new Date().toISOString()};});
 handle('media:relink',async(_e,projectPath:string,relative:string,project:ProjectDocument)=>{checkPath(projectPath);validateProject(project);if(!/^media\/[a-zA-Z0-9_.-]+$/.test(relative))throw new Error('Invalid media path');const r=await dialog.showOpenDialog({properties:['openFile'],title:'Locate replacement media'});if(r.canceled||!r.filePaths[0])return null;return relinkFile(projectPath,relative,r.filePaths[0],project);});
 handle('media:url',async(_e,projectPath:string,relative:string)=>{const file=await mediaPath(projectPath,relative);await stat(file);return `vfmedia://local/${encodeURIComponent(file)}?v=${Date.now()}`;});
 handle('video:cancel',e=>{exportsInProgress.get(e.sender.id)?.abort();return{ok:true};});

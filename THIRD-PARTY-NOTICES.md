@@ -1,9 +1,21 @@
 # Third-party inventory and release obligations
 
-DEPENDENCIES.json records installed package versions and declared licenses; package-lock.json records resolution. Electron includes MIT/Chromium third-party notices. React, Zustand and Lucide retain their respective licenses. This inventory is not a completed redistribution review.
+## Application packages and bundled runtime
 
-The Windows media candidates have been replaced with a matched FFmpeg/FFprobe9.0-branch build from the upstream FFmpeg-Builds release. resources/tools/win-x64/MANIFEST.json records asset/archive/executable hashes and sizes; GPL text is included. Static archive/header/package checks pass. Native execution and final corresponding-source/dependency redistribution review remain open. The supplier documents Windows10 22H2 as minimum supported. DejaVu Sans/font license are included; the app icon is an original geometric vector/rasterized ICO asset.
+DEPENDENCIES.json records the development/install inventory; package-lock.json records resolved versions. `node scripts/collect-runtime-licenses.cjs` copies verbatim license/notice files for all 11 non-development lockfile packages into resources/legal and records their versions, installed paths and SHA256 hashes. `--check` verifies the generated files against installed originals. This conservative set includes type-only packages even when not retained by bundling. electron-builder includes resources/legal in the installed application.
 
-Production NIGHT SIDE uses NASA footage subject to NASA's media guidelines/third-party exceptions/no endorsement, plus original script/music and Kokoro neural narration. Detailed sources, metadata, hashes and caption method are in production/night-side and its project pack. Kokoro-ONNX inference code is MIT and Kokoro82M model is Apache2.0; production model weights are not bundled or mandatory application dependencies. The project contains rendered narration audio and does not require Python or neural models to reopen it.
+React 18.3.1, React DOM 18.3.1, Scheduler 0.23.2, Zustand 5.1.0, Zod 4.6.7, loose-envify 1.4.0 and js-tokens 4.0.0 declare MIT licenses. Lucide React 0.468.0 declares ISC. The copied files retain their upstream copyright/permission text. Electron's LICENSE.electron.txt and LICENSES.chromium.html remain beside the packaged executable; the package includes separate Chromium/Electron notices. This inventory does not replace review of the final installer payload.
 
-The current npm audit records six moderate advisories through minimatch/build tooling, zero high/critical advisories. See evidence/recovery-dependency-audit.json. Final dependency and distribution review remains a release gate; no claim of zero vulnerabilities or completed security audit is made.
+DejaVu Sans and its Bitstream Vera/font notices are supplied in resources/fonts. The app icon is an original geometric asset.
+
+## Separate media executables — unresolved release gate
+
+resources/tools/win-x64/MANIFEST.json records exact archive and FFmpeg/FFprobe executable hashes. LICENSE.txt is GPLv3. The executable configuration contains `--enable-gpl --enable-version3`; this is not an LGPL-only distribution. resources/tools/win-x64/REDISTRIBUTION-STATUS.md and evidence/licensing-ffmpeg-static.json identify the missing exact corresponding-source, dependency and build-recipe retention/delivery work. The supplier's MIT build scripts do not relicense the generated binaries. Public release remains held until this gate is resolved.
+
+## Documentary assets
+
+NIGHT SIDE uses NASA footage with recorded sources, credits and hashes in production/night-side. NASA media guidelines, third-party exceptions and no-endorsement conditions still apply. Original script/music and rendered Kokoro narration accompany the project; neural model weights are not bundled application dependencies. Inference/model licenses and provenance belong with their source workflow; rendered audio does not require Python or model installation to reopen the project.
+
+## Verification limits
+
+The retained dependency-remediation audit reports zero known npm advisories (evidence/dependency-remediation-audit.json); this corrects the older six-moderate-advisory statement and is not a fresh audit or comprehensive security assessment. Hosted Windows runtime and documentary passes are recorded separately. No completed legal review, zero-vulnerability claim, or owner-ready release is asserted.

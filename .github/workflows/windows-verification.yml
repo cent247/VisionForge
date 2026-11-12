@@ -59,6 +59,8 @@ jobs:
           Copy-Item tool-stage/verified/* resources/tools/win-x64/ -Force
           "$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
           "VISIONFORGE_TOOLS=$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      - name: Verify bundled runtime notices
+        run: node scripts/collect-runtime-licenses.cjs --check
       - run: npm run typecheck
       - name: Automated media and storage checks
         run: npm test 2>&1 | Tee-Object evidence/windows-unit-tests.txt
@@ -97,6 +99,13 @@ jobs:
         run: |
           Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
           node tests/parity-desktop.cjs
+      - name: Installed security regression
+        shell: pwsh
+        run: |
+          node tests/security-desktop.cjs
+          $legal = Join-Path (Split-Path $env:VF_TEST_EXECUTABLE) 'resources/legal'
+          if (!(Test-Path "$legal/runtime-dependencies.json")) { throw 'Packaged runtime notices missing' }
+          node scripts/check-packaged-licenses.cjs $legal
       - name: Preserve installed desktop evidence
         if: always() && steps.installed_desktop.outcome != 'skipped'
         shell: pwsh
@@ -116,3 +125,4 @@ jobs:
             release/*.exe
             release/*.yml
           retention-days: 14
+

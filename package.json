@@ -11,7 +11,8 @@
     "test": "npm run test:compile && node --test tests/*.test.mjs",
     "test:compile": "tsc src/main/render.ts src/main/project-storage.ts src/main/services.ts src/main/preview.ts src/main/media-protocol.ts src/main/media-management.ts --allowJs --outDir test-build --target ES2022 --module commonjs --esModuleInterop --skipLibCheck && tsc src/renderer/src/store.ts --outDir test-store --target ES2022 --module commonjs --esModuleInterop --skipLibCheck",
     "test:desktop": "npm run build && node tests/parity-desktop.cjs",
-    "verify": "npm run typecheck && npm test && npm run test:desktop"
+    "verify": "npm run typecheck && npm test && npm run test:desktop && npm run test:security",
+    "test:security": "npm run build && node tests/security-desktop.cjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -32,7 +33,7 @@
     "typescript": "^5.7.2",
     "vite": "^6.0.7"
   },
-  "description": "Local video editing application — development checkpoint",
+  "description": "Local video editing application \u2014 development checkpoint",
   "author": "VisionForge",
   "overrides": {
     "minimatch@10.2.6": "11.0.1",

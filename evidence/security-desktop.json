@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "results": [
+    "production CSP blocks injected inline script and direct renderer requests",
+    "valid PNG overlay accepted; non-PNG payload rejected",
+    "external media-directory junction cannot receive overlay writes"
+  ]
+}

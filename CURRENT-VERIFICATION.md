@@ -6,6 +6,18 @@ Successful matrix run: https://github.com/cent247/VisionForge/actions/runs/43139
 Tested revision: `d782ad37f58e5dc09dcdef05b0be6b409c3fa857`  
 Development PR: https://github.com/cent247/VisionForge/pull/1
 
+## Latest parallel review — source changed; Windows rerun required
+
+The subsequent security fixes pass `npm run verify` on Linux: 45 automated tests, 13 desktop workflow checks, and the dedicated Electron security regression. The overlay import now checks canonical media containment and exclusive creation; preview caches reject redirected directories and non-regular entries. Production renderer CSP and default permission denial are enabled. This targeted review does not establish a comprehensive security audit or protection from concurrent hostile filesystem races.
+
+The fresh npm audit reports zero known advisories. Verbatim runtime notices for 11 dependency packages are generated, hash checked and included in packaging configuration. The Windows workflow now checks the installed license payload and runs the new security regression. New installers have not yet passed that workflow.
+
+A five-minute, 60-cut captioned timeline passed low-resolution full decoding, unchanged-preview reuse and caption-boundary export cancellation/retry. A separate 30-second 1920x1080/24fps six-cut moving-source fixture with audio, captions and effects passed all 720 decoded frames (45.101 seconds including source generation, render and decode). See evidence/reliability-review.md for measured results and exact limits; this does not establish prolonged high-resolution GUI performance or physical power-loss durability.
+
+The installed Windows documentary run has also passed: https://github.com/cent247/VisionForge/actions/runs/43142851730 (tested source dd5419768c63504cea2f87b3a007daf63d6bd36f). It assembled/exported the 160.666667-second film with 22 visual clips and 36 captions; full decoding, 4,820 matching preview/export frames, four narration timing samples within 10ms, -16.6 LUFS and -1.88 dBTP passed. Original narration was imported, not synthesized by that run. This predates the new security changes.
+
+**Release remains held:** the exact complete corresponding-source/dependency/build distribution for the GPL media binaries is incomplete. Clean Windows 10/native Intel/AMD Windows 11 acceptance, devices/human listening, broader reliability/accessibility, comprehensive security and provider/stock work remain open. See evidence/security-review.md and evidence/licensing-review.md. Historical matrix results below apply to their recorded revision, not the latest source.
+
 ## Measured Windows coverage
 
 | Environment | Process target | Automated suite | Desktop/source | Packaged app | Installed app | Install/uninstall |
@@ -38,7 +50,7 @@ Both Windows dependency audits report zero known npm advisories. Existing Linux 
 
 ## Existing documentary
 
-NIGHT SIDE was assembled, saved/reopened, previewed and exported through VisionForge on Linux: 160.666667 seconds, original script/neural narration/music, NASA footage and B-roll, two timeline audio layers, captions, motion/fades, titles and credits. Records include full decoding, 4820 matching preview/export frames and sampled narration alignment within 10ms. Source/license metadata and validation remain in production/night-side. This matrix exports short test projects, not a new Windows documentary. Full human auditory review remains open.
+NIGHT SIDE was assembled, saved/reopened, previewed and exported through VisionForge on Linux: 160.666667 seconds, original script/neural narration/music, NASA footage and B-roll, two timeline audio layers, captions, motion/fades, titles and credits. Records include full decoding, 4820 matching preview/export frames and sampled narration alignment within 10ms. Source/license metadata and validation remain in production/night-side. The original matrix exports short test projects; the subsequent documentary workflow described above covers the complete Windows film. Full human auditory review remains open.
 
 ## Remaining gates
 

@@ -1,0 +1,54 @@
+{
+  "platform": "linux",
+  "node": "v24.22.1",
+  "started": "2026-11-12T03:08:57.950Z",
+  "scope": "Real render functions on Linux; not installed GUI, Windows, physical devices or power-loss acceptance.",
+  "checks": [
+    {
+      "name": "five-minute-60-cut-captioned-preview",
+      "passed": true,
+      "elapsedSeconds": 16.544,
+      "durationSeconds": 300,
+      "frames": 3600,
+      "clips": 61,
+      "captions": 60,
+      "resolution": "320x180",
+      "fps": 12,
+      "fullDecode": true
+    },
+    {
+      "name": "unchanged-long-preview-cache-hit",
+      "passed": true,
+      "elapsedSeconds": 0.006,
+      "renderProgressEvents": 0
+    },
+    {
+      "name": "cancel-at-caption-pass-boundary-preserves-output-and-cleans-staging",
+      "passed": true,
+      "elapsedSeconds": 1.897,
+      "captionPassReached": true,
+      "oldOutputPreserved": true,
+      "temporaryFilesRemoved": true,
+      "retryExportPassed": true
+    },
+    {
+      "name": "1080p-30-second-six-cut-motion-captioned-preview",
+      "passed": true,
+      "elapsedSeconds": 45.101,
+      "durationSeconds": 30,
+      "frames": 720,
+      "clips": 7,
+      "captions": 6,
+      "resolution": "1920x1080",
+      "fps": 24,
+      "movingTestPatternSource": true,
+      "motionAndBrightnessEffects": true,
+      "fullDecode": true,
+      "renderBudgetSeconds": 60
+    }
+  ],
+  "passed": true,
+  "peakSampledNodeRssMiB": 44.9,
+  "memoryMeasurement": "100ms sampling of Node RSS only; excludes FFmpeg. Descendant-process RSS is unavailable because sandbox /proc child enumeration is absent. Not a leak or long interactive session test.",
+  "finished": "2026-11-12T03:10:01.883Z"
+}

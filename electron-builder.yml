@@ -14,3 +14,5 @@ extraResources:
     to: tools/win-x64
   - from: resources/fonts
     to: fonts
+  - from: resources/legal
+    to: legal
