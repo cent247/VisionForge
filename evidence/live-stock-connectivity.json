@@ -1,0 +1,7 @@
+{
+  "provider": "Pexels",
+  "test": "unauthenticated reachability only; no valid credential configured",
+  "authenticatedSearchPassed": false,
+  "status": 403,
+  "response": "error code: 1010\n"
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-12",
+  "delivery": "GitHub Actions artifact 13933956031, unsigned test installer",
+  "liveSpeech": "Passed real Kokoro 0.6.1 inference, service request, media import and full audio decode",
+  "stock": "HTTP403 unauthenticated endpoint; authenticated search not tested; no key configured",
+  "quality": {
+    "typecheck": "passed",
+    "unitTests": 49,
+    "failures": 0,
+    "productionBuild": "passed"
+  },
+  "windowsClients": "Both native x64 evaluation workflows failed at waiting for guest acceptance; not passes",
+  "remainingOrder": [
+    "Resolve hosted AI and authenticated stock tests when credentials available",
+    "Complete broader desktop quality checks",
+    "Diagnose Windows10/11 x64 guest acceptance failures",
+    "Final security and licensing review",
+    "Final installer and guide"
+  ]
+}
