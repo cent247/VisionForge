@@ -12,7 +12,7 @@
 
 The source package does not yet provide a retained complete corresponding-source distribution for the bundled GPL media executables and all included dependencies. Embedded short FFmpeg revision/configuration helps identify it but does not close the gap. The `latest` archive URL floats; supplier daily retention is limited. Do not equate archived executable hashes, build-script repository links or a GPL text with corresponding-source fulfillment. Exact full revisions, dependency sources, patches, build scripts and durable source delivery must be assembled before public distribution.
 
-The final installer must be rebuilt and checked for the newly generated notices, Electron/Chromium notices, font notices and media-tool notices. Documentary source/license provenance remains in its production pack; no exhaustive rights clearance was performed. No legal approval is claimed.
+Subsequent hosted Windows builds passed installed checks for the newly generated 11 license texts, including their manifest hashes (windows-parallel-review-success.json). Final complete Electron/Chromium, font and media-tool notice/redistribution acceptance remains part of the final release review. Documentary source/license provenance remains in its production pack; no exhaustive rights clearance was performed. No legal approval is claimed.
 
 ## Primary references consulted
 

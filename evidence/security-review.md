@@ -37,7 +37,7 @@ regression check, not a comprehensive security audit.
 
 ## Limits and remaining work
 
-No Windows runtime rerun of these new changes has been performed in this review.
+Subsequent hosted Windows Server 2022 x64 and Windows 11 ARM/x64-emulation reruns passed these changes, including installed security tests; see windows-parallel-review-success.json. Clean Windows 10/native Intel/AMD Windows 11 acceptance remains open.
 The fixes validate the filesystem state when operations begin; hostile concurrent
 filesystem mutation/reparse-point races are not claimed solved. PNG signature
 validation is not exhaustive image-format validation. Media parser sandboxing,
