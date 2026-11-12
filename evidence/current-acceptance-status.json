@@ -7,9 +7,11 @@
     "typecheck": "passed",
     "unitTests": 49,
     "failures": 0,
-    "productionBuild": "passed"
+    "productionBuild": "passed",
+    "desktopChecks": 27,
+    "desktopResult": "passed: 13 workflow, 3 security, 7 keyboard, 4 fixture stock checks; 105 decoded preview/export frames match"
   },
-  "windowsClients": "Both native x64 evaluation workflows failed at waiting for guest acceptance; not passes",
+  "windowsClients": "Windows10 guest acceptance timed out. Windows11 guest crashed SYSTEM_SERVICE_EXCEPTION (0x3B), no app acceptance events. Both unresolved.",
   "remainingOrder": [
     "Resolve hosted AI and authenticated stock tests when credentials available",
     "Complete broader desktop quality checks",

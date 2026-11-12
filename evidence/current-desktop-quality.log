@@ -1,0 +1,27 @@
+create-import-offset-audio-save
+single-clock-rendered-playback-and-seek-into-audio-tail
+repeated-play-pause-seek-20-cycles-retain-requested-position
+desktop-preview-export-105-decoded-frames-identical
+visual-end-trim-and-undo
+timeline-edit-invalidates-preview
+edit-and-delete-keyframe-controls
+editable-overlay-and-undo
+save-and-reopen-edited-project
+short-relink-rejected-with-original-media-preserved
+missing-media-relinked-through-validated-ipc
+newer-autosave-recovered-through-application
+damaged-saved-file-recovered-and-restored-through-application
+production CSP blocks injected inline script and direct renderer requests
+valid PNG overlay accepted; non-PNG payload rejected
+external media-directory junction cannot receive overlay writes
+Enter selects a native timeline clip button and updates selection state
+Space selects focused clip without starting preview playback
+Space activates focused zoom button without triggering global playback shortcut
+Keyboard focus has a visible outline
+Global frame stepping remains available while timeline clip is focused
+Editor status is an atomic polite live region
+Icon-only add and zoom controls expose explicit accessible names
+no automatic requests; explicit UI search reaches main-process fixture
+explicit download imports real MP4 and saves credit/hash without key; CDN receives no key
+finishing an old-project download cannot add media to the newly selected project
+session key can be cleared explicitly
