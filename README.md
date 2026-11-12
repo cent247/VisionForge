@@ -2,6 +2,8 @@
 
 Local Electron/React/TypeScript video editor — **development, not a finished release**.
 
-Current source: `visionforge-development`; draft PR #1. See [hosted Windows test results](GITHUB-TESTING-STATUS.md) for passed source/packaged/installed desktop workflows and silent install/uninstall on Windows Server 2022. Windows 10/11 client hardware, licensing, performance and broader acceptance remain open.
+[Current verification and remaining gates](CURRENT-VERIFICATION.md) · [Development PR](https://github.com/cent247/VisionForge/pull/1)
 
-The documentary script, sources/licenses and validation are in `production/night-side`. Historical Linux evidence and current Windows results are retained separately. No owner dependency installation or intermediate installation is requested.
+The current revision passes 44 Linux automated tests and hosted Windows Server 2022 native packaging, 43 tests (one skipped), source/packaged/installed desktop workflows, silent installation and uninstallation. Current npm audits report zero known advisories. Windows 10/11 client hardware, final licensing/security and broader performance/usability acceptance remain open.
+
+The documentary script, sources/licenses and validation are in production/night-side. No owner dependency installation or interim installation is requested.

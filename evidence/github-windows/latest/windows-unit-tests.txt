@@ -1,0 +1,84 @@
+
+> visionforge@0.1.0 test
+> npm run test:compile && node --test tests/*.test.mjs
+
+
+> visionforge@0.1.0 test:compile
+> tsc src/main/render.ts src/main/project-storage.ts src/main/services.ts src/main/preview.ts src/main/media-protocol.ts src/main/media-management.ts --allowJs --outDir test-build --target ES2022 --module commonjs --esModuleInterop --skipLibCheck && tsc src/renderer/src/store.ts --outDir test-store --target ES2022 --module commonjs --esModuleInterop --skipLibCheck
+
+✔ keyframe interpolation holds endpoints and interpolates positions (1.5358ms)
+✔ fade envelope matches timeline endpoints (0.2236ms)
+✔ SRT round trips multiline captions (1.3274ms)
+✔ SRT rejects backwards timing and malformed timestamps (0.4253ms)
+✔ undo redo, branch edit, and new project history isolation (1.2319ms)
+✔ batch import rolls back valid staged media when another source is corrupt (1375.6686ms)
+✔ invalid replacement cannot overwrite a working project media file (92.8103ms)
+✔ shorter relink is rejected before overwriting media used by a longer timeline clip (137.9498ms)
+✔ audio with embedded cover art imports as audio without video dimensions (144.5674ms)
+✔ media protocol serves byte ranges for seeking and rejects invalid ranges (45.2324ms)
+✔ storyboard retains original narration and matches imported footage (1.3474ms)
+✔ reviewed plans reject unavailable visuals and invalid times (0.3174ms)
+✔ single compositor includes embedded audio, leading silence, delayed narration and audio-only tail (1669.2196ms)
+✔ preview/export decoded frames match and edits invalidate cached movie (965.7618ms)
+✔ audio-only timeline renders black picture and mute removes embedded sound (367.4802ms)
+﹣ renderer rejects symlink media escaping project before publishing (0.2154ms) # Native reparse-point fixture requires Windows privilege setup
+✔ interrupted in-flight render leaves previous output intact and removes partial files (225.3416ms)
+✔ export cannot overwrite project data or imported media (86.5491ms)
+✔ caption rendering works in a project folder containing spaces and an apostrophe (438.4707ms)
+✔ a2x speed change preserves narration pitch while shortening duration (274.9787ms)
+✔ preview and export reject an external media-folder symlink or Windows junction (87.8936ms)
+✔ serialized saves preserve submission order and reject invalid documents without changing saved data (157.047ms)
+✔ autosave recovery only offers newer validated documents with the same project identity (42.3037ms)
+✔ force-killing a saving process leaves a complete saved document and permits a subsequent save (90.647ms)
+✔ a damaged saved document can recover from a validated autosave without replacing either file (76.4162ms)
+✔ a disk-full failure during temporary-file writing preserves the completed project and cleans the partial write (127.2518ms)
+✔ valid document round trips through JSON (1.7944ms)
+✔ rejects path traversal (0.2905ms)
+✔ rejects invalid fps (0.1063ms)
+✔ rejects odd dimensions (0.116ms)
+✔ rejects negative source trim (0.1176ms)
+✔ rejects duplicate media IDs (0.1159ms)
+✔ rejects missing media (0.0959ms)
+✔ rejects source overrun (0.0949ms)
+✔ rejects duplicate clips (0.2209ms)
+✔ split preserves source and timeline continuity (0.4507ms)
+✔ split rejects boundaries (0.1545ms)
+{
+  "duration": "2.500000",
+  "streams": [
+    {
+      "type": "video",
+      "codec": "h264"
+    },
+    {
+      "type": "audio",
+      "codec": "aac"
+    },
+    {
+      "type": "subtitle",
+      "codec": "mov_text"
+    }
+  ],
+  "messages": [
+    "Rendering timeline",
+    "Rendering timeline 100%",
+    "Rendering captions",
+    "Rendering captions 100%",
+    "Export complete"
+  ]
+}
+✔ application renderer exports image, gap, and two offset audio layers (1350.1666ms)
+✔ service configuration rejects unsafe endpoints and embedded credentials (1.1975ms)
+✔ explicit service requests validate plans, inspect speech and require timed SRT (273.6215ms)
+✔ caption service rejects an external media-folder junction before transmitting bytes (6.764ms)
+✔ duration includes audio tails and captions, rounded up to a complete frame (0.95ms)
+✔ split preserves animation, speed, source position and fade envelopes (1.1714ms)
+✔ nested slices retain original envelope and interpolate new keyframe boundaries (0.2766ms)
+ℹ tests 44
+ℹ suites 0
+ℹ pass 43
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 1
+ℹ todo 0
+ℹ duration_ms 4382.9773

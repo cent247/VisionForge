@@ -1,3 +1,7 @@
+# Current report
+
+See CURRENT-VERIFICATION.md for the successful current Windows run, 44 Linux tests, 43 passed/1 skipped Windows tests, 39 desktop step executions, install/uninstall results, zero npm advisories and remaining release gates. The following material is retained historical audit context; its earlier status statements are superseded.
+
 # Latest Windows update
 
 Hosted Windows Server 2022 source, packaged and installed desktop workflows, native installer build, silent install and uninstall now pass. Automated suite: 41 passed, 0 failed, 1 skipped. See GITHUB-TESTING-STATUS.md and evidence/github-windows for current evidence and remaining limits. This supersedes Windows-environment statements in the historical Linux-stage report below. Windows 10/11 client hardware acceptance is still open.

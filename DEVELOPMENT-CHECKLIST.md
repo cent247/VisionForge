@@ -1,13 +1,12 @@
 # Development checklist
 
-- [x] Audit/recover saved source and preserve checkpoints
-- [x] Unify preview/export and test audio/timing/edit continuity
-- [x] Implement/test editing, settings, optional services and improved save/recovery/relink safeguards
-- [x] Pass42 current automated tests and real Electron desktop checks
-- [x] Export/validate genuine >=120s documentary through application
-- [x] Cross-build Windows NSIS/portable candidates without GitHub/Wine execution
-- [x] Inspect candidate extraction/CRC/architecture/app resources/tools/fonts
-- [ ] Native Windows10/11 install/runtime/playback/audio/export/uninstall acceptance
-- [ ] Complete licensing/corresponding-source/dependency and security review
-- [ ] Complete broader performance/reliability/usability/live-provider acceptance
-- [ ] Validate final package and guide; deliver only after acceptance passes
+- [x] Audit/recover source and preserve it in GitHub
+- [x] Test deterministic preview/export, audio timing, editing/history, captions and project recovery
+- [x] Export and validate a genuine >=120s documentary through the app
+- [x] Pass current Linux TypeScript/build, 44 automated tests and 13 desktop checks
+- [x] Pass hosted Windows Server 2022 native build, 43 tests (one privileged fixture skipped), three 13-step desktop workflows with 20 seek cycles each, installation and uninstallation
+- [x] Patch reported build dependency advisories; current Linux/Windows npm audits report zero
+- [ ] Clean Windows 10/11 client editions and device/native-dialog acceptance
+- [ ] Complete corresponding-source/licensing and comprehensive security review
+- [ ] Complete broader performance/reliability/usability/accessibility/live-provider acceptance
+- [ ] Validate final guide and installer; deliver only after remaining gates pass
