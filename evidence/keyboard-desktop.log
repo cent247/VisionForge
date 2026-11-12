@@ -1,0 +1,7 @@
+Enter selects a native timeline clip button and updates selection state
+Space selects focused clip without starting preview playback
+Space activates focused zoom button without triggering global playback shortcut
+Keyboard focus has a visible outline
+Global frame stepping remains available while timeline clip is focused
+Editor status is an atomic polite live region
+Icon-only add and zoom controls expose explicit accessible names

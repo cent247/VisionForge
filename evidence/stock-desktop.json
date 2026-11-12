@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "provider": "Pexels API and MP4 responses are fixtures; no live credentials or live provider acceptance",
+  "checks": [
+    "no automatic requests; explicit UI search reaches main-process fixture",
+    "explicit download imports real MP4 and saves credit/hash without key; CDN receives no key",
+    "finishing an old-project download cannot add media to the newly selected project",
+    "session key can be cleared explicitly"
+  ]
+}

@@ -9,10 +9,12 @@
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "dist:win": "npm run build && electron-builder --win nsis",
     "test": "npm run test:compile && node --test tests/*.test.mjs",
-    "test:compile": "tsc src/main/render.ts src/main/project-storage.ts src/main/services.ts src/main/preview.ts src/main/media-protocol.ts src/main/media-management.ts --allowJs --outDir test-build --target ES2022 --module commonjs --esModuleInterop --skipLibCheck && tsc src/renderer/src/store.ts --outDir test-store --target ES2022 --module commonjs --esModuleInterop --skipLibCheck",
+    "test:compile": "tsc src/main/stock.ts src/main/render.ts src/main/project-storage.ts src/main/services.ts src/main/preview.ts src/main/media-protocol.ts src/main/media-management.ts --allowJs --outDir test-build --target ES2022 --module commonjs --esModuleInterop --skipLibCheck && tsc src/renderer/src/store.ts --outDir test-store --target ES2022 --module commonjs --esModuleInterop --skipLibCheck",
     "test:desktop": "npm run build && node tests/parity-desktop.cjs",
-    "verify": "npm run typecheck && npm test && npm run test:desktop && npm run test:security",
-    "test:security": "npm run build && node tests/security-desktop.cjs"
+    "verify": "npm run typecheck && npm test && npm run build && node tests/parity-desktop.cjs && node tests/security-desktop.cjs && node tests/keyboard-desktop.cjs && node tests/stock-desktop.cjs",
+    "test:security": "npm run build && node tests/security-desktop.cjs",
+    "test:keyboard": "npm run build && node tests/keyboard-desktop.cjs",
+    "test:stock": "npm run build && node tests/stock-desktop.cjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

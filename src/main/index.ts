@@ -1,3 +1,4 @@
+import {createStockService,pexelsPage} from './stock';
 import {projectMediaRoot} from './media';
 import {persistProject,readProject,recoverableAutosave,readProjectOrAutosave} from './project-storage';
 import {requestPlan,requestSpeech,requestCaptions,ServiceConfig} from './services';
@@ -7,7 +8,7 @@ import {importFiles,relinkFile} from './media-management';
 import {exportVideo,probe} from './render';
 import { validateProject } from '../shared/project.mjs';
 import type {IpcMainInvokeEvent} from 'electron';
-import { app, BrowserWindow, dialog, ipcMain, protocol, net } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, protocol, net, shell } from 'electron';
 import { copyFile, mkdir, readFile, writeFile, stat, rename, realpath, lstat } from 'node:fs/promises';
 import { basename, dirname, extname, join, resolve, sep } from 'node:path';
 import { randomUUID } from 'node:crypto';
@@ -15,6 +16,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { spawn } from 'node:child_process';
 import type { ProjectDocument, TimelineClip, ImportedMedia } from '../renderer/src/types/project';
 const here = __dirname;
+const stock=createStockService();
 if(app.isPackaged&&process.platform==='win32'){process.env.VISIONFORGE_TOOLS=join(process.resourcesPath,'tools','win-x64');process.env.VISIONFORGE_FONTS=join(process.resourcesPath,'fonts');}
 const previewsInProgress=new Map<number,AbortController>(),previewFiles=new Map<string,string>();
 const exportsInProgress = new Map<number,AbortController>();
@@ -33,7 +35,7 @@ function createWindow(){
  win.webContents.session.setPermissionRequestHandler((_contents,_permission,callback)=>callback(false));
  win.webContents.session.setPermissionCheckHandler(()=>false);
  if(!process.env.ELECTRON_RENDERER_URL)win.webContents.session.webRequest.onHeadersReceived((details,callback)=>callback({responseHeaders:{...details.responseHeaders,'Content-Security-Policy':["default-src 'none'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: vfmedia:; media-src vfmedia:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"]}}));
- const senderId=win.webContents.id;win.on('closed',()=>{exportsInProgress.get(senderId)?.abort();previewsInProgress.get(senderId)?.abort();});
+ const senderId=win.webContents.id;win.on('closed',()=>{stock.clear(String(senderId));exportsInProgress.get(senderId)?.abort();previewsInProgress.get(senderId)?.abort();});
  win.webContents.setWindowOpenHandler(() => ({action:'deny'}));
  win.webContents.on('will-navigate', e => e.preventDefault());
  if(process.env.ELECTRON_RENDERER_URL)void win.loadURL(process.env.ELECTRON_RENDERER_URL);else void win.loadFile(join(here,'../renderer/index.html'));
@@ -59,6 +61,9 @@ handle('video:export',async(e,projectPath:string,project:ProjectDocument)=>{
  checkPath(projectPath);previewsInProgress.get(e.sender.id)?.abort();if(exportsInProgress.has(e.sender.id))throw new Error('An export is already running.');const r=await dialog.showSaveDialog({defaultPath:project.name+'.mp4',filters:[{name:'MP4 video',extensions:['mp4']}]});if(r.canceled||!r.filePath)return{canceled:true};
  const controller=new AbortController();exportsInProgress.set(e.sender.id,controller);try{await exportVideo(projectPath,project,r.filePath,message=>{if(!e.sender.isDestroyed())e.sender.send('export:progress',message);},controller.signal);return{canceled:false,output:r.filePath};}catch(error){if(controller.signal.aborted)return{canceled:true};throw error;}finally{exportsInProgress.delete(e.sender.id);}
 });
+handle('stock:search',async(e,key:string,query:string)=>stock.search(String(e.sender.id),key,query));
+handle('stock:download',async(e,path:string,token:string)=>stock.download(String(e.sender.id),token,checkPath(path)));
+handle('stock:page',async(_e,url:string)=>{const page=url==='https://www.pexels.com/'?url:pexelsPage(url);await shell.openExternal(page);});
 handle('services:plan',async(_e,path:string,p:ProjectDocument,script:string,config:ServiceConfig)=>{checkPath(path);validateProject(p);return requestPlan(config,script,p);});
 handle('services:speech',async(_e,path:string,text:string,voice:string,config:ServiceConfig)=>{checkPath(path);return requestSpeech(config,text,voice,path);});
 handle('services:captions',async(_e,path:string,relative:string,config:ServiceConfig)=>{checkPath(path);return requestCaptions(config,path,relative);});

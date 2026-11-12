@@ -1,0 +1,153 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 verify
+> npm run typecheck && npm test && npm run build && node tests/parity-desktop.cjs && node tests/security-desktop.cjs && node tests/keyboard-desktop.cjs && node tests/stock-desktop.cjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 typecheck
+> tsc --noEmit -p tsconfig.json
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 test
+> npm run test:compile && node --test tests/*.test.mjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 test:compile
+> tsc src/main/stock.ts src/main/render.ts src/main/project-storage.ts src/main/services.ts src/main/preview.ts src/main/media-protocol.ts src/main/media-management.ts --allowJs --outDir test-build --target ES2022 --module commonjs --esModuleInterop --skipLibCheck && tsc src/renderer/src/store.ts --outDir test-store --target ES2022 --module commonjs --esModuleInterop --skipLibCheck
+
+✔ keyframe interpolation holds endpoints and interpolates positions (1.59224ms)
+✔ fade envelope matches timeline endpoints (0.610289ms)
+✔ SRT round trips multiline captions (3.307725ms)
+✔ SRT rejects backwards timing and malformed timestamps (1.300957ms)
+✔ undo redo, branch edit, and new project history isolation (1.017495ms)
+✔ batch import rolls back valid staged media when another source is corrupt (353.395713ms)
+✔ invalid replacement cannot overwrite a working project media file (168.085607ms)
+✔ shorter relink is rejected before overwriting media used by a longer timeline clip (245.807944ms)
+✔ audio with embedded cover art imports as audio without video dimensions (210.884901ms)
+✔ imported playlists cannot trigger network inspection or rendering requests (209.982512ms)
+✔ media protocol serves byte ranges for seeking and rejects invalid ranges (39.459912ms)
+✔ storyboard retains original narration and matches imported footage (1.205485ms)
+✔ reviewed plans reject unavailable visuals and invalid times (0.334237ms)
+✔ single compositor includes embedded audio, leading silence, delayed narration and audio-only tail (830.572408ms)
+✔ preview/export decoded frames match and edits invalidate cached movie (1023.651468ms)
+✔ audio-only timeline renders black picture and mute removes embedded sound (473.811754ms)
+✔ renderer rejects symlink media escaping project before publishing (130.284387ms)
+✔ interrupted in-flight render leaves previous output intact and removes partial files (1252.295001ms)
+✔ export cannot overwrite project data or imported media (137.620145ms)
+✔ caption rendering works in a project folder containing spaces and an apostrophe (541.308116ms)
+✔ a2x speed change preserves narration pitch while shortening duration (345.851491ms)
+✔ preview and export reject an external media-folder symlink or Windows junction (122.3671ms)
+✔ preview rejects an external cache-directory junction before deleting or writing files (119.654471ms)
+✔ serialized saves preserve submission order and reject invalid documents without changing saved data (69.450036ms)
+✔ autosave recovery only offers newer validated documents with the same project identity (12.634131ms)
+✔ force-killing a saving process leaves a complete saved document and permits a subsequent save (102.55722ms)
+✔ a damaged saved document can recover from a validated autosave without replacing either file (21.124867ms)
+✔ a disk-full failure during temporary-file writing preserves the completed project and cleans the partial write (14.161882ms)
+✔ valid document round trips through JSON (2.159706ms)
+✔ rejects path traversal (0.335359ms)
+✔ rejects invalid fps (0.123765ms)
+✔ rejects odd dimensions (0.142432ms)
+✔ rejects negative source trim (0.161ms)
+✔ rejects duplicate media IDs (0.154681ms)
+✔ rejects missing media (0.204214ms)
+✔ rejects source overrun (0.121841ms)
+✔ rejects duplicate clips (0.774152ms)
+✔ split preserves source and timeline continuity (0.423951ms)
+✔ split rejects boundaries (0.128111ms)
+{
+  "duration": "2.500000",
+  "streams": [
+    {
+      "type": "video",
+      "codec": "h264"
+    },
+    {
+      "type": "audio",
+      "codec": "aac"
+    },
+    {
+      "type": "subtitle",
+      "codec": "mov_text"
+    }
+  ],
+  "messages": [
+    "Rendering timeline",
+    "Rendering timeline 96%",
+    "Rendering captions",
+    "Rendering captions 80%",
+    "Export complete"
+  ]
+}
+✔ application renderer exports image, gap, and two offset audio layers (1154.910167ms)
+✔ service configuration rejects unsafe endpoints and embedded credentials (1.244493ms)
+✔ explicit service requests validate plans, inspect speech and require timed SRT (438.485391ms)
+✔ caption service rejects an external media-folder junction before transmitting bytes (4.39232ms)
+✔ stock search uses fixed provider, scoped expiring selections and never forwards keys to video hosts (511.375248ms)
+✔ stock service rejects unsafe URLs and invalid requests before networking (0.897356ms)
+✔ search rejects oversized response and omits unsupported downloads without publishing a selection (0.899469ms)
+✔ duration includes audio tails and captions, rounded up to a complete frame (0.662887ms)
+✔ split preserves animation, speed, source position and fade envelopes (1.002593ms)
+✔ nested slices retain original envelope and interpolate new keyframe boundaries (0.206578ms)
+ℹ tests 49
+ℹ suites 0
+ℹ pass 49
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 5183.212686
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 build
+> electron-vite build
+
+vite v6.4.6 building SSR bundle for production...
+transforming...
+✓ 15 modules transformed.
+rendering chunks...
+out/main/index.js  55.08 kB
+✓ built in 144ms
+vite v6.4.6 building SSR bundle for production...
+transforming...
+✓ 1 modules transformed.
+rendering chunks...
+out/preload/index.js  1.99 kB
+✓ built in 9ms
+vite v6.4.6 building for production...
+transforming...
+✓ 1589 modules transformed.
+rendering chunks...
+../../out/renderer/index.html                   0.36 kB
+../../out/renderer/assets/index-yFLSnCnI.css    7.67 kB
+../../out/renderer/assets/index-C7VeMB6q.js   311.78 kB
+✓ built in 1.17s
+create-import-offset-audio-save
+single-clock-rendered-playback-and-seek-into-audio-tail
+repeated-play-pause-seek-20-cycles-retain-requested-position
+desktop-preview-export-105-decoded-frames-identical
+visual-end-trim-and-undo
+timeline-edit-invalidates-preview
+edit-and-delete-keyframe-controls
+editable-overlay-and-undo
+save-and-reopen-edited-project
+short-relink-rejected-with-original-media-preserved
+missing-media-relinked-through-validated-ipc
+newer-autosave-recovered-through-application
+damaged-saved-file-recovered-and-restored-through-application
+production CSP blocks injected inline script and direct renderer requests
+valid PNG overlay accepted; non-PNG payload rejected
+external media-directory junction cannot receive overlay writes
+Enter selects a native timeline clip button and updates selection state
+Space selects focused clip without starting preview playback
+Space activates focused zoom button without triggering global playback shortcut
+Keyboard focus has a visible outline
+Global frame stepping remains available while timeline clip is focused
+Editor status is an atomic polite live region
+Icon-only add and zoom controls expose explicit accessible names
+no automatic requests; explicit UI search reaches main-process fixture
+explicit download imports real MP4 and saves credit/hash without key; CDN receives no key
+finishing an old-project download cannot add media to the newly selected project
+session key can be cleared explicitly

@@ -12,6 +12,7 @@ export function validateProject(p) {
  const ids = new Set();
  for (const m of p.media) {
   if (!m || typeof m.id !== 'string' || ids.has(m.id) || typeof m.relativePath !== 'string' || !/^media\/[a-zA-Z0-9_.-]+$/.test(m.relativePath) || !['video','audio','image'].includes(m.mediaType) || (m.durationSeconds !== null && !num(m.durationSeconds, 0.001, 604800))) fail('Invalid media entry');
+  if(m.source!==undefined){const a=m.source;if(!a||a.provider!=='pexels'||typeof a.id!=='string'||!/^\d{1,20}$/.test(a.id)||typeof a.creator!=='string'||!a.creator.trim()||a.creator.length>200||typeof a.pageUrl!=='string'||a.pageUrl.length>2000||!/^https:\/\/www\.pexels\.com\/video\/[a-zA-Z0-9-]+\/$/.test(a.pageUrl)||a.licenseUrl!=='https://www.pexels.com/license/'||typeof a.downloadedAt!=='string'||a.downloadedAt.length>40||!Number.isFinite(Date.parse(a.downloadedAt))||typeof a.sha256!=='string'||! /^[a-f0-9]{64}$/.test(a.sha256))fail('Invalid stock source attribution');}
   ids.add(m.id);
  }
  for(const c of p.captions??[]){if(!num(c.startSeconds,0,604800)||!num(c.endSeconds,c.startSeconds+0.001,604800)||typeof c.text!=='string'||c.text.length>1000)fail('Invalid caption');}

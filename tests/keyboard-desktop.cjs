@@ -1,0 +1,18 @@
+const assert=require('node:assert/strict'),fs=require('node:fs/promises'),path=require('node:path'),os=require('node:os');
+const {launchDesktop}=require('./helpers/desktop-harness.cjs');
+(async()=>{const root=await fs.mkdtemp(path.join(os.tmpdir(),'vf-keyboard-')),results=[];const desktop=await launchDesktop();const {app,page}=desktop;
+try{
+ await page.waitForSelector('.brand');await app.evaluate(({dialog},f)=>{dialog.showSaveDialog=async()=>({canceled:false,filePath:f});},path.join(root,'Keyboard.vforge'));
+ await page.getByRole('button',{name:'New',exact:true}).click();await page.getByRole('heading',{name:'Keyboard',exact:true}).waitFor();
+ await page.getByRole('textbox',{name:'Text overlay',exact:true}).fill('First clip');await page.getByRole('button',{name:'Add text overlay',exact:true}).click();await page.getByRole('button',{name:/^Select First clip,/}).waitFor();
+ await page.getByRole('textbox',{name:'Text overlay',exact:true}).fill('Second clip');await page.getByRole('button',{name:'Add text overlay',exact:true}).click();await page.getByRole('button',{name:/^Select Second clip,/}).waitFor();
+ const first=page.getByRole('button',{name:/^Select First clip,/}),second=page.getByRole('button',{name:/^Select Second clip,/});
+ await first.focus();await page.keyboard.press('Enter');assert.equal(await first.getAttribute('aria-pressed'),'true');assert.equal(await second.getAttribute('aria-pressed'),'false');results.push('Enter selects a native timeline clip button and updates selection state');
+ await second.focus();await page.keyboard.press('Space');assert.equal(await second.getAttribute('aria-pressed'),'true');assert.equal(await first.getAttribute('aria-pressed'),'false');assert.equal(await page.getByRole('button',{name:'Play',exact:true}).count(),1);results.push('Space selects focused clip without starting preview playback');
+ const zoom=page.getByRole('button',{name:'Zoom in timeline',exact:true}),before=await page.locator('.timeline-tools span').textContent();await zoom.focus();await page.keyboard.press('Space');assert.notEqual(await page.locator('.timeline-tools span').textContent(),before);assert.equal(await page.getByRole('button',{name:'Play',exact:true}).count(),1);results.push('Space activates focused zoom button without triggering global playback shortcut');
+ await first.focus();await page.keyboard.press('Tab');await first.focus();assert.ok(await first.evaluate(el=>getComputedStyle(el).outlineStyle!=='none'));results.push('Keyboard focus has a visible outline');
+ await page.keyboard.press('ArrowRight');await page.waitForFunction(()=>Number(document.querySelector('input[aria-label="Playhead seconds"]').value)>0);results.push('Global frame stepping remains available while timeline clip is focused');
+ assert.equal(await page.getByRole('status').getAttribute('aria-live'),'polite');assert.equal(await page.getByRole('status').getAttribute('aria-atomic'),'true');results.push('Editor status is an atomic polite live region');
+ assert.equal(await page.getByRole('button',{name:'Add Text overlay at playhead',exact:true}).count(),2);assert.equal(await page.getByRole('button',{name:'Zoom out timeline',exact:true}).count(),1);results.push('Icon-only add and zoom controls expose explicit accessible names');
+ await fs.writeFile('evidence/keyboard-desktop.json',JSON.stringify({passed:true,platform:process.platform,checks:results,limits:'Automated Electron keyboard and DOM semantics checks; not screen-reader, Windows assistive-technology or comprehensive accessibility acceptance.'},null,2));console.log(results.join('\n'));
+}finally{await desktop.close();await fs.rm(root,{recursive:true,force:true});}})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -107,6 +107,11 @@ jobs:
           $legal = Join-Path (Split-Path $env:VF_TEST_EXECUTABLE) 'resources/legal'
           if (!(Test-Path "$legal/runtime-dependencies.json")) { throw 'Packaged runtime notices missing' }
           node scripts/check-packaged-licenses.cjs $legal
+      - name: Installed keyboard and stock UI regressions
+        shell: pwsh
+        run: |
+          node tests/keyboard-desktop.cjs
+          node tests/stock-desktop.cjs
       - name: Preserve installed desktop evidence
         if: always() && steps.installed_desktop.outcome != 'skipped'
         shell: pwsh

@@ -1,5 +1,8 @@
 import {contextBridge,ipcRenderer} from 'electron';
 contextBridge.exposeInMainWorld('visionForge',{
+ searchStock:(key:string,query:string)=>ipcRenderer.invoke('stock:search',key,query),
+ downloadStock:(path:string,token:string)=>ipcRenderer.invoke('stock:download',path,token),
+ openStockPage:(url:string)=>ipcRenderer.invoke('stock:page',url),
  requestPlan:(path:string,p:unknown,script:string,c:unknown)=>ipcRenderer.invoke('services:plan',path,p,script,c),
  requestSpeech:(path:string,text:string,voice:string,c:unknown)=>ipcRenderer.invoke('services:speech',path,text,voice,c),
  requestCaptions:(path:string,relative:string,c:unknown)=>ipcRenderer.invoke('services:captions',path,relative,c),

@@ -9,7 +9,7 @@ export function compositeArgs(projectPath:string,p:ProjectDocument){
  const args=['-y','-filter_complex_threads','1','-f','lavfi','-i',`color=c=black:s=${w}x${h}:r=${fps}:d=${total}`],filters:string[]=[],sounds:string[]=[];let input=1,layer='0:v';
  for(const track of p.tracks)for(const c of [...track.clips].sort((a,b)=>a.startSeconds-b.startSeconds)){
  const m=p.media.find(m=>m.id===c.mediaId)!,idx=input++,speed=c.speed??1,env=envelopeFor(c),source=resolve(dirname(projectPath),m.relativePath);
- if(m.mediaType==='image')args.push('-loop','1','-framerate',String(fps),'-t',String(c.durationSeconds),'-threads','1','-i',source);else args.push('-ss',String(c.sourceInSeconds),'-t',String(c.durationSeconds*speed),'-threads','1','-i',source);
+ if(m.mediaType==='image')args.push('-protocol_whitelist','file,pipe','-loop','1','-framerate',String(fps),'-t',String(c.durationSeconds),'-threads','1','-i',source);else args.push('-protocol_whitelist','file,pipe','-ss',String(c.sourceInSeconds),'-t',String(c.durationSeconds*speed),'-threads','1','-i',source);
  if(track.kind!=='audio'){
  const crop=c.transform?.crop??0,fit=c.transform?.fit==='cover'?`scale=${w}:${h}:force_original_aspect_ratio=increase,crop=${w}:${h}:(iw-ow)*${c.transform.sourceX??.5}:(ih-oh)*${c.transform.sourceY??.5},format=rgba`:`scale=${w}:${h}:force_original_aspect_ratio=decrease,format=rgba,pad=${w}:${h}:(ow-iw)/2:(oh-ih)/2:color=black@0`;
  filters.push(`[${idx}:v]setpts=(PTS-STARTPTS)/${speed}+${env.offsetSeconds}/TB,${crop?`crop=iw*${1-2*crop}:ih*${1-2*crop},`:''}${fit},setsar=1[raw${idx}]`);let visual=`raw${idx}`;const color=c.transform;

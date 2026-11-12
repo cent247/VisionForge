@@ -1,5 +1,8 @@
 import type {ProjectDocument,ImportedMedia} from './project';
 declare global {interface Window {visionForge:{
+ searchStock(key:string,query:string):Promise<{token:string;id:number;creator:string;pageUrl:string;durationSeconds:number;width:number;height:number}[]>;
+ downloadStock(path:string,token:string):Promise<ImportedMedia>;
+ openStockPage(url:string):Promise<void>;
  requestPlan(path:string,p:ProjectDocument,script:string,c:{endpoint:string;model:string;key?:string}):Promise<unknown>;
  requestSpeech(path:string,text:string,voice:string,c:{endpoint:string;model:string;key?:string}):Promise<ImportedMedia>;
  requestCaptions(path:string,relative:string,c:{endpoint:string;model:string;key?:string}):Promise<string>;
