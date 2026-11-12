@@ -5,7 +5,7 @@ import Preview from './Preview';
 import Services from './Services';
 import ProjectSettings from './ProjectSettings';
 import {splitClip,validateProject} from '../../../shared/project.mjs';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Film, FolderOpen, Plus, Save, Download, Music2, Image as ImageIcon, Scissors, Sparkles, Layers, Captions, Settings, Trash2, ZoomIn, ZoomOut, MousePointer2 } from 'lucide-react';
 import { useEditor } from '../store';
 import type { ImportedMedia, TimelineClip, TimelineTrack } from '../types/project';
@@ -31,7 +31,11 @@ export default function App() {
   const [playing,setPlaying] = useState(false);
   const [exporting,setExporting] = useState(false);
   const [selected,setSelected] = useState<string | null>(null);
-  const [playhead,setPlayhead] = useState(0);
+  const [playhead,setPlaybackTime] = useState(0);
+  const playheadClock=useRef(0);
+  const [seekRequest,setSeekRequest]=useState({seconds:0,revision:0});
+  function playbackTime(seconds:number){playheadClock.current=seconds;setPlaybackTime(seconds);}
+  function setPlayhead(value:number|((previous:number)=>number)){const seconds=typeof value==='function'?value(playheadClock.current):value;playheadClock.current=seconds;setPlaybackTime(seconds);setSeekRequest(previous=>({seconds,revision:previous.revision+1}));}
   const [zoom,setZoom] = useState(55);
   const [trimDraft,setTrimDraft]=useState<{id:string;start:number;duration:number}|null>(null);
   const fps = project?.settings.fps ?? 30;
@@ -135,7 +139,7 @@ export default function App() {
       <div className="upper"><section className="panel media-panel"><h3>MEDIA LIBRARY <small>{project?.media.length??0} ITEMS</small></h3>
         {!project?.media.length?<div className="empty"><ImageIcon/><b>No media imported</b><p>Import video, audio, or images to start.</p><button disabled={!project} onClick={importMedia}>Import files</button></div>:
           <div className="media-list">{project.media.map(m=><div className="media" key={m.id}>{m.mediaType==='audio'?<Music2/>:m.mediaType==='image'?<ImageIcon/>:<Film/>}<span>{m.name}<small>{m.mediaType} · {m.durationSeconds?`${m.durationSeconds.toFixed(1)}s`:'5s placeholder'}</small></span><button aria-label={`Relink ${m.name}`} onClick={async()=>{if(!project||!path)return;try{const r=await window.visionForge.relinkMedia(path,m.relativePath,project);if(r){updateProject({...project,media:project.media.map(v=>v.id===m.id?{...v,...r}:v)});setMessage('Media relinked.');}}catch(e){setMessage(`Relink failed: ${e}`);}}}>Relink</button><button onClick={()=>place(m)} title="Add at playhead"><Plus/></button></div>)}</div>}
-      </section><section className="panel preview"><h3>PREVIEW MONITOR <small>{timecode(playhead,fps)}</small></h3><div className="screen"><Preview project={project} path={path} time={playhead} playing={playing} onTime={setPlayhead} onPlaying={setPlaying} onMessage={setMessage}/></div><div className="controls"><button disabled={!project} onClick={()=>setPlaying(v=>!v)}>{playing?'Pause':'Play'}</button> Playhead: {timecode(playhead,fps)} <input aria-label="Playhead seconds" type="number" min="0" step={1/fps} value={playhead} onChange={e=>setPlayhead(Math.max(0,Number(e.target.value)))}/> <button onClick={()=>setPlayhead(0)}>Reset playhead</button></div></section></div>
+      </section><section className="panel preview"><h3>PREVIEW MONITOR <small>{timecode(playhead,fps)}</small></h3><div className="screen"><Preview project={project} path={path} time={playhead} seekRequest={seekRequest} playing={playing} onTime={playbackTime} onPlaying={setPlaying} onMessage={setMessage}/></div><div className="controls"><button disabled={!project} onClick={()=>setPlaying(v=>!v)}>{playing?'Pause':'Play'}</button> Playhead: {timecode(playhead,fps)} <input aria-label="Playhead seconds" type="number" min="0" step={1/fps} value={playhead} onChange={e=>setPlayhead(Math.max(0,Number(e.target.value)))}/> <button onClick={()=>setPlayhead(0)}>Reset playhead</button></div></section></div>
       <section className="panel timeline"><div className="timeline-header"><h3>TIMELINE <small>{project?.tracks.length??0} TRACKS</small></h3><div className="timeline-tools"><button disabled={!past.length} onClick={undo}>Undo</button><button disabled={!future.length} onClick={redo}>Redo</button><button disabled={!project} onClick={()=>{if(project)commit([...project.tracks,{id:uid(),name:`Video ${project.tracks.filter(t=>t.kind==='video').length+1}`,kind:'video',clips:[]}]);}}>+ Video track</button><button disabled={!project} onClick={()=>{if(project)commit([...project.tracks,{id:uid(),name:`Audio ${project.tracks.filter(t=>t.kind==='audio').length+1}`,kind:'audio',clips:[]}]);}}>+ Audio track</button><button disabled={!selectedClip} onClick={split}><Scissors/> Split</button><button disabled={!selectedClip} onClick={rippleDelete}>Ripple delete</button><button disabled={!selectedClip} onClick={remove}><Trash2/> Delete</button><button onClick={()=>setZoom(v=>Math.max(20,v-10))}><ZoomOut/></button><span>{zoom} px/s</span><button onClick={()=>setZoom(v=>Math.min(200,v+10))}><ZoomIn/></button></div></div>
       {!project?<div className="empty">Create a project to start editing.</div>:<div className="timeline-scroll"><div className="timeline-canvas" style={{width:timelineWidth+115}}>
         <div className="time-ruler"><div className="ruler-label">TIME</div><div className="ruler-body" onClick={e=>{const rect=e.currentTarget.getBoundingClientRect();setPlayhead(snap((e.clientX-rect.left)/zoom,fps));}}>{Array.from({length:Math.ceil(timelineWidth/(zoom*5))+1},(_,i)=><span key={i} style={{left:i*5*zoom}}>{i*5}s</span>)}</div></div>

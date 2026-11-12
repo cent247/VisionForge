@@ -1,0 +1,139 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 verify
+> npm run typecheck && npm test && npm run test:desktop
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 typecheck
+> tsc --noEmit -p tsconfig.json
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 test
+> npm run test:compile && node --test tests/*.test.mjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 test:compile
+> tsc src/main/render.ts src/main/project-storage.ts src/main/services.ts src/main/preview.ts src/main/media-protocol.ts src/main/media-management.ts --allowJs --outDir test-build --target ES2022 --module commonjs --esModuleInterop --skipLibCheck && tsc src/renderer/src/store.ts --outDir test-store --target ES2022 --module commonjs --esModuleInterop --skipLibCheck
+
+✔ keyframe interpolation holds endpoints and interpolates positions (2.417105ms)
+✔ fade envelope matches timeline endpoints (0.356217ms)
+✔ SRT round trips multiline captions (2.176565ms)
+✔ SRT rejects backwards timing and malformed timestamps (0.990995ms)
+✔ undo redo, branch edit, and new project history isolation (1.368812ms)
+✔ batch import rolls back valid staged media when another source is corrupt (318.627186ms)
+✔ invalid replacement cannot overwrite a working project media file (213.262587ms)
+✔ shorter relink is rejected before overwriting media used by a longer timeline clip (304.302892ms)
+✔ audio with embedded cover art imports as audio without video dimensions (298.275463ms)
+✔ media protocol serves byte ranges for seeking and rejects invalid ranges (38.297033ms)
+✔ storyboard retains original narration and matches imported footage (2.379474ms)
+✔ reviewed plans reject unavailable visuals and invalid times (0.653884ms)
+✔ single compositor includes embedded audio, leading silence, delayed narration and audio-only tail (1059.879416ms)
+✔ preview/export decoded frames match and edits invalidate cached movie (1447.869803ms)
+✔ audio-only timeline renders black picture and mute removes embedded sound (826.948673ms)
+✔ renderer rejects symlink media escaping project before publishing (197.981494ms)
+✔ interrupted in-flight render leaves previous output intact and removes partial files (436.959887ms)
+✔ export cannot overwrite project data or imported media (191.190845ms)
+✔ caption rendering works in a project folder containing spaces and an apostrophe (935.290784ms)
+✔ a2x speed change preserves narration pitch while shortening duration (594.565488ms)
+✔ preview and export reject an external media-folder symlink or Windows junction (197.343353ms)
+✔ serialized saves preserve submission order and reject invalid documents without changing saved data (49.929947ms)
+✔ autosave recovery only offers newer validated documents with the same project identity (14.882276ms)
+✔ force-killing a saving process leaves a complete saved document and permits a subsequent save (146.712256ms)
+✔ a damaged saved document can recover from a validated autosave without replacing either file (10.838424ms)
+✔ a disk-full failure during temporary-file writing preserves the completed project and cleans the partial write (16.309593ms)
+✔ valid document round trips through JSON (5.102872ms)
+✔ rejects path traversal (0.796771ms)
+✔ rejects invalid fps (0.688208ms)
+✔ rejects odd dimensions (0.334116ms)
+✔ rejects negative source trim (0.451756ms)
+✔ rejects duplicate media IDs (0.348042ms)
+✔ rejects missing media (0.274033ms)
+✔ rejects source overrun (0.392796ms)
+✔ rejects duplicate clips (1.186632ms)
+✔ split preserves source and timeline continuity (1.10045ms)
+✔ split rejects boundaries (3.62364ms)
+{
+  "duration": "2.500000",
+  "streams": [
+    {
+      "type": "video",
+      "codec": "h264"
+    },
+    {
+      "type": "audio",
+      "codec": "aac"
+    },
+    {
+      "type": "subtitle",
+      "codec": "mov_text"
+    }
+  ],
+  "messages": [
+    "Rendering timeline",
+    "Rendering timeline 96%",
+    "Rendering captions",
+    "Rendering captions 80%",
+    "Export complete"
+  ]
+}
+✔ application renderer exports image, gap, and two offset audio layers (1562.304623ms)
+✔ service configuration rejects unsafe endpoints and embedded credentials (2.093097ms)
+✔ explicit service requests validate plans, inspect speech and require timed SRT (354.970993ms)
+✔ caption service rejects an external media-folder junction before transmitting bytes (5.326861ms)
+✔ duration includes audio tails and captions, rounded up to a complete frame (1.97159ms)
+✔ split preserves animation, speed, source position and fade envelopes (2.454625ms)
+✔ nested slices retain original envelope and interpolate new keyframe boundaries (0.467515ms)
+ℹ tests 44
+ℹ suites 0
+ℹ pass 44
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6069.124609
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 test:desktop
+> npm run build && node tests/parity-desktop.cjs
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> visionforge@0.1.0 build
+> electron-vite build
+
+vite v6.4.6 building SSR bundle for production...
+transforming...
+✓ 14 modules transformed.
+rendering chunks...
+out/main/index.js  44.56 kB
+✓ built in 270ms
+vite v6.4.6 building SSR bundle for production...
+transforming...
+✓ 1 modules transformed.
+rendering chunks...
+out/preload/index.js  1.74 kB
+✓ built in 11ms
+vite v6.4.6 building for production...
+transforming...
+✓ 1588 modules transformed.
+rendering chunks...
+../../out/renderer/index.html                   0.36 kB
+../../out/renderer/assets/index-XZgDFuz7.css    7.05 kB
+../../out/renderer/assets/index-B3wuxjH6.js   304.11 kB
+✓ built in 2.08s
+create-import-offset-audio-save
+single-clock-rendered-playback-and-seek-into-audio-tail
+repeated-play-pause-seek-retains-requested-position
+desktop-preview-export-105-decoded-frames-identical
+visual-end-trim-and-undo
+timeline-edit-invalidates-preview
+edit-and-delete-keyframe-controls
+editable-overlay-and-undo
+save-and-reopen-edited-project
+short-relink-rejected-with-original-media-preserved
+missing-media-relinked-through-validated-ipc
+newer-autosave-recovered-through-application
+damaged-saved-file-recovered-and-restored-through-application

@@ -1,5 +1,7 @@
-# Preview seek stabilization
+# Preview seek correction
 
-A packaged desktop attempt timed out waiting for seek position 2.8s. The following media-root run (43131467249, commit 8a39a0d061f270f66ae6e31df485c3e49f0606b2) passed all source/packaged/installed desktop, native build/install/uninstall stages, with the same dependency overrides. This means the first failure is intermittent, not established as a dependency incompatibility.
+A Windows source/packaged seek intermittently returned to the previous playback clock. Diagnostics from run 43132146364 show requested seek completion timed out with UI/video both at 0.288603s, paused and fully buffered, despite a 3.5s movie. Changing effect timing alone did not fix it.
 
-Preview seeks now synchronize through useLayoutEffect before browser media events can report an old clock value after a requested position change. Decode errors now display an explicit playback error. The desktop suite adds five repeated play/pause/seek cycles; failure reports include video state, requested position and UI status. Local TypeScript/build and all 13 desktop checks pass. Windows verification of this latest preview change is pending; do not treat the earlier run as a pass for this revision.
+Explicit user seek requests are now stored separately from media timeupdate feedback. The preview only seeks when that request changes (or a new preview loads); playback ticks update the displayed clock without issuing another seek. Decode errors are reported. The five-cycle play/pause/seek regression, other 12 desktop checks, TypeScript/build and 44 Linux tests pass in evidence/explicit-seek-verification.txt. Hosted Windows verification of this revision is pending.
+
+The media downloader now uses the recorded archive URL/SHA256/size plus individual executable hashes directly. A real download/extraction/hash check passes locally (evidence/pinned-tool-check.json). Supplier metadata API rate limits caused another failed attempt; no account token is needed or used. Changed supplier bytes fail validation instead of silently refreshing tools.
