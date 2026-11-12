@@ -1,6 +1,6 @@
 # Known issues — owner installation handoff remains held
 
-- Windows cross-build/static checks now pass, but native Windows10/11 install/runtime/device audio/export/uninstall remains untested.
+- Hosted Windows Server 2022 native build/install/source+packaged+installed desktop/export/uninstall now pass. Windows 10/11 client-edition and hardware device acceptance remains untested. See GITHUB-TESTING-STATUS.md.
 - The media supplier supports Windows10 22H2 minimum; earlier Windows10 is not covered. Actual compatibility is untested.
 - Media archive/executable hashes are verified; final dependency/security/notices/corresponding-source review remains open. Last recorded audit has six moderate build-tool advisories.
 - Rendered preview preparation can be slow. Large/long projects, hardware behavior and performance need broader acceptance.

@@ -1,3 +1,7 @@
+# Latest Windows update
+
+Hosted Windows Server 2022 source, packaged and installed desktop workflows, native installer build, silent install and uninstall now pass. Automated suite: 41 passed, 0 failed, 1 skipped. See GITHUB-TESTING-STATUS.md and evidence/github-windows for current evidence and remaining limits. This supersedes Windows-environment statements in the historical Linux-stage report below. Windows 10/11 client hardware acceptance is still open.
+
 # VisionForge — current verification report
 
 **Release status: NOT accepted for owner installation. No100% completion claim.** This report supersedes older32/38-test status summaries. The removed GitHub plugin is not used, and this route requires no account sign-in or owner-PC testing.
