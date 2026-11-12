@@ -10,7 +10,7 @@ if ($Mode -eq 'install') {
   if ($process.ExitCode -ne 0) { throw "Installer failed: $($process.ExitCode)" }
   $appExe = Join-Path $installDir 'VisionForge.exe'
   if (-not (Test-Path $appExe)) { throw 'Installed executable missing' }
-  $record = @{ platform='Windows Server 2022 hosted runner'; installer=$installer.Name; installerSha256=(Get-FileHash $installer.FullName -Algorithm SHA256).Hash; installExitCode=$process.ExitCode; installedExecutableFound=$true; uninstallTested=$false }
+  $record = @{ platform=(Get-CimInstance Win32_OperatingSystem).Caption; hostArchitecture=[Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString(); applicationArchitecture='x64'; installer=$installer.Name; installerSha256=(Get-FileHash $installer.FullName -Algorithm SHA256).Hash; installExitCode=$process.ExitCode; installedExecutableFound=$true; uninstallTested=$false }
   $record | ConvertTo-Json | Set-Content $recordPath
   "VF_TEST_EXECUTABLE=$appExe" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 } else {

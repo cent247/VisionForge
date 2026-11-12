@@ -7,19 +7,33 @@ permissions:
   contents: read
 jobs:
   verify:
-    runs-on: windows-2022
+    name: ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: server-2022-x64
+            runner: windows-2022
+          - target: windows-11-arm-x64-emulated
+            runner: windows-11-arm
+    runs-on: ${{ matrix.runner }}
     timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+          architecture: x64
           cache: npm
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - name: Create evidence directory
         run: New-Item -ItemType Directory -Force evidence
+      - name: Record actual Windows platform
+        shell: pwsh
+        run: |
+          @{ operatingSystem=(Get-CimInstance Win32_OperatingSystem).Caption; version=[Environment]::OSVersion.Version.ToString(); hostArchitecture=[Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString(); applicationArchitecture='x64'; runner='${{ matrix.runner }}' } | ConvertTo-Json | Set-Content evidence/windows-platform.json
       - run: npm ci
       - name: Record dependency audit
         run: npm audit --json | Out-File evidence/windows-dependency-audit.json -Encoding utf8
@@ -82,7 +96,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: windows-verification-evidence
+          name: windows-verification-evidence-${{ matrix.target }}
           path: |
             evidence/*.json
             evidence/windows-unit-tests.txt
