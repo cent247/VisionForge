@@ -1,10 +1,25 @@
 # VisionForge — Windows verification and remaining release gates
 
-**An unsigned 0.1.1 candidate is available for the owner-requested trial. Final release remains pending.** Target: Windows 10/11 x64. No finished-release or 100% completion claim.
+**An unsigned 0.1.2 candidate is available for the owner-requested trial. Final release remains pending.** Target: Windows 10/11 x64. No finished-release or 100% completion claim.
 
 Successful matrix run: https://github.com/cent247/VisionForge/actions/runs/43139240640  
 Tested revision: `d782ad37f58e5dc09dcdef05b0be6b409c3fa857`  
 Development PR: https://github.com/cent247/VisionForge/pull/1
+
+## Version 0.1.2 — long-project playback and Windows command limits
+
+Owner screenshots show an open `test1` project with 118 imported media entries, timeline clips, and a pending full preview. The full render command grows beyond the Windows process limit for a synthetic project of that size. The preview also discarded rendering progress and placed text behind absolute-positioned controls.
+
+Version 0.1.2 loads the long filter graph from a generated file (`-/filter_complex`), shortens media input paths relative to the temporary render folder, adds a 10-second preview window with absolute timeline clock mapping, exposes preview progress/errors/cancellation, separates controls from the picture, and removes the extra outer editor scrollbar. Full preview/export remain available. The project document format is unchanged.
+
+Successful installed Windows Server x64 run:
+https://github.com/cent247/VisionForge/actions/runs/43476781569
+
+Download: https://github.com/cent247/VisionForge/actions/runs/43476781569/artifacts/14063243024
+
+Local verification: 53 automated tests, existing editor/export parity, keyboard/security/stock regressions, and a real Electron 118-item project test passed. The installed Windows test measured 1.7 seconds for a synthetic 10-second preview, tested seeking to a second window with correct clock mapping, edited/saved a clip, checked non-overlapping controls, and fully decoded both preview files. The separate full-render test uses 118 cuts, 236 frames at 160×90, and verifies visible picture and full decode. These fixtures do not use the owner's photos/video or establish real-project render speed. Native Windows10/11 x64 and the owner's result remain unconfirmed. Windows11 ARM/x64-emulation for this revision was still running when this record was written.
+
+Primary technical references: https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-createprocessw ; https://ffmpeg.org/ffmpeg.html (file-backed option arguments).
 
 ## Version 0.1.1 — owner-reported inert interface
 
@@ -15,7 +30,7 @@ https://github.com/cent247/VisionForge/actions/runs/43336244847
 
 Trial download: https://github.com/cent247/VisionForge/actions/runs/43336244847/artifacts/13997247602
 
-A separate acceptance job passed project settings, clip effects, adding audio tracks and captions, and saved-value checks against that same downloaded installer (no application rebuild):
+A separate acceptance job checks project settings, clip effects, adding audio tracks and captions, and saved values against that same downloaded installer (no application rebuild):
 https://github.com/cent247/VisionForge/actions/runs/43337572084
 
 Clean Windows 10 and native Intel/AMD Windows 11 acceptance remain open. Earlier evaluation guests timed out or crashed without app acceptance events; see evidence/client-failure-diagnosis.json. Hosted AI and authenticated Pexels acceptance, full media-tool corresponding-source review/delivery, and final release acceptance remain open.

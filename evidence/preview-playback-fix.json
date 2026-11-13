@@ -1,0 +1,33 @@
+{
+  "version": "0.1.2",
+  "workflow": "https://github.com/cent247/VisionForge/actions/runs/43476781569",
+  "artifactId": 14063243024,
+  "hostedWindowsServerX64": "passed",
+  "ownerAcceptance": "unconfirmed",
+  "fixes": [
+    "10-second preview window excludes unrelated timeline clips",
+    "Preview reports media checks and render progress; errors stay visible",
+    "Preview toolbar no longer covers placeholder/picture text",
+    "Filter graph loaded from generated file; media input paths relative to render folder"
+  ],
+  "localAutomatedTests": 53,
+  "installedLongTimelineChecks": [
+    "118-entry timeline, 1280x720 at 30fps, short preview in 1.7 seconds on test runner",
+    "Seek to a second window; absolute playhead remains correct",
+    "Select clip, change duration and save on long timeline",
+    "Both 10-second MP4 previews fully decode"
+  ],
+  "fullRenderFixture": {
+    "cuts": 118,
+    "width": 160,
+    "height": 90,
+    "frames": 236,
+    "visiblePicture": true,
+    "fullDecode": true
+  },
+  "limits": [
+    "Synthetic assets, not owner's media",
+    "Full timeline pre-render remains slower than short preview",
+    "Windows10/native Intel/AMD Windows11 acceptance still open"
+  ]
+}

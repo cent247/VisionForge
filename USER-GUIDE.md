@@ -3,15 +3,25 @@
 ## Install the Windows test build
 
 Download the test archive while signed into the GitHub account with repository access:
-https://github.com/cent247/VisionForge/actions/runs/43336244847/artifacts/13997247602
+https://github.com/cent247/VisionForge/actions/runs/43476781569/artifacts/14063243024
 
-Extract the ZIP, open `release`, and run `VisionForge-INTERNAL-CANDIDATE-Setup-0.1.1-x64.exe`. This unsigned development build is offered for your trial; final Windows 10/11 x64 acceptance and release review remain open. Do not disable Windows security controls if installation is blocked. The installer SHA256 is recorded in `evidence/windows-installer.json` inside the download.
+Extract the ZIP, open `release`, and run `VisionForge-INTERNAL-CANDIDATE-Setup-0.1.2-x64.exe`. This unsigned development build is offered for your trial; final Windows 10/11 x64 acceptance and release review remain open. Do not disable Windows security controls if installation is blocked. The installer SHA256 is recorded in `evidence/windows-installer.json` inside the download.
 
-PowerShell can verify it with `Get-FileHash .\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.1-x64.exe -Algorithm SHA256`.
+PowerShell can verify it with `Get-FileHash .\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.2-x64.exe -Algorithm SHA256`.
 
 Editing, local media import, captions, and export do not need an AI subscription. AI model weights are not bundled. Optional hosted AI and Pexels features need their own configured service access. The successful local Kokoro test was a developer service test, not an included Windows speech engine.
 
 Version 0.1.1 repairs non-clickable workspace navigation, attaches New/Open dialogs to the editor window, and shows an actionable error when the desktop connection cannot load. These changes passed installed Windows Server x64 checks; the owner-device freeze has not yet been confirmed resolved. Close the old version before installing.
+
+## Version 0.1.2: playback and editing on long timelines
+
+Save your project and close the old app before installing the replacement test build. Reopen the existing project file; for a project named `test1`, this is normally `test1/project.vforge` inside its project folder.
+
+Place the playhead within the section you want to inspect, then choose **Preview 10 seconds here**. This prepares and plays only that section, preserving its position on the timeline. It stops at the end of the short section. Moving outside that section requires another short preview or a full preview. **Update preview** still renders the entire timeline, so it can take longer. Preparation stages, percentages and errors are displayed above the picture, with cancellation available.
+
+To edit, click a purple video/image clip or an audio clip **on the timeline**, then choose **Clip effects**. Change its numeric controls or use the trim handles; Save retains the edit. Split and Delete require a selected clip. Imported library entries are source assets; their plus buttons add editable clips to the timeline.
+
+Version 0.1.2 also moves large rendering instructions into a temporary file and shortens input paths to address Windows process-command limits. Tests cover a synthetic 118-item timeline and a full 118-cut low-resolution export; they do not establish performance for every real project or confirm the owner's PC is repaired.
 
 ## First trial
 

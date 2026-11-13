@@ -1,15 +1,16 @@
 {
   "date": "2026-11-12",
-  "delivery": "GitHub Actions artifact 13997247602, unsigned replacement test installer",
+  "delivery": "GitHub Actions artifact 14063243024, unsigned playback/large-project replacement test installer",
   "liveSpeech": "Passed real Kokoro 0.6.1 inference, service request, media import and full audio decode",
   "stock": "HTTP403 unauthenticated endpoint; authenticated search not tested; no key configured",
   "quality": {
     "typecheck": "passed",
-    "unitTests": 49,
+    "unitTests": 53,
     "failures": 0,
     "productionBuild": "passed",
     "desktopChecks": 27,
-    "desktopResult": "passed: 13 workflow, 3 security, 7 keyboard, 4 fixture stock checks; 105 decoded preview/export frames match"
+    "desktopResult": "passed: 13 workflow, 3 security, 7 keyboard, 4 fixture stock checks; 105 decoded preview/export frames match",
+    "shortPreviewAndLargeExport": "Passed 118-item short-preview UI, second-window clock mapping, clip edit persistence, 118-cut full-render test and complete decode"
   },
   "windowsClients": "Windows10 guest acceptance timed out. Windows11 guest crashed SYSTEM_SERVICE_EXCEPTION (0x3B), no app acceptance events. Both unresolved.",
   "remainingOrder": [
@@ -19,15 +20,12 @@
     "Final security and licensing review",
     "Final installer and guide"
   ],
-  "version": "0.1.1",
-  "ownerReportedIssue": "0.1.0 appeared inert; confirmed sidebar defect repaired; owner result for 0.1.1 pending",
+  "version": "0.1.2",
+  "ownerReportedIssue": "Owner opened a project and imported 118 entries; playback screenshot showed pending full preview and no selected clip. New build trial remains unconfirmed.",
   "windowsHostedVerification": {
-    "workflow": "https://github.com/cent247/VisionForge/actions/runs/43336244847",
+    "workflow": "https://github.com/cent247/VisionForge/actions/runs/43476781569",
     "server2022X64": "passed",
-    "windows11ArmX64Emulation": "passed"
+    "windows11ArmX64Emulation": "pending"
   },
-  "additionalNavigationAcceptance": {
-    "passed": true,
-    "workflow": "https://github.com/cent247/VisionForge/actions/runs/43337572084"
-  }
+  "additionalNavigationAcceptance": "https://github.com/cent247/VisionForge/actions/runs/43337572084"
 }
