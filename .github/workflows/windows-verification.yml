@@ -13,6 +13,7 @@ on:
       - 'electron*'
       - 'scripts/build-windows-native.cjs'
       - 'scripts/fetch-windows-tools.py'
+      - 'scripts/recover-pinned-windows-tools.cjs'
       - 'scripts/windows-install-check.ps1'
       - '.github/workflows/windows-verification.yml' 
   workflow_dispatch:
@@ -52,8 +53,19 @@ jobs:
         run: npm audit --json | Out-File evidence/windows-dependency-audit.json -Encoding utf8
       - name: Install Electron runtime explicitly
         run: node node_modules/electron/install.js
-      - name: Fetch and verify Windows media binaries
-        run: python scripts/fetch-windows-tools.py tool-stage
+      - name: Download retained installer containing pinned media binaries
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 43196669781
+          name: windows-verification-evidence-server-2022-x64
+          path: recorded-tool-candidate
+      - name: Recover and verify exact Windows media binaries
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem recorded-tool-candidate/release -Filter '*.exe' | Select-Object -First 1
+          if (!$installer) { throw 'Retained installer unavailable' }
+          node scripts/recover-pinned-windows-tools.cjs $installer.FullName tool-stage
       - name: Configure media binaries
         shell: pwsh
         run: |
