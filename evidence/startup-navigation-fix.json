@@ -1,0 +1,25 @@
+{
+  "version": "0.1.1",
+  "userReported": "Installed 0.1.0 window appears inert; owner-device root cause not yet reproduced",
+  "confirmedDefect": "Workspace sidebar entries were paragraphs with no click handlers",
+  "changes": [
+    "Replace six decorative workspace entries with keyboard-accessible navigation buttons",
+    "Open and focus corresponding editor sections; explain missing project or clip selection",
+    "Attach New/Open native dialogs to their editor BrowserWindow",
+    "Display actionable startup failure when desktop bridge is missing or React startup fails"
+  ],
+  "validation": {
+    "typecheck": "passed",
+    "productionBuild": "passed",
+    "startupDesktop": "passed",
+    "editingExportRecovery": "13 checks passed",
+    "keyboard": "7 checks passed",
+    "security": "3 checks passed"
+  },
+  "windowsBuild": "https://github.com/cent247/VisionForge/actions/runs/43335163731",
+  "limits": [
+    "Not confirmed repaired on owner's PC",
+    "Clean Windows10/native x64 Windows11 acceptance remains unresolved",
+    "Unsigned candidate; not final release"
+  ]
+}
