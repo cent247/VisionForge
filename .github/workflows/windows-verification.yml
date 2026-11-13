@@ -124,6 +124,7 @@ jobs:
         shell: pwsh
         run: |
           node tests/startup-desktop.cjs
+          node tests/preview-window-desktop.cjs
           node tests/keyboard-desktop.cjs
           node tests/stock-desktop.cjs
       - name: Preserve installed desktop evidence

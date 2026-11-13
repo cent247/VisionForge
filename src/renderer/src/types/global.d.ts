@@ -7,7 +7,8 @@ declare global {interface Window {visionForge:{
  requestSpeech(path:string,text:string,voice:string,c:{endpoint:string;model:string;key?:string}):Promise<ImportedMedia>;
  requestCaptions(path:string,relative:string,c:{endpoint:string;model:string;key?:string}):Promise<string>;
  autosaveProject(p:{projectPath:string;project:ProjectDocument}):Promise<{ok:boolean}>;
- preparePreview(projectPath:string,project:ProjectDocument):Promise<string>;
+ preparePreview(projectPath:string,project:ProjectDocument,range?:{startSeconds:number;durationSeconds:number}):Promise<string>;
+ onPreviewProgress(fn:(message:string)=>void):()=>void;
  cancelPreview():Promise<void>;
  cancelExport():Promise<{ok:boolean}>;
  newProject():Promise<{project:ProjectDocument;projectPath:string;recovered?:boolean}|null>;

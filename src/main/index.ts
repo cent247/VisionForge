@@ -2,7 +2,7 @@ import {createStockService,pexelsPage} from './stock';
 import {projectMediaRoot} from './media';
 import {persistProject,readProject,recoverableAutosave,readProjectOrAutosave} from './project-storage';
 import {requestPlan,requestSpeech,requestCaptions,ServiceConfig} from './services';
-import {preparePreview} from './preview';
+import {preparePreview,PreviewRange} from './preview';
 import {mediaResponse} from './media-protocol';
 import {importFiles,relinkFile} from './media-management';
 import {exportVideo,probe} from './render';
@@ -69,7 +69,7 @@ handle('services:plan',async(_e,path:string,p:ProjectDocument,script:string,conf
 handle('services:speech',async(_e,path:string,text:string,voice:string,config:ServiceConfig)=>{checkPath(path);return requestSpeech(config,text,voice,path);});
 handle('services:captions',async(_e,path:string,relative:string,config:ServiceConfig)=>{checkPath(path);return requestCaptions(config,path,relative);});
 handle('preview:cancel',e=>{previewsInProgress.get(e.sender.id)?.abort();});
-handle('preview:prepare',async(e,projectPath:string,project:ProjectDocument)=>{checkPath(projectPath);if(exportsInProgress.has(e.sender.id))throw new Error('Wait for export');previewsInProgress.get(e.sender.id)?.abort();const controller=new AbortController();previewsInProgress.set(e.sender.id,controller);try{const file=await preparePreview(projectPath,project,()=>{},controller.signal);controller.signal.throwIfAborted();const token=randomUUID();previewFiles.set(token,file);while(previewFiles.size>16)previewFiles.delete(previewFiles.keys().next().value!);return 'vfmedia://preview/'+token;}finally{if(previewsInProgress.get(e.sender.id)===controller)previewsInProgress.delete(e.sender.id);}});
+handle('preview:prepare',async(e,projectPath:string,project:ProjectDocument,range?:PreviewRange)=>{checkPath(projectPath);if(exportsInProgress.has(e.sender.id))throw new Error('Wait for export');previewsInProgress.get(e.sender.id)?.abort();const controller=new AbortController();previewsInProgress.set(e.sender.id,controller);try{const file=await preparePreview(projectPath,project,message=>{if(!e.sender.isDestroyed()&&!controller.signal.aborted&&previewsInProgress.get(e.sender.id)===controller)e.sender.send('preview:progress',message);},controller.signal,range);controller.signal.throwIfAborted();const token=randomUUID();previewFiles.set(token,file);while(previewFiles.size>16)previewFiles.delete(previewFiles.keys().next().value!);return 'vfmedia://preview/'+token;}finally{if(previewsInProgress.get(e.sender.id)===controller)previewsInProgress.delete(e.sender.id);}});
 app.whenReady().then(()=>{
  protocol.handle('vfmedia',async request=>{try{const url=new URL(request.url);if(url.hostname==='preview'){const file=previewFiles.get(url.pathname.slice(1));return file?mediaResponse(file,request):new Response('Forbidden',{status:403});}if(url.hostname!=='local')return new Response('Forbidden',{status:403});const requested=decodeURIComponent(url.pathname.slice(1));for(const p of projects){const root=resolve(dirname(p),'media');if(requested.startsWith(root+sep)){const relative='media/'+basename(requested),actual=await mediaPath(p,relative);if(actual!==await realpath(requested))return new Response('Forbidden',{status:403});return mediaResponse(actual,request);}}return new Response('Forbidden',{status:403});}catch{return new Response('Not found',{status:404});}});
  createWindow();app.on('activate',()=>{if(!BrowserWindow.getAllWindows().length)createWindow();});

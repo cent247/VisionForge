@@ -1,3 +1,4 @@
+import {sliceClip,timelineDuration} from '../shared/timeline.mjs';
 import {createHash} from 'node:crypto';
 import {mkdir,stat,lstat,realpath,readFile,readdir,rm} from 'node:fs/promises';
 import {dirname,join,sep} from 'node:path';
@@ -5,8 +6,17 @@ import {projectMediaRoot} from './media';
 import {exportVideo} from './render';
 import {validateProject} from '../shared/project.mjs';
 import type {ProjectDocument} from '../renderer/src/types/project';
-export async function preparePreview(projectPath:string,p:ProjectDocument,progress:(s:string)=>void,signal?:AbortSignal){
- validateProject(p);const root=await projectMediaRoot(projectPath);const content={settings:p.settings,tracks:p.tracks,captions:p.captions,captionStyle:p.captionStyle};const hash=createHash('sha256').update(JSON.stringify(content));
+export interface PreviewRange{startSeconds:number;durationSeconds:number}
+export function previewSegment(document:ProjectDocument,range:PreviewRange){
+ validateProject(document);const total=timelineDuration(document),{startSeconds:start,durationSeconds:duration}=range;
+ if(!Number.isFinite(start)||!Number.isFinite(duration)||start<0||duration<=0||duration>30||start>=total)throw new Error('Choose a preview range of at most 30 seconds within the timeline');
+ const end=Math.min(total,start+duration),p=structuredClone(document);
+ p.tracks=p.tracks.map(t=>({...t,clips:t.clips.filter(c=>c.startSeconds<end&&c.startSeconds+c.durationSeconds>start).map(c=>{const clipped=sliceClip(c,Math.max(0,start-c.startSeconds),Math.min(c.durationSeconds,end-c.startSeconds));return {...clipped,startSeconds:Math.max(0,clipped.startSeconds-start)};})}));
+ p.captions=p.captions?.filter(c=>c.startSeconds<end&&c.endSeconds>start).map(c=>({...c,startSeconds:Math.max(0,c.startSeconds-start),endSeconds:Math.min(end,c.endSeconds)-start}));
+ validateProject(p);return p;
+}
+export async function preparePreview(projectPath:string,p:ProjectDocument,progress:(s:string)=>void,signal?:AbortSignal,range?:PreviewRange){
+ validateProject(p);if(range)p=previewSegment(p,range);const root=await projectMediaRoot(projectPath);const content={settings:p.settings,tracks:p.tracks,captions:p.captions,captionStyle:p.captionStyle};const hash=createHash('sha256').update(JSON.stringify(content));
  for(const id of new Set(p.tracks.flatMap(t=>t.clips.map(c=>c.mediaId)))){const m=p.media.find(m=>m.id===id)!;const file=await realpath(join(dirname(projectPath),m.relativePath));if(!file.startsWith(root+sep))throw new Error('Invalid preview media path');const info=await stat(file);hash.update(JSON.stringify([m,file,info.size,info.mtimeMs]));}
  // Fingerprint the compiled renderer bundle (or compiled test modules), so cache survives edits safely.
  for(const file of ['index.js','render.js','composite.js'])try{hash.update(await readFile(join(__dirname,file)));}catch{}
