@@ -3,13 +3,15 @@
 ## Install the Windows test build
 
 Download the test archive while signed into the GitHub account with repository access:
-https://github.com/cent247/VisionForge/actions/runs/43196669781/artifacts/13933956031
+https://github.com/cent247/VisionForge/actions/runs/43336244847/artifacts/13997247602
 
-Extract the ZIP, open `release`, and run `VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe`. This unsigned development build is offered for your trial; final Windows 10/11 x64 acceptance and release review remain open. Do not disable Windows security controls if installation is blocked. The expected installer SHA256 is `cbf3eecda878bfa68a425fdb7d637ff6d2248ba337cd06e848a7aaf50fdb87f7`.
+Extract the ZIP, open `release`, and run `VisionForge-INTERNAL-CANDIDATE-Setup-0.1.1-x64.exe`. This unsigned development build is offered for your trial; final Windows 10/11 x64 acceptance and release review remain open. Do not disable Windows security controls if installation is blocked. The installer SHA256 is recorded in `evidence/windows-installer.json` inside the download.
 
-PowerShell can verify it with `Get-FileHash .\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe -Algorithm SHA256`.
+PowerShell can verify it with `Get-FileHash .\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.1-x64.exe -Algorithm SHA256`.
 
 Editing, local media import, captions, and export do not need an AI subscription. AI model weights are not bundled. Optional hosted AI and Pexels features need their own configured service access. The successful local Kokoro test was a developer service test, not an included Windows speech engine.
+
+Version 0.1.1 repairs non-clickable workspace navigation, attaches New/Open dialogs to the editor window, and shows an actionable error when the desktop connection cannot load. These changes passed installed Windows Server x64 checks; the owner-device freeze has not yet been confirmed resolved. Close the old version before installing.
 
 ## First trial
 
