@@ -1,12 +1,26 @@
 # VisionForge — Windows verification and remaining release gates
 
-**Owner installation handoff remains held.** Target: Windows 10/11 x64. No finished-release or 100% completion claim.
+**An unsigned 0.1.1 candidate is available for the owner-requested trial. Final release remains pending.** Target: Windows 10/11 x64. No finished-release or 100% completion claim.
 
 Successful matrix run: https://github.com/cent247/VisionForge/actions/runs/43139240640  
 Tested revision: `d782ad37f58e5dc09dcdef05b0be6b409c3fa857`  
 Development PR: https://github.com/cent247/VisionForge/pull/1
 
-## Latest continuation — stock, keyboard and source recovery
+## Version 0.1.1 — owner-reported inert interface
+
+The owner reported that the installed 0.1.0 interface appeared unresponsive. A confirmed defect was decorative sidebar entries with no click handlers. Version 0.1.1 replaces them with accessible navigation controls, opens and focuses the requested editor sections, gives New/Open dialogs an owning window, and displays a startup-failure screen when the desktop bridge or React startup fails. The complete owner-device issue is not yet confirmed resolved.
+
+The exact downloadable 0.1.1 candidate passed source, packaged and installed workflows, startup/navigation checks, security, keyboard, stock fixtures, runtime notices, and install/uninstall on both Windows Server 2022 x64 and Windows 11 ARM using x64 emulation:
+https://github.com/cent247/VisionForge/actions/runs/43336244847
+
+Trial download: https://github.com/cent247/VisionForge/actions/runs/43336244847/artifacts/13997247602
+
+A separate acceptance job passed project settings, clip effects, adding audio tracks and captions, and saved-value checks against that same downloaded installer (no application rebuild):
+https://github.com/cent247/VisionForge/actions/runs/43337572084
+
+Clean Windows 10 and native Intel/AMD Windows 11 acceptance remain open. Earlier evaluation guests timed out or crashed without app acceptance events; see evidence/client-failure-diagnosis.json. Hosted AI and authenticated Pexels acceptance, full media-tool corresponding-source review/delivery, and final release acceptance remain open.
+
+## Earlier continuation — stock, keyboard and source recovery
 
 Current source adds optional explicit Pexels VIDEO search and selected MP4 import, bounded provider/download requests, saved creator/source/hash provenance and protection against late responses after project switching. Keys remain in session and are excluded from saved project metadata and CDN requests. Real Pexels authentication/quota/CDN acceptance remains open without a live credential; provider responses in tests were fixtures. See evidence/stock-review.md.
 

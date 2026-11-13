@@ -1,6 +1,6 @@
 {
   "date": "2026-11-12",
-  "delivery": "GitHub Actions artifact 13933956031, unsigned test installer",
+  "delivery": "GitHub Actions artifact 13997247602, unsigned replacement test installer",
   "liveSpeech": "Passed real Kokoro 0.6.1 inference, service request, media import and full audio decode",
   "stock": "HTTP403 unauthenticated endpoint; authenticated search not tested; no key configured",
   "quality": {
@@ -18,5 +18,16 @@
     "Diagnose Windows10/11 x64 guest acceptance failures",
     "Final security and licensing review",
     "Final installer and guide"
-  ]
+  ],
+  "version": "0.1.1",
+  "ownerReportedIssue": "0.1.0 appeared inert; confirmed sidebar defect repaired; owner result for 0.1.1 pending",
+  "windowsHostedVerification": {
+    "workflow": "https://github.com/cent247/VisionForge/actions/runs/43336244847",
+    "server2022X64": "passed",
+    "windows11ArmX64Emulation": "passed"
+  },
+  "additionalNavigationAcceptance": {
+    "passed": true,
+    "workflow": "https://github.com/cent247/VisionForge/actions/runs/43337572084"
+  }
 }
