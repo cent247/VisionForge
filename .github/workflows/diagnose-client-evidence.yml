@@ -1,0 +1,34 @@
+name: Diagnose retained Windows client evidence
+on:
+  push:
+    branches: [visionforge-development]
+    paths: ['scripts/diagnose-client-evidence.py', '.github/workflows/diagnose-client-evidence.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: sudo apt-get update -qq && sudo apt-get install -y tesseract-ocr
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 43269232286
+          name: windows10-x64-evaluation-evidence
+          path: client-evidence/windows10
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 43268831012
+          name: windows11-x64-evaluation-evidence
+          path: client-evidence/windows11
+      - run: python3 scripts/diagnose-client-evidence.py client-evidence
+      - uses: actions/upload-artifact@v4
+        with:
+          name: client-failure-diagnosis
+          path: client-evidence/diagnosis.json
+          retention-days: 30

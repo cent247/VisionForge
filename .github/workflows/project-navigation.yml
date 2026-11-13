@@ -1,0 +1,54 @@
+name: Installed 0.1.1 project navigation acceptance
+on:
+  push:
+    branches: [visionforge-development]
+    paths: ['checks/project-navigation.cjs', '.github/workflows/project-navigation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  project-navigation:
+    runs-on: windows-2022
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 43336244847
+          name: windows-verification-evidence-server-2022-x64
+          path: candidate
+      - name: Verify and test the exact downloadable installer
+        shell: pwsh
+        run: |
+          $record = Get-Content candidate/evidence/windows-installer.json -Raw | ConvertFrom-Json
+          $installer = Get-ChildItem candidate/release -Filter '*Setup-0.1.1-x64.exe' | Select-Object -First 1
+          if (!$installer) { throw 'Pinned 0.1.1 installer missing' }
+          if ((Get-FileHash $installer.FullName -Algorithm SHA256).Hash -ne $record.installerSha256) { throw 'Installer hash mismatch' }
+          $install = Join-Path $env:RUNNER_TEMP 'VisionForgeNavigationAcceptance'
+          if (Test-Path $install) { throw 'Acceptance install folder must be absent' }
+          $process = Start-Process $installer.FullName -ArgumentList @('/S',"/D=$install") -PassThru -Wait
+          if ($process.ExitCode -ne 0) { throw 'Installation failed' }
+          $env:VF_TEST_EXECUTABLE = Join-Path $install 'VisionForge.exe'
+          try {
+            node checks/project-navigation.cjs 2>&1 | Tee-Object evidence/project-navigation.log
+            if ($LASTEXITCODE -ne 0) { throw 'Installed navigation acceptance failed' }
+          } finally {
+            $uninstaller = Get-ChildItem $install -Filter '*uninstall*.exe' | Select-Object -First 1
+            if ($uninstaller) {
+              $removed = Start-Process $uninstaller.FullName -ArgumentList '/S' -PassThru -Wait
+              if ($removed.ExitCode -ne 0) { throw 'Uninstall failed' }
+            }
+          }
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: installed-project-navigation-evidence
+          path: evidence/project-navigation.log
+          retention-days: 30

@@ -1,0 +1,610 @@
+﻿2026-11-12T01:10:42.2570096Z Current runner version: '2.338.2'
+2026-11-12T01:10:42.2603267Z ##[group]Runner Image Provisioner
+2026-11-12T01:10:42.2604472Z Hosted Compute Agent
+2026-11-12T01:10:42.2605333Z Version: 20261028.624
+2026-11-12T01:10:42.2606370Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-12T01:10:42.2607580Z Build Date: 2026-10-28T21:51:42Z
+2026-11-12T01:10:42.2608681Z Worker ID: {483e5e68-fb75-49cc-ba7c-53c52d84294e}
+2026-11-12T01:10:42.2609857Z Region: northcentralus
+2026-11-12T01:10:42.2610726Z Cloud: Azure
+2026-11-12T01:10:42.2611491Z ##[endgroup]
+2026-11-12T01:10:42.2613487Z ##[group]Operating System
+2026-11-12T01:10:42.2614500Z Microsoft Windows Server 2022
+2026-11-12T01:10:42.2615495Z 10.0.20348
+2026-11-12T01:10:42.2616317Z Datacenter
+2026-11-12T01:10:42.2617134Z ##[endgroup]
+2026-11-12T01:10:42.2618004Z ##[group]Runner Image
+2026-11-12T01:10:42.2618881Z Image: windows-2022
+2026-11-12T01:10:42.2619737Z Version: 20261101.353.1
+2026-11-12T01:10:42.2622200Z Included Software: https://github.com/actions/runner-images/blob/win22/20261101.353/images/windows/Windows2022-Readme.md
+2026-11-12T01:10:42.2625002Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20261101.353
+2026-11-12T01:10:42.2626654Z ##[endgroup]
+2026-11-12T01:10:42.2628560Z ##[group]GITHUB_TOKEN Permissions
+2026-11-12T01:10:42.2630989Z Contents: read
+2026-11-12T01:10:42.2631963Z Metadata: read
+2026-11-12T01:10:42.2632820Z ##[endgroup]
+2026-11-12T01:10:42.2635720Z Secret source: Actions
+2026-11-12T01:10:42.2637126Z Cache mode: write
+2026-11-12T01:10:42.2638302Z Prepare workflow directory
+2026-11-12T01:10:42.2977902Z Prepare all required actions
+2026-11-12T01:10:42.3024398Z Getting action download info
+2026-11-12T01:10:42.5956320Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-12T01:10:42.7086701Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-11-12T01:10:42.8494392Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-12T01:10:42.9812347Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-12T01:10:43.3002592Z Complete job name: verify
+2026-11-12T01:10:43.4713840Z ##[group]Run actions/checkout@v4
+2026-11-12T01:10:43.4714915Z with:
+2026-11-12T01:10:43.4776279Z   repository: cent247/VisionForge
+2026-11-12T01:10:43.4780420Z   token: ***
+2026-11-12T01:10:43.4780857Z   ssh-strict: true
+2026-11-12T01:10:43.4781293Z   ssh-user: git
+2026-11-12T01:10:43.4781735Z   persist-credentials: true
+2026-11-12T01:10:43.4782218Z   clean: true
+2026-11-12T01:10:43.4782650Z   sparse-checkout-cone-mode: true
+2026-11-12T01:10:43.4783172Z   fetch-depth: 1
+2026-11-12T01:10:43.4783591Z   fetch-tags: false
+2026-11-12T01:10:43.4784027Z   show-progress: true
+2026-11-12T01:10:43.4784484Z   lfs: false
+2026-11-12T01:10:43.4784906Z   submodules: false
+2026-11-12T01:10:43.4785350Z   set-safe-directory: true
+2026-11-12T01:10:43.4785872Z   allow-unsafe-pr-checkout: false
+2026-11-12T01:10:43.4786747Z ##[endgroup]
+2026-11-12T01:10:43.6136955Z Syncing repository: cent247/VisionForge
+2026-11-12T01:10:43.6138788Z ##[group]Getting Git version info
+2026-11-12T01:10:43.6139557Z Working directory is 'D:\a\VisionForge\VisionForge'
+2026-11-12T01:10:43.7128858Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-12T01:10:44.0586382Z git version 2.56.0.windows.4
+2026-11-12T01:10:44.0625254Z ##[endgroup]
+2026-11-12T01:10:44.0642875Z Temporarily overriding HOME='D:\a\_temp\6d5dc99d-1c3f-47db-8b87-5177523f30c2' before making global git config changes
+2026-11-12T01:10:44.0645096Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T01:10:44.0653716Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VisionForge\VisionForge
+2026-11-12T01:10:44.1136315Z Deleting the contents of 'D:\a\VisionForge\VisionForge'
+2026-11-12T01:10:44.1141425Z ##[group]Initializing the repository
+2026-11-12T01:10:44.1150277Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\VisionForge\VisionForge
+2026-11-12T01:10:44.1895743Z Initialized empty Git repository in D:/a/VisionForge/VisionForge/.git/
+2026-11-12T01:10:44.1933309Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/cent247/VisionForge
+2026-11-12T01:10:44.2479829Z ##[endgroup]
+2026-11-12T01:10:44.2481717Z ##[group]Disabling automatic garbage collection
+2026-11-12T01:10:44.2487954Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-11-12T01:10:44.2768352Z ##[endgroup]
+2026-11-12T01:10:44.2771669Z ##[group]Setting up auth
+2026-11-12T01:10:44.2781380Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T01:10:44.3084386Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-12T01:10:45.5847131Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T01:10:45.6123453Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-12T01:10:46.0643608Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T01:10:46.0926689Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-12T01:10:46.5343693Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-11-12T01:10:46.5660559Z ##[endgroup]
+2026-11-12T01:10:46.5661238Z ##[group]Fetching the repository
+2026-11-12T01:10:46.5681820Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +b83a601244157f6705dae71c365ee08d995f0805:refs/remotes/origin/visionforge-development
+2026-11-12T01:10:47.5188560Z From https://github.com/cent247/VisionForge
+2026-11-12T01:10:47.5189855Z  * [new ref]         b83a601244157f6705dae71c365ee08d995f0805 -> origin/visionforge-development
+2026-11-12T01:10:47.5218213Z ##[endgroup]
+2026-11-12T01:10:47.5218827Z ##[group]Determining the checkout info
+2026-11-12T01:10:47.5221594Z ##[endgroup]
+2026-11-12T01:10:47.5230578Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-11-12T01:10:47.5692828Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-11-12T01:10:47.5982379Z ##[group]Checking out the ref
+2026-11-12T01:10:47.5991008Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B visionforge-development refs/remotes/origin/visionforge-development
+2026-11-12T01:10:47.6835128Z Switched to a new branch 'visionforge-development'
+2026-11-12T01:10:47.6933561Z branch 'visionforge-development' set up to track 'origin/visionforge-development'.
+2026-11-12T01:10:47.6962741Z ##[endgroup]
+2026-11-12T01:10:47.7319233Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-11-12T01:10:47.7569419Z b83a601244157f6705dae71c365ee08d995f0805
+2026-11-12T01:10:47.7981957Z ##[group]Run actions/setup-node@v4
+2026-11-12T01:10:47.7982297Z with:
+2026-11-12T01:10:47.7982485Z   node-version: 24
+2026-11-12T01:10:47.7982691Z   cache: npm
+2026-11-12T01:10:47.7982868Z   always-auth: false
+2026-11-12T01:10:47.7983064Z   check-latest: false
+2026-11-12T01:10:47.7985542Z   token: ***
+2026-11-12T01:10:47.7985749Z ##[endgroup]
+2026-11-12T01:10:47.9640729Z Found in cache @ C:\hostedtoolcache\windows\node\24.22.2\x64
+2026-11-12T01:10:47.9648547Z (node:6356) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T01:10:47.9650951Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T01:10:47.9652788Z ##[group]Environment details
+2026-11-12T01:10:51.8971413Z node: v24.22.2
+2026-11-12T01:10:51.8971675Z npm: 11.19.1
+2026-11-12T01:10:51.8971867Z yarn: 1.22.22
+2026-11-12T01:10:51.8972693Z ##[endgroup]
+2026-11-12T01:10:51.9861884Z [command]C:\Windows\system32\cmd.exe /D /S /C "C:\hostedtoolcache\windows\node\24.22.2\x64\npm.cmd config get cache"
+2026-11-12T01:10:52.4040897Z C:\npm\cache
+2026-11-12T01:10:52.7003514Z Cache hit for: node-cache-Windows-x64-npm-f01bae8b2afa62bf776a11803cf1b736dd495a95a11a9e98447723248fdf63fd
+2026-11-12T01:10:52.7115196Z (node:6356) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-12T01:10:53.3569740Z Received 46308524 of 46308524 (100.0%), 83.8 MBs/sec
+2026-11-12T01:10:53.3571921Z Cache Size: ~44 MB (46308524 B)
+2026-11-12T01:10:53.3645355Z [command]"C:\Program Files\Git\usr\bin\tar.exe" -xf D:/a/_temp/2a45ad89-44f5-4b23-b040-074d09a3dfe7/cache.tzst -P -C D:/a/VisionForge/VisionForge --force-local --use-compress-program "zstd -d"
+2026-11-12T01:10:55.6762466Z Cache restored successfully
+2026-11-12T01:10:55.6801720Z Cache restored from key: node-cache-Windows-x64-npm-f01bae8b2afa62bf776a11803cf1b736dd495a95a11a9e98447723248fdf63fd
+2026-11-12T01:10:55.7130316Z ##[group]Run actions/setup-python@v5
+2026-11-12T01:10:55.7130721Z with:
+2026-11-12T01:10:55.7130976Z   python-version: 3.12
+2026-11-12T01:10:55.7131251Z   check-latest: false
+2026-11-12T01:10:55.7134589Z   token: ***
+2026-11-12T01:10:55.7134878Z   update-environment: true
+2026-11-12T01:10:55.7135254Z   allow-prereleases: false
+2026-11-12T01:10:55.7135576Z   freethreaded: false
+2026-11-12T01:10:55.7135844Z ##[endgroup]
+2026-11-12T01:10:55.8614793Z ##[group]Installed versions
+2026-11-12T01:10:55.8773640Z (node:7684) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T01:10:55.8775016Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T01:10:55.8775774Z Successfully set up CPython (3.12.10)
+2026-11-12T01:10:55.8776413Z ##[endgroup]
+2026-11-12T01:10:55.9002650Z ##[group]Run New-Item -ItemType Directory -Force evidence
+2026-11-12T01:10:55.9003167Z [36;1mNew-Item -ItemType Directory -Force evidence[0m
+2026-11-12T01:10:55.9209372Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:10:55.9209825Z env:
+2026-11-12T01:10:55.9210165Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:10:55.9210792Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:10:55.9211398Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:10:55.9211955Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:10:55.9212485Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:10:55.9212914Z ##[endgroup]
+2026-11-12T01:10:56.3263288Z 
+2026-11-12T01:10:56.3271647Z     Directory: D:\a\VisionForge\VisionForge
+2026-11-12T01:10:56.3272474Z 
+2026-11-12T01:10:56.3276244Z [32;1mMode   [0m[32;1m              LastWriteTime[0m [32;1;3m        Length[0m[32;1m Name[0m
+2026-11-12T01:10:56.3277580Z [32;1m----   [0m [32;1m             -------------[0m [32;1m        ------[0m [32;1m----[0m
+2026-11-12T01:10:56.3432223Z d----          11/12/2026  1:10 AM                [44;1mevidence[0m
+2026-11-12T01:10:56.3457725Z 
+2026-11-12T01:10:56.3983909Z ##[group]Run npm ci
+2026-11-12T01:10:56.3984194Z [36;1mnpm ci[0m
+2026-11-12T01:10:56.4023622Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:10:56.4023974Z env:
+2026-11-12T01:10:56.4024242Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:10:56.4024875Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:10:56.4025326Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:10:56.4025729Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:10:56.4026166Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:10:56.4026491Z ##[endgroup]
+2026-11-12T01:11:01.3955595Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-11-12T01:11:01.4634752Z npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+2026-11-12T01:11:01.5301547Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-11-12T01:11:01.9653131Z npm warn deprecated boolean@3.2.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+2026-11-12T01:11:08.7721078Z 
+2026-11-12T01:11:08.7722366Z added 358 packages, and audited 359 packages in 12s
+2026-11-12T01:11:08.7723120Z 
+2026-11-12T01:11:08.7723462Z 54 packages are looking for funding
+2026-11-12T01:11:08.7724784Z   run `npm fund` for details
+2026-11-12T01:11:08.7736293Z 
+2026-11-12T01:11:08.7736801Z found 0 vulnerabilities
+2026-11-12T01:11:08.7747145Z npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+2026-11-12T01:11:08.7748562Z npm warn install-scripts   electron-winstaller@5.4.0 (install: node ./script/select-7z-arch.js)
+2026-11-12T01:11:08.7749799Z npm warn install-scripts   esbuild@0.25.12 (postinstall: node install.js)
+2026-11-12T01:11:08.7750558Z npm warn install-scripts
+2026-11-12T01:11:08.7751685Z npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+2026-11-12T01:11:09.7665361Z ##[group]Run npm audit --json | Out-File evidence/windows-dependency-audit.json -Encoding utf8
+2026-11-12T01:11:09.7666103Z [36;1mnpm audit --json | Out-File evidence/windows-dependency-audit.json -Encoding utf8[0m
+2026-11-12T01:11:09.7705983Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:09.7706327Z env:
+2026-11-12T01:11:09.7706589Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:09.7707059Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:09.7707512Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:09.7707931Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:09.7708333Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:09.7708669Z ##[endgroup]
+2026-11-12T01:11:10.9592047Z ##[group]Run node node_modules/electron/install.js
+2026-11-12T01:11:10.9592526Z [36;1mnode node_modules/electron/install.js[0m
+2026-11-12T01:11:10.9635040Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:10.9635644Z env:
+2026-11-12T01:11:10.9636101Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:10.9636948Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:10.9637788Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:10.9638534Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:10.9639275Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:10.9639875Z ##[endgroup]
+2026-11-12T01:11:16.4052551Z ##[group]Run python scripts/fetch-windows-tools.py tool-stage
+2026-11-12T01:11:16.4053413Z [36;1mpython scripts/fetch-windows-tools.py tool-stage[0m
+2026-11-12T01:11:16.4093179Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:16.4093538Z env:
+2026-11-12T01:11:16.4093815Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:16.4094289Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:16.4094745Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:16.4095162Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:16.4095564Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:16.4095880Z ##[endgroup]
+2026-11-12T01:11:21.4919547Z {"pinnedArchiveSha256": "20158509057316e2cc60393883e6ce1f4370e319c60af0f8a405f89eb6fce76d", "executablesVerified": 2, "metadataApiRequired": false}
+2026-11-12T01:11:21.6090254Z ##[group]Run Copy-Item tool-stage/verified/* resources/tools/win-x64/ -Force
+2026-11-12T01:11:21.6090896Z [36;1mCopy-Item tool-stage/verified/* resources/tools/win-x64/ -Force[0m
+2026-11-12T01:11:21.6091480Z [36;1m"$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append[0m
+2026-11-12T01:11:21.6092180Z [36;1m"VISIONFORGE_TOOLS=$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append[0m
+2026-11-12T01:11:21.6133262Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:21.6133615Z env:
+2026-11-12T01:11:21.6133892Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:21.6134351Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:21.6134811Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:21.6135214Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:21.6135649Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:21.6135978Z ##[endgroup]
+2026-11-12T01:11:22.0716447Z ##[group]Run npm run typecheck
+2026-11-12T01:11:22.0716790Z [36;1mnpm run typecheck[0m
+2026-11-12T01:11:22.0755989Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:22.0756339Z env:
+2026-11-12T01:11:22.0756619Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:22.0757082Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:22.0757543Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:22.0757974Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:22.0758394Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:22.0758838Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:11:22.0759202Z ##[endgroup]
+2026-11-12T01:11:22.7355948Z 
+2026-11-12T01:11:22.7356580Z > visionforge@0.1.0 typecheck
+2026-11-12T01:11:22.7357341Z > tsc --noEmit -p tsconfig.json
+2026-11-12T01:11:22.7358334Z 
+2026-11-12T01:11:25.3770776Z ##[group]Run npm test 2>&1 | Tee-Object evidence/windows-unit-tests.txt
+2026-11-12T01:11:25.3771370Z [36;1mnpm test 2>&1 | Tee-Object evidence/windows-unit-tests.txt[0m
+2026-11-12T01:11:25.3810699Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:25.3811034Z env:
+2026-11-12T01:11:25.3811302Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:25.3811782Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:25.3812243Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:25.3812647Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:25.3813063Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:25.3813501Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:11:25.3813857Z ##[endgroup]
+2026-11-12T01:11:25.9868889Z 
+2026-11-12T01:11:25.9874018Z > visionforge@0.1.0 test
+2026-11-12T01:11:25.9874826Z > npm run test:compile && node --test tests/*.test.mjs
+2026-11-12T01:11:25.9877777Z 
+2026-11-12T01:11:26.2389527Z 
+2026-11-12T01:11:26.2396977Z > visionforge@0.1.0 test:compile
+2026-11-12T01:11:26.2403302Z > tsc src/main/render.ts src/main/project-storage.ts src/main/services.ts src/main/preview.ts src/main/media-protocol.ts src/main/media-management.ts --allowJs --outDir test-build --target ES2022 --module commonjs --esModuleInterop --skipLibCheck && tsc src/renderer/src/store.ts --outDir test-store --target ES2022 --module commonjs --esModuleInterop --skipLibCheck
+2026-11-12T01:11:26.2405504Z 
+2026-11-12T01:11:28.9071131Z ✔ keyframe interpolation holds endpoints and interpolates positions (1.3724ms)
+2026-11-12T01:11:28.9072763Z ✔ fade envelope matches timeline endpoints (0.221ms)
+2026-11-12T01:11:28.9226775Z ✔ SRT round trips multiline captions (1.8436ms)
+2026-11-12T01:11:28.9229094Z ✔ SRT rejects backwards timing and malformed timestamps (0.5619ms)
+2026-11-12T01:11:28.9430493Z ✔ undo redo, branch edit, and new project history isolation (1.3604ms)
+2026-11-12T01:11:29.4159254Z ✔ batch import rolls back valid staged media when another source is corrupt (404.0535ms)
+2026-11-12T01:11:29.5188980Z ✔ invalid replacement cannot overwrite a working project media file (105.0076ms)
+2026-11-12T01:11:29.6766008Z ✔ shorter relink is rejected before overwriting media used by a longer timeline clip (160.6956ms)
+2026-11-12T01:11:29.8278092Z ✔ audio with embedded cover art imports as audio without video dimensions (146.4819ms)
+2026-11-12T01:11:29.8378266Z ✔ media protocol serves byte ranges for seeking and rejects invalid ranges (59.6273ms)
+2026-11-12T01:11:29.8382113Z ✔ storyboard retains original narration and matches imported footage (1.9714ms)
+2026-11-12T01:11:29.8383930Z ✔ reviewed plans reject unavailable visuals and invalid times (0.5269ms)
+2026-11-12T01:11:30.8712977Z ✔ single compositor includes embedded audio, leading silence, delayed narration and audio-only tail (650.5372ms)
+2026-11-12T01:11:30.8714401Z ✔ preview/export decoded frames match and edits invalidate cached movie (1103.4491ms)
+2026-11-12T01:11:31.2605340Z ✔ audio-only timeline renders black picture and mute removes embedded sound (388.6461ms)
+2026-11-12T01:11:31.2607106Z ﹣ renderer rejects symlink media escaping project before publishing (0.2256ms) # Native reparse-point fixture requires Windows privilege setup
+2026-11-12T01:11:31.4924182Z ✔ interrupted in-flight render leaves previous output intact and removes partial files (231.9727ms)
+2026-11-12T01:11:31.5874825Z ✔ export cannot overwrite project data or imported media (95.1582ms)
+2026-11-12T01:11:32.0316563Z ✔ caption rendering works in a project folder containing spaces and an apostrophe (443.9678ms)
+2026-11-12T01:11:32.3155859Z ✔ a2x speed change preserves narration pitch while shortening duration (283.8126ms)
+2026-11-12T01:11:32.4094394Z ✔ preview and export reject an external media-folder symlink or Windows junction (93.7662ms)
+2026-11-12T01:11:32.4189714Z ✔ serialized saves preserve submission order and reject invalid documents without changing saved data (132.5231ms)
+2026-11-12T01:11:32.4193386Z ✔ autosave recovery only offers newer validated documents with the same project identity (56.2849ms)
+2026-11-12T01:11:32.4195168Z ✔ force-killing a saving process leaves a complete saved document and permits a subsequent save (93.6185ms)
+2026-11-12T01:11:32.4197400Z ✔ a damaged saved document can recover from a validated autosave without replacing either file (14.4831ms)
+2026-11-12T01:11:32.4199292Z ✔ a disk-full failure during temporary-file writing preserves the completed project and cleans the partial write (11.2034ms)
+2026-11-12T01:11:32.4200666Z ✔ valid document round trips through JSON (3.4065ms)
+2026-11-12T01:11:32.4202010Z ✔ rejects path traversal (0.4838ms)
+2026-11-12T01:11:32.4202676Z ✔ rejects invalid fps (0.2002ms)
+2026-11-12T01:11:32.4206229Z ✔ rejects odd dimensions (0.2091ms)
+2026-11-12T01:11:32.4213186Z ✔ rejects negative source trim (0.2477ms)
+2026-11-12T01:11:32.4213939Z ✔ rejects duplicate media IDs (0.2105ms)
+2026-11-12T01:11:32.4214931Z ✔ rejects missing media (0.2094ms)
+2026-11-12T01:11:32.4215705Z ✔ rejects source overrun (0.2039ms)
+2026-11-12T01:11:32.4216609Z ✔ rejects duplicate clips (0.3088ms)
+2026-11-12T01:11:32.4217521Z ✔ split preserves source and timeline continuity (0.7245ms)
+2026-11-12T01:11:32.4218593Z ✔ split rejects boundaries (0.2344ms)
+2026-11-12T01:11:32.4219062Z {
+2026-11-12T01:11:32.4220390Z   "duration": "2.500000",
+2026-11-12T01:11:32.4232528Z   "streams": [
+2026-11-12T01:11:32.4232903Z     {
+2026-11-12T01:11:32.4233228Z       "type": "video",
+2026-11-12T01:11:32.4233649Z       "codec": "h264"
+2026-11-12T01:11:32.4234318Z     },
+2026-11-12T01:11:32.4234669Z     {
+2026-11-12T01:11:32.4234958Z       "type": "audio",
+2026-11-12T01:11:32.4235305Z       "codec": "aac"
+2026-11-12T01:11:32.4235651Z     },
+2026-11-12T01:11:32.4235943Z     {
+2026-11-12T01:11:32.4236516Z       "type": "subtitle",
+2026-11-12T01:11:32.4236928Z       "codec": "mov_text"
+2026-11-12T01:11:32.4237505Z     }
+2026-11-12T01:11:32.4237950Z   ],
+2026-11-12T01:11:32.4238808Z   "messages": [
+2026-11-12T01:11:32.4239406Z     "Rendering timeline",
+2026-11-12T01:11:32.4240261Z     "Rendering timeline 100%",
+2026-11-12T01:11:32.4240862Z     "Rendering captions",
+2026-11-12T01:11:32.4241291Z     "Rendering captions 100%",
+2026-11-12T01:11:32.4241940Z     "Export complete"
+2026-11-12T01:11:32.4242469Z   ]
+2026-11-12T01:11:32.4242752Z }
+2026-11-12T01:11:32.4243890Z ✔ application renderer exports image, gap, and two offset audio layers (1047.1206ms)
+2026-11-12T01:11:32.4245321Z ✔ service configuration rejects unsafe endpoints and embedded credentials (1.8881ms)
+2026-11-12T01:11:32.4247005Z ✔ explicit service requests validate plans, inspect speech and require timed SRT (275.0292ms)
+2026-11-12T01:11:32.4248676Z ✔ caption service rejects an external media-folder junction before transmitting bytes (9.3472ms)
+2026-11-12T01:11:32.4250063Z ✔ duration includes audio tails and captions, rounded up to a complete frame (1.4657ms)
+2026-11-12T01:11:32.4251247Z ✔ split preserves animation, speed, source position and fade envelopes (1.9634ms)
+2026-11-12T01:11:32.4252426Z ✔ nested slices retain original envelope and interpolate new keyframe boundaries (0.405ms)
+2026-11-12T01:11:32.4252935Z ℹ tests 44
+2026-11-12T01:11:32.4253139Z ℹ suites 0
+2026-11-12T01:11:32.4253341Z ℹ pass 43
+2026-11-12T01:11:32.4253528Z ℹ fail 0
+2026-11-12T01:11:32.4253725Z ℹ cancelled 0
+2026-11-12T01:11:32.4483947Z ℹ skipped 1
+2026-11-12T01:11:32.4484352Z ℹ todo 0
+2026-11-12T01:11:32.4486707Z ℹ duration_ms 3597.0748
+2026-11-12T01:11:32.5025640Z ##[group]Run npm run build
+2026-11-12T01:11:32.5025968Z [36;1mnpm run build[0m
+2026-11-12T01:11:32.5064728Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:32.5065078Z env:
+2026-11-12T01:11:32.5065380Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:32.5065846Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:32.5066295Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:32.5066697Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:32.5067098Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:32.5067548Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:11:32.5067907Z ##[endgroup]
+2026-11-12T01:11:33.1009079Z 
+2026-11-12T01:11:33.1009710Z > visionforge@0.1.0 build
+2026-11-12T01:11:33.1010240Z > electron-vite build
+2026-11-12T01:11:33.1010578Z 
+2026-11-12T01:11:33.6729516Z [36mvite v6.4.6 [32mbuilding SSR bundle for production...[36m[39m
+2026-11-12T01:11:33.7314135Z transforming...
+2026-11-12T01:11:33.8577426Z [32m✓[39m 14 modules transformed.
+2026-11-12T01:11:33.8929703Z rendering chunks...
+2026-11-12T01:11:33.8969497Z [2mout/main/[22m[36mindex.js  [39m[1m[2m44.56 kB[22m[1m[22m
+2026-11-12T01:11:33.8971287Z [32m✓ built in 200ms[39m
+2026-11-12T01:11:33.9012098Z [36mvite v6.4.6 [32mbuilding SSR bundle for production...[36m[39m
+2026-11-12T01:11:33.9051411Z transforming...
+2026-11-12T01:11:33.9076060Z [32m✓[39m 1 modules transformed.
+2026-11-12T01:11:33.9114578Z rendering chunks...
+2026-11-12T01:11:33.9124919Z [2mout/preload/[22m[36mindex.js  [39m[1m[2m1.74 kB[22m[1m[22m
+2026-11-12T01:11:33.9125959Z [32m✓ built in 11ms[39m
+2026-11-12T01:11:33.9173685Z [36mvite v6.4.6 [32mbuilding for production...[36m[39m
+2026-11-12T01:11:33.9381348Z transforming...
+2026-11-12T01:11:35.8791597Z [32m✓[39m 1588 modules transformed.
+2026-11-12T01:11:35.9563438Z rendering chunks...
+2026-11-12T01:11:35.9629612Z [2m../../out/renderer/[22m[32mindex.html                 [39m[1m[2m  0.36 kB[22m[1m[22m
+2026-11-12T01:11:35.9630869Z [2m../../out/renderer/[22m[35massets/index-AwFfBdi5.css  [39m[1m[2m  7.06 kB[22m[1m[22m
+2026-11-12T01:11:35.9632639Z [2m../../out/renderer/[22m[36massets/index-CxMckCnZ.js   [39m[1m[2m304.11 kB[22m[1m[22m
+2026-11-12T01:11:35.9633664Z [32m✓ built in 2.05s[39m
+2026-11-12T01:11:36.0531554Z ##[group]Run Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
+2026-11-12T01:11:36.0532450Z [36;1mRemove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue[0m
+2026-11-12T01:11:36.0533044Z [36;1mnode tests/parity-desktop.cjs[0m
+2026-11-12T01:11:36.0572095Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:36.0572443Z env:
+2026-11-12T01:11:36.0572716Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:36.0573203Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:36.0573660Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:36.0574079Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:36.0574482Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:36.0574937Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:11:36.0575301Z ##[endgroup]
+2026-11-12T01:11:36.7965829Z (node:5488) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-11-12T01:11:36.7967680Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T01:11:38.1489505Z create-import-offset-audio-save
+2026-11-12T01:11:40.0212309Z single-clock-rendered-playback-and-seek-into-audio-tail
+2026-11-12T01:11:41.1738072Z repeated-play-pause-seek-retains-requested-position
+2026-11-12T01:11:43.1104110Z desktop-preview-export-105-decoded-frames-identical
+2026-11-12T01:11:43.3478097Z visual-end-trim-and-undo
+2026-11-12T01:11:43.3618485Z timeline-edit-invalidates-preview
+2026-11-12T01:11:43.4593489Z edit-and-delete-keyframe-controls
+2026-11-12T01:11:43.6903627Z editable-overlay-and-undo
+2026-11-12T01:11:43.8220295Z save-and-reopen-edited-project
+2026-11-12T01:11:43.9471680Z short-relink-rejected-with-original-media-preserved
+2026-11-12T01:11:44.0403615Z missing-media-relinked-through-validated-ipc
+2026-11-12T01:11:46.2071472Z newer-autosave-recovered-through-application
+2026-11-12T01:11:46.3669873Z damaged-saved-file-recovered-and-restored-through-application
+2026-11-12T01:11:46.5871188Z ##[group]Run if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-source-desktop.json }
+2026-11-12T01:11:46.5872293Z [36;1mif (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-source-desktop.json }[0m
+2026-11-12T01:11:46.5912383Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:46.5912723Z env:
+2026-11-12T01:11:46.5913149Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:46.5913606Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:46.5914069Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:46.5914473Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:46.5914870Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:46.5915319Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:11:46.5915666Z ##[endgroup]
+2026-11-12T01:11:46.9243069Z ##[group]Run node scripts/build-windows-native.cjs
+2026-11-12T01:11:46.9243761Z [36;1mnode scripts/build-windows-native.cjs[0m
+2026-11-12T01:11:46.9284361Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:11:46.9284733Z env:
+2026-11-12T01:11:46.9285011Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:46.9285501Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:11:46.9285955Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:46.9286360Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:46.9286769Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:11:46.9287219Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:11:46.9287585Z ##[endgroup]
+2026-11-12T01:11:47.8042184Z   • electron-builder  version=26.18.0 os=10.0.20348
+2026-11-12T01:11:47.8138544Z   • loaded configuration  file=D:\a\VisionForge\VisionForge\electron-builder.yml
+2026-11-12T01:11:48.6424805Z   • executing @electron/rebuild  electronVersion=45.3.0 arch=x64 buildFromSource=false workspaceRoot=D:\a\VisionForge\VisionForge projectDir=./ appDir=./
+2026-11-12T01:11:48.6426916Z   • installing native dependencies  arch=x64
+2026-11-12T01:11:48.8537181Z   • completed installing native dependencies
+2026-11-12T01:11:48.8587315Z   • packaging       platform=win32 arch=x64 electron=45.3.0 appOutDir=release\win-unpacked
+2026-11-12T01:11:48.9401948Z   • downloaded      label=electron progress=100%
+2026-11-12T01:11:52.6614990Z   • downloaded electron zip extracted successfully  output=D:\a\VisionForge\VisionForge\release\win-unpacked
+2026-11-12T01:11:52.6796107Z   • searching for node modules  pm=npm searchDir=D:\a\VisionForge\VisionForge
+2026-11-12T01:11:56.0879095Z   • duplicate dependency references  dependencies=["react@18.3.1","react@18.3.1","loose-envify@1.4.0","loose-envify@1.4.0","react@18.3.1"]
+2026-11-12T01:12:05.9636097Z   • updating asar integrity executable resource  executablePath=release\win-unpacked\VisionForge.exe
+2026-11-12T01:12:06.3294125Z   • file signing skipped via signExecutable configuration  file=release\win-unpacked\VisionForge.exe
+2026-11-12T01:12:06.3306538Z   • building        target=nsis file=release\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe archs=x64 oneClick=false perMachine=false
+2026-11-12T01:12:06.4247429Z   • downloaded      label=7zip-win-x64.tar.gz progress=100%
+2026-11-12T01:13:11.8999407Z   • downloaded      label=nsis-3.0.4.1.7z progress=100%
+2026-11-12T01:13:13.1344769Z   • downloaded      label=nsis-resources-3.4.1.7z progress=100%
+2026-11-12T01:13:14.9738868Z   • file signing skipped via signExecutable configuration  file=release\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.__uninstaller.exe
+2026-11-12T01:13:16.8760995Z   • file signing skipped via signExecutable configuration  file=release\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe
+2026-11-12T01:13:16.8765714Z   • building block map  blockMapFile=release\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe.blockmap
+2026-11-12T01:13:25.3755081Z ##[group]Run Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
+2026-11-12T01:13:25.3755868Z [36;1mRemove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue[0m
+2026-11-12T01:13:25.3757338Z [36;1m$env:VF_TEST_EXECUTABLE = "$pwd\release\win-unpacked\VisionForge.exe"[0m
+2026-11-12T01:13:25.3757760Z [36;1mnode tests/parity-desktop.cjs[0m
+2026-11-12T01:13:25.3799298Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:13:25.3799642Z env:
+2026-11-12T01:13:25.3799917Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:25.3800408Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:13:25.3800883Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:25.3801293Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:25.3801745Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:25.3802189Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:13:25.3802562Z ##[endgroup]
+2026-11-12T01:13:26.1719625Z (node:1908) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-11-12T01:13:26.1721548Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T01:13:27.0081629Z create-import-offset-audio-save
+2026-11-12T01:13:28.7060836Z single-clock-rendered-playback-and-seek-into-audio-tail
+2026-11-12T01:13:29.8418241Z repeated-play-pause-seek-retains-requested-position
+2026-11-12T01:13:31.5826513Z desktop-preview-export-105-decoded-frames-identical
+2026-11-12T01:13:31.8139950Z visual-end-trim-and-undo
+2026-11-12T01:13:31.8268506Z timeline-edit-invalidates-preview
+2026-11-12T01:13:31.9095310Z edit-and-delete-keyframe-controls
+2026-11-12T01:13:32.0954188Z editable-overlay-and-undo
+2026-11-12T01:13:32.2124864Z save-and-reopen-edited-project
+2026-11-12T01:13:32.3364525Z short-relink-rejected-with-original-media-preserved
+2026-11-12T01:13:32.4299605Z missing-media-relinked-through-validated-ipc
+2026-11-12T01:13:34.5799858Z newer-autosave-recovered-through-application
+2026-11-12T01:13:34.7267307Z damaged-saved-file-recovered-and-restored-through-application
+2026-11-12T01:13:34.8529945Z ##[group]Run if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-packaged-desktop.json }
+2026-11-12T01:13:34.8531073Z [36;1mif (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-packaged-desktop.json }[0m
+2026-11-12T01:13:34.8570169Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:13:34.8570528Z env:
+2026-11-12T01:13:34.8570799Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:34.8571269Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:13:34.8571739Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:34.8572152Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:34.8572581Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:34.8573043Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:13:34.8573421Z ##[endgroup]
+2026-11-12T01:13:35.1875797Z ##[group]Run ./scripts/windows-install-check.ps1 install
+2026-11-12T01:13:35.1876301Z [36;1m./scripts/windows-install-check.ps1 install[0m
+2026-11-12T01:13:35.1915387Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:13:35.1915746Z env:
+2026-11-12T01:13:35.1916019Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:35.1916497Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:13:35.1916965Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:35.1917383Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:35.1917818Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:35.1918434Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:13:35.1918806Z ##[endgroup]
+2026-11-12T01:13:53.2989915Z ##[group]Run Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
+2026-11-12T01:13:53.2990651Z [36;1mRemove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue[0m
+2026-11-12T01:13:53.2991114Z [36;1mnode tests/parity-desktop.cjs[0m
+2026-11-12T01:13:53.3030729Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:13:53.3031090Z env:
+2026-11-12T01:13:53.3031363Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:53.3031842Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:13:53.3032319Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:53.3032743Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:53.3033148Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:13:53.3033632Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:13:53.3034096Z   VF_TEST_EXECUTABLE: D:\a\_temp\VisionForgeAcceptance\VisionForge.exe
+2026-11-12T01:13:53.3034443Z ##[endgroup]
+2026-11-12T01:13:54.0472735Z (node:864) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-11-12T01:13:54.0474638Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T01:13:55.0095334Z create-import-offset-audio-save
+2026-11-12T01:13:56.7692495Z single-clock-rendered-playback-and-seek-into-audio-tail
+2026-11-12T01:14:27.0612199Z page.waitForFunction: Timeout 30000ms exceeded.
+2026-11-12T01:14:27.0613196Z     at D:\a\VisionForge\VisionForge\tests\parity-desktop.cjs:5:462 {
+2026-11-12T01:14:27.0613600Z   name: 'TimeoutError'
+2026-11-12T01:14:27.0613870Z }
+2026-11-12T01:14:27.0961189Z ##[error]Process completed with exit code 1.
+2026-11-12T01:14:27.1098283Z ##[group]Run if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-installed-desktop.json }
+2026-11-12T01:14:27.1100024Z [36;1mif (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-installed-desktop.json }[0m
+2026-11-12T01:14:27.1139479Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:14:27.1139824Z env:
+2026-11-12T01:14:27.1140093Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:27.1140570Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:14:27.1141052Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:27.1141459Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:27.1141873Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:27.1142379Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:14:27.1142848Z   VF_TEST_EXECUTABLE: D:\a\_temp\VisionForgeAcceptance\VisionForge.exe
+2026-11-12T01:14:27.1143190Z ##[endgroup]
+2026-11-12T01:14:27.4394162Z ##[group]Run ./scripts/windows-install-check.ps1 uninstall
+2026-11-12T01:14:27.4394651Z [36;1m./scripts/windows-install-check.ps1 uninstall[0m
+2026-11-12T01:14:27.4434068Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T01:14:27.4434412Z env:
+2026-11-12T01:14:27.4434669Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:27.4435145Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:14:27.4435611Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:27.4436019Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:27.4436414Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:27.4437008Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:14:27.4437481Z   VF_TEST_EXECUTABLE: D:\a\_temp\VisionForgeAcceptance\VisionForge.exe
+2026-11-12T01:14:27.4437856Z ##[endgroup]
+2026-11-12T01:14:29.2079089Z ##[group]Run actions/upload-artifact@v4
+2026-11-12T01:14:29.2079439Z with:
+2026-11-12T01:14:29.2079647Z   name: windows-verification-evidence
+2026-11-12T01:14:29.2080299Z   path: evidence/*.json
+evidence/windows-unit-tests.txt
+tool-stage/verified/MANIFEST.json
+release/*.exe
+release/*.yml
+
+2026-11-12T01:14:29.2080855Z   retention-days: 14
+2026-11-12T01:14:29.2081061Z   if-no-files-found: warn
+2026-11-12T01:14:29.2081272Z   compression-level: 6
+2026-11-12T01:14:29.2081469Z   overwrite: false
+2026-11-12T01:14:29.2081666Z   include-hidden-files: false
+2026-11-12T01:14:29.2081875Z env:
+2026-11-12T01:14:29.2082128Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:29.2082608Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T01:14:29.2083058Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:29.2083453Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:29.2083900Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T01:14:29.2084342Z   VISIONFORGE_TOOLS: D:\a\VisionForge\VisionForge\resources\tools\win-x64
+2026-11-12T01:14:29.2084802Z   VF_TEST_EXECUTABLE: D:\a\_temp\VisionForgeAcceptance\VisionForge.exe
+2026-11-12T01:14:29.2085153Z ##[endgroup]
+2026-11-12T01:14:29.3876696Z (node:8004) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T01:14:29.3877499Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T01:14:29.4022856Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-12T01:14:29.4026923Z The least common ancestor is D:\a\VisionForge\VisionForge. This will be the root directory of the artifact
+2026-11-12T01:14:29.4027817Z With the provided path, there will be 14 files uploaded
+2026-11-12T01:14:29.4032574Z Artifact name is valid!
+2026-11-12T01:14:29.4035258Z Root directory input is valid!
+2026-11-12T01:14:29.6509099Z Beginning upload of artifact content to blob storage
+2026-11-12T01:14:29.9352422Z (node:8004) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-12T01:14:30.3683311Z Uploaded bytes 8388608
+2026-11-12T01:14:30.6199239Z Uploaded bytes 16777216
+2026-11-12T01:14:30.6222929Z Uploaded bytes 25165824
+2026-11-12T01:14:30.8763719Z Uploaded bytes 33554432
+2026-11-12T01:14:31.0784168Z Uploaded bytes 41943040
+2026-11-12T01:14:31.3322435Z Uploaded bytes 50331648
+2026-11-12T01:14:31.5830830Z Uploaded bytes 58720256
+2026-11-12T01:14:31.8711764Z Uploaded bytes 67108864
+2026-11-12T01:14:32.1259082Z Uploaded bytes 75497472
+2026-11-12T01:14:32.3799642Z Uploaded bytes 83886080
+2026-11-12T01:14:32.6427660Z Uploaded bytes 92274688
+2026-11-12T01:14:32.9194351Z Uploaded bytes 100663296
+2026-11-12T01:14:33.1637311Z Uploaded bytes 109051904
+2026-11-12T01:14:33.4032763Z Uploaded bytes 117440512
+2026-11-12T01:14:33.6738751Z Uploaded bytes 125829120
+2026-11-12T01:14:33.9486494Z Uploaded bytes 134217728
+2026-11-12T01:14:34.1536503Z Uploaded bytes 142606336
+2026-11-12T01:14:34.3577719Z Uploaded bytes 150994944
+2026-11-12T01:14:34.6545842Z Uploaded bytes 159383552
+2026-11-12T01:14:34.8591792Z Uploaded bytes 167772160
+2026-11-12T01:14:35.0941109Z Uploaded bytes 176160768
+2026-11-12T01:14:35.3411540Z Uploaded bytes 184549376
+2026-11-12T01:14:35.6860155Z Uploaded bytes 192937984
+2026-11-12T01:14:35.9771566Z Uploaded bytes 201326592
+2026-11-12T01:14:36.0929172Z Uploaded bytes 209715200
+2026-11-12T01:14:36.3192173Z Uploaded bytes 218103808
+2026-11-12T01:14:36.3823273Z Uploaded bytes 220983333
+2026-11-12T01:14:36.4132883Z Finished uploading artifact content to blob storage!
+2026-11-12T01:14:36.4140319Z SHA256 digest of uploaded artifact zip is 215a19341d36186acd415730ec856a382a42724fd60ed7c35bd17343fb9a9b4b
+2026-11-12T01:14:36.4141451Z Finalizing artifact upload
+2026-11-12T01:14:36.8385025Z Artifact windows-verification-evidence.zip successfully finalized. Artifact ID 13904994940
+2026-11-12T01:14:36.8386353Z Artifact windows-verification-evidence has been successfully uploaded! Final size is 220983333 bytes. Artifact ID is 13904994940
+2026-11-12T01:14:36.8397867Z Artifact download URL: https://github.com/cent247/VisionForge/actions/runs/43132651605/artifacts/13904994940
+2026-11-12T01:14:36.8726950Z Post job cleanup.
+2026-11-12T01:14:37.0606663Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-12T01:14:37.0872160Z git version 2.56.0.windows.4
+2026-11-12T01:14:37.0939501Z Temporarily overriding HOME='D:\a\_temp\cb974599-b8e2-4bcc-ac09-c13e49d88263' before making global git config changes
+2026-11-12T01:14:37.0940999Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T01:14:37.0952680Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VisionForge\VisionForge
+2026-11-12T01:14:37.1253470Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T01:14:37.1541969Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-12T01:14:37.7153566Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T01:14:37.7406885Z http.https://github.com/.extraheader
+2026-11-12T01:14:37.7440502Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2026-11-12T01:14:37.7723001Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-12T01:14:38.2194610Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T01:14:38.2481063Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-12T01:14:38.7316483Z Cleaning up orphan processes
+2026-11-12T01:14:38.7616675Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

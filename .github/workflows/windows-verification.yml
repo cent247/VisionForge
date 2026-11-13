@@ -1,0 +1,148 @@
+name: Windows source and packaged-app verification
+on:
+  push:
+    branches: [main, visionforge-development]
+    paths:
+      - '.gitattributes'
+      - 'src/**'
+      - 'tests/**'
+      - '!tests/windows-documentary.cjs'
+      - 'package*.json'
+      - 'resources/**'
+      - 'build/**'
+      - 'electron*'
+      - 'scripts/build-windows-native.cjs'
+      - 'scripts/fetch-windows-tools.py'
+      - 'scripts/recover-pinned-windows-tools.cjs'
+      - 'scripts/windows-install-check.ps1'
+      - '.github/workflows/windows-verification.yml' 
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  verify:
+    name: ${{ matrix.target }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - target: server-2022-x64
+            runner: windows-2022
+          - target: windows-11-arm-x64-emulated
+            runner: windows-11-arm
+    runs-on: ${{ matrix.runner }}
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          architecture: x64
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Create evidence directory
+        run: New-Item -ItemType Directory -Force evidence
+      - name: Record actual Windows platform
+        shell: pwsh
+        run: |
+          @{ operatingSystem=(Get-CimInstance Win32_OperatingSystem).Caption; version=[Environment]::OSVersion.Version.ToString(); hostArchitecture=[Runtime.InteropServices.RuntimeInformation]::OSArchitecture.ToString(); applicationArchitecture='x64'; runner='${{ matrix.runner }}' } | ConvertTo-Json | Set-Content evidence/windows-platform.json
+      - run: npm ci
+      - name: Record dependency audit
+        run: npm audit --json | Out-File evidence/windows-dependency-audit.json -Encoding utf8
+      - name: Install Electron runtime explicitly
+        run: node node_modules/electron/install.js
+      - name: Download retained installer containing pinned media binaries
+        uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 43196669781
+          name: windows-verification-evidence-server-2022-x64
+          path: recorded-tool-candidate
+      - name: Recover and verify exact Windows media binaries
+        shell: pwsh
+        run: |
+          $installer = Get-ChildItem recorded-tool-candidate/release -Filter '*.exe' | Select-Object -First 1
+          if (!$installer) { throw 'Retained installer unavailable' }
+          node scripts/recover-pinned-windows-tools.cjs $installer.FullName tool-stage
+      - name: Configure media binaries
+        shell: pwsh
+        run: |
+          Copy-Item tool-stage/verified/* resources/tools/win-x64/ -Force
+          "$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          "VISIONFORGE_TOOLS=$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+      - name: Verify bundled runtime notices
+        run: node scripts/collect-runtime-licenses.cjs --check
+      - run: npm run typecheck
+      - name: Automated media and storage checks
+        run: npm test 2>&1 | Tee-Object evidence/windows-unit-tests.txt
+      - run: npm run build
+      - name: Source Electron desktop workflow
+        id: source_desktop
+        shell: pwsh
+        run: |
+          Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
+          node tests/parity-desktop.cjs
+      - name: Preserve source desktop evidence
+        if: always()
+        shell: pwsh
+        run: |
+          if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-source-desktop.json }
+      - name: Build internal Windows installer and unpacked application
+        run: node scripts/build-windows-native.cjs
+      - name: Packaged executable desktop workflow
+        id: packaged_desktop
+        shell: pwsh
+        run: |
+          Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
+          $env:VF_TEST_EXECUTABLE = "$pwd\release\win-unpacked\VisionForge.exe"
+          node tests/parity-desktop.cjs
+      - name: Preserve packaged desktop evidence
+        if: always() && steps.packaged_desktop.outcome != 'skipped'
+        shell: pwsh
+        run: |
+          if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-packaged-desktop.json }
+      - name: Install internal candidate silently
+        id: install_check
+        run: ./scripts/windows-install-check.ps1 install
+      - name: Installed executable desktop workflow
+        id: installed_desktop
+        shell: pwsh
+        run: |
+          Remove-Item evidence/desktop-recovery.json -ErrorAction SilentlyContinue
+          node tests/parity-desktop.cjs
+      - name: Installed security regression
+        shell: pwsh
+        run: |
+          node tests/security-desktop.cjs
+          $legal = Join-Path (Split-Path $env:VF_TEST_EXECUTABLE) 'resources/legal'
+          if (!(Test-Path "$legal/runtime-dependencies.json")) { throw 'Packaged runtime notices missing' }
+          node scripts/check-packaged-licenses.cjs $legal
+      - name: Installed keyboard and stock UI regressions
+        shell: pwsh
+        run: |
+          node tests/startup-desktop.cjs
+          node tests/keyboard-desktop.cjs
+          node tests/stock-desktop.cjs
+      - name: Preserve installed desktop evidence
+        if: always() && steps.installed_desktop.outcome != 'skipped'
+        shell: pwsh
+        run: |
+          if (Test-Path evidence/desktop-recovery.json) { Copy-Item evidence/desktop-recovery.json evidence/windows-installed-desktop.json }
+      - name: Uninstall internal candidate
+        if: always() && steps.install_check.outcome == 'success'
+        run: ./scripts/windows-install-check.ps1 uninstall
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-verification-evidence-${{ matrix.target }}
+          path: |
+            evidence/*.json
+            evidence/windows-unit-tests.txt
+            tool-stage/verified/MANIFEST.json
+            release/*.exe
+            release/*.yml
+          retention-days: 14
+

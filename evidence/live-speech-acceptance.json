@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "test": "Real Kokoro ONNX inference through requestSpeech and transactional media import",
+  "at": "2026-11-12T21:12:12.099Z",
+  "requests": 1,
+  "elapsedSeconds": 7.244,
+  "durationSeconds": 7.944,
+  "outputSha256": "16998bee021bb43bcb88a9bf553257c89ab9f449ecff0bd993366898ff0d6571",
+  "models": [
+    {
+      "name": "kokoro-v1.0.onnx",
+      "bytes": 325505369,
+      "sha256": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a"
+    },
+    {
+      "name": "voices-v1.0.bin",
+      "bytes": 28214398,
+      "sha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d"
+    }
+  ],
+  "limitations": [
+    "Linux service integration only; no Windows client inference claim",
+    "No listening assessment",
+    "External AI and authenticated Pexels not tested"
+  ],
+  "kokoroOnnxVersion": "0.6.1",
+  "initialFailure": "kokoro-onnx 0.4.9 used int32 speed for a model expecting float; 0.6.1 passed"
+}

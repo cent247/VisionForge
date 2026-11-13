@@ -1,0 +1,11 @@
+const {_electron}=require('playwright-core');const {spawn}=require('node:child_process');const fs=require('node:fs');const path=require('node:path');const net=require('node:net');
+const delay=ms=>new Promise(r=>setTimeout(r,ms));
+async function launchDesktop(){let server,log;const env={...process.env};
+ if(process.platform==='win32'&&process.env.VF_TEST_EXECUTABLE){
+  const windows=process.env.SystemRoot;if(!windows)throw new Error('SystemRoot is required for isolated Windows launch');
+  for(const key of Object.keys(env))if(['PATH','NODE_PATH','NODE_OPTIONS','PYTHONPATH','PYTHONHOME','ELECTRON_RENDERER_URL','ELECTRON_RUN_AS_NODE','VISIONFORGE_TOOLS','VISIONFORGE_FONTS'].includes(key.toUpperCase()))delete env[key];
+  env.Path=path.join(windows,'System32')+';'+windows;
+ }
+ if(process.platform==='linux'&&!env.DISPLAY){const port=await new Promise((resolve,reject)=>{const s=net.createServer();s.on('error',reject);s.listen(0,'127.0.0.1',()=>{const port=s.address().port;s.close(()=>resolve(port));});});const display=port-6000;log=fs.openSync('evidence/desktop-recovery-xorg.log','a');server=spawn('/usr/bin/Xorg',[`:${display}`,'-config',path.join(__dirname,'xorg.conf'),'-logfile',path.resolve('evidence/desktop-recovery-xorg-server.log'),'-nolisten','unix','-nolisten','local','-listen','tcp','-ac'],{stdio:['ignore',log,log]});env.DISPLAY=`127.0.0.1:${display}`;await delay(1500);}
+ try{const executablePath=process.env.VF_TEST_EXECUTABLE??(process.platform==='win32'?path.resolve('node_modules/electron/dist/electron.exe'):path.resolve('node_modules/electron/dist/electron'));const app=await _electron.launch({executablePath,args:process.env.VF_TEST_EXECUTABLE?[]:['--no-sandbox','--disable-gpu',path.resolve('.')],env,timeout:30000});const page=await app.firstWindow();return {app,page,close:async()=>{await app.close();server?.kill();if(log!==undefined)fs.closeSync(log);}};}catch(e){server?.kill();if(log!==undefined)fs.closeSync(log);throw e;}}
+module.exports={launchDesktop};

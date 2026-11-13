@@ -1,0 +1,68 @@
+{
+  "mediaGuidelines": "https://www.nasa.gov/nasa-brand-center/images-and-media/",
+  "records": [
+    {
+      "name": "ground-stars.mp4",
+      "download": "https://images-assets.nasa.gov/video/Marshall%20Night%20Stars/Marshall%20Night%20Stars~large.mp4",
+      "credit": "NASA/MSFC; James Bilbrey, Joe Kuner",
+      "source": "https://images-assets.nasa.gov/video/Marshall%20Night%20Stars/collection.json",
+      "bytes": 25137220,
+      "sha256": "b5185bf324d51745eed38fa68d8827e6b0548c03a17463a006ee793f075b869a",
+      "terms": "NASA media guidelines with third-party exceptions and no endorsement"
+    },
+    {
+      "name": "airglow-broll.mp4",
+      "download": "https://images-assets.nasa.gov/video/GSFC_20180124_m12825_ISS_Airglow/GSFC_20180124_m12825_ISS_Airglow~orig.mp4",
+      "credit": "NASA/GSFC; Joy Ng et al.",
+      "source": "https://images-assets.nasa.gov/video/GSFC_20180124_m12825_ISS_Airglow/collection.json",
+      "bytes": 53559266,
+      "sha256": "67b9766197f0674c10f9f0e22bfebea7f3d4ce87bfd079c403022b99c0c7c714",
+      "terms": "NASA media guidelines with third-party exceptions and no endorsement"
+    },
+    {
+      "name": "night-lights.mp4",
+      "download": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/GSFC_20170412_Lights_m12573_EarthAtNight~large.mp4",
+      "credit": "NASA/GSFC; Kathryn Mersmann, Joshua Stevens, Mike Carlowicz, Kate Ramsayer, Miguel Roman",
+      "source": "https://images-assets.nasa.gov/video/GSFC_20170412_Lights_m12573_EarthAtNight/collection.json",
+      "bytes": 49735282,
+      "sha256": "e80afbba827df3062f093a96894f1b35afc591b7c293d07791eb9b4a95faeb9d",
+      "terms": "NASA media guidelines with third-party exceptions and no endorsement"
+    },
+    {
+      "name": "five-minutes-orbit.mp4",
+      "download": "https://assets.science.nasa.gov/content/dam/science/esd/eo/images/imagerecords/154000/154728/iss073e311235_moon_anim.mp4",
+      "credit": "NASA/JSC",
+      "source": "https://science.nasa.gov/earth/earth-observatory/five-minutes-in-orbit-154728/",
+      "bytes": 104930762,
+      "sha256": "7cd2ebc7b12d3c8d8370ba18ed02288cf8b55999cf735cc4d68cb54dd0ad9e6c",
+      "terms": "NASA media guidelines with third-party exceptions and no endorsement"
+    },
+    {
+      "name": "earth-expedition42.mp4",
+      "download": "https://assets.science.nasa.gov/content/dam/science/psd/lunar-science/2023/09/jsc2015m000273_orig.mp4",
+      "credit": "NASA/JSC",
+      "source": "https://science.nasa.gov/resource/iss-expedition-42-time-lapse-video-of-earth/",
+      "bytes": 7367057,
+      "sha256": "1eb2ea344f16a0f3394da8a14276004422b07891836d7336922cfb3eb0d10f78",
+      "terms": "NASA media guidelines with third-party exceptions and no endorsement"
+    },
+    {
+      "name": "kokoro-v1.0.onnx",
+      "download": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/kokoro-v1.0.onnx",
+      "credit": "Kokoro-82M Apache2.0",
+      "source": "https://github.com/thewh1teagle/kokoro-onnx",
+      "bytes": 325505369,
+      "sha256": "beb0d1848dee9a49da392cc3df26958d46cfa35d321edf434f52949153f0df3a",
+      "terms": "Production-only model, not bundled in application"
+    },
+    {
+      "name": "voices-v1.0.bin",
+      "download": "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.1/voices-v1.0.bin",
+      "credit": "Kokoro-82M Apache2.0",
+      "source": "https://github.com/thewh1teagle/kokoro-onnx",
+      "bytes": 28214398,
+      "sha256": "bca610b8308e8d99f32e6fe4197e7ec01679264efed0cac9140fe9c29f1fbf7d",
+      "terms": "Production-only model, not bundled in application"
+    }
+  ]
+}

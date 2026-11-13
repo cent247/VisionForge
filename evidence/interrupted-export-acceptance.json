@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "platform": "linux",
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24
+  },
+  "durationSeconds": 60,
+  "checks": [
+    {
+      "stage": "timeline",
+      "progressPercent": 57,
+      "elapsedSeconds": 4.183,
+      "previousOutputPreserved": true,
+      "stagingRemoved": true
+    },
+    {
+      "stage": "captions",
+      "progressPercent": 17,
+      "elapsedSeconds": 9.299,
+      "previousOutputPreserved": true,
+      "stagingRemoved": true
+    }
+  ],
+  "retryFullyDecoded": true,
+  "limits": "AbortSignal cancellation of active encoding; not abrupt app termination, Windows, physical disk failure or power-loss durability."
+}

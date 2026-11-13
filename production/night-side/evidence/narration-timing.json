@@ -1,0 +1,248 @@
+{
+  "durationSeconds": 153.75454166666668,
+  "paragraphs": [
+    {
+      "text": "From the ground, night can make the world feel smaller. A window. A street. A circle of light.",
+      "startSeconds": 0.0,
+      "endSeconds": 8.483333333333334
+    },
+    {
+      "text": "From orbit, the view changes. Darkness reveals a planet that is still moving, still active, and still connected.",
+      "startSeconds": 8.483333333333334,
+      "endSeconds": 17.036666666666665
+    },
+    {
+      "text": "Look first at the surface. Clusters of light trace places where people live. Smaller points stretch between them. Coastlines and rivers emerge from patterns made by human activity. Satellite composites reveal these patterns across entire continents.",
+      "startSeconds": 17.036666666666665,
+      "endSeconds": 36.306583333333336
+    },
+    {
+      "text": "These lights are only one layer of the scene. Above them, clouds move across the landscape. Brief flashes illuminate parts of the cloud cover: lightning, seen from a perspective most of us will never experience directly.",
+      "startSeconds": 36.306583333333336,
+      "endSeconds": 52.53658333333334
+    },
+    {
+      "text": "Then the horizon begins to glow. A thin band follows the curve of Earth, separating the dark surface from the blackness beyond it.",
+      "startSeconds": 52.53658333333334,
+      "endSeconds": 62.333916666666674
+    },
+    {
+      "text": "Some of that light is airglow. Atoms and molecules in the upper atmosphere release energy as light after being excited by sunlight. The night sky is not perfectly dark, even far from a city.",
+      "startSeconds": 62.333916666666674,
+      "endSeconds": 77.51791666666666
+    },
+    {
+      "text": "From this perspective, the atmosphere becomes visible as a layer. Clouds occupy the lower part of the scene. The glow sits higher. Stars appear beyond them, against the darkness of space.",
+      "startSeconds": 77.51791666666666,
+      "endSeconds": 91.90191666666666
+    },
+    {
+      "text": "A bright object rising over the horizon adds another point of reference. In this astronaut sequence, it is the Moon. Its appearance changes with the camera's exposure, reminding us that a photograph records a view through an instrument.",
+      "startSeconds": 91.90191666666666,
+      "endSeconds": 109.27525
+    },
+    {
+      "text": "The motion in the astronaut recordings is accelerated. Individual photographs taken from the International Space Station have been combined into time-lapse sequences. Minutes of observation pass in seconds.",
+      "startSeconds": 109.27525,
+      "endSeconds": 124.78254166666666
+    },
+    {
+      "text": "That changes our sense of scale. A storm becomes a flicker. A city becomes a pattern. The atmosphere becomes a delicate boundary against space.",
+      "startSeconds": 124.78254166666666,
+      "endSeconds": 136.509875
+    },
+    {
+      "text": "These images bring different kinds of light together: human activity below, weather in between, and the upper atmosphere responding to energy from the Sun.",
+      "startSeconds": 136.509875,
+      "endSeconds": 148.11720833333334
+    },
+    {
+      "text": "Night does not switch the planet off. It gives us another way to see it.",
+      "startSeconds": 148.11720833333334,
+      "endSeconds": 153.75454166666668
+    }
+  ],
+  "captions": [
+    {
+      "text": "From the ground, night can make the world feel smaller.",
+      "startSeconds": 0.0,
+      "endSeconds": 3.562666666666667
+    },
+    {
+      "text": "A window.",
+      "startSeconds": 3.722666666666667,
+      "endSeconds": 4.917333333333334
+    },
+    {
+      "text": "A street.",
+      "startSeconds": 5.077333333333334,
+      "endSeconds": 6.280666666666667
+    },
+    {
+      "text": "A circle of light.",
+      "startSeconds": 6.440666666666667,
+      "endSeconds": 8.083333333333334
+    },
+    {
+      "text": "From orbit, the view changes.",
+      "startSeconds": 8.483333333333334,
+      "endSeconds": 10.699333333333335
+    },
+    {
+      "text": "Darkness reveals a planet that is still moving, still active, and still connected.",
+      "startSeconds": 10.859333333333336,
+      "endSeconds": 16.63666666666667
+    },
+    {
+      "text": "Look first at the surface.",
+      "startSeconds": 17.036666666666665,
+      "endSeconds": 18.913999999999998
+    },
+    {
+      "text": "Clusters of light trace places where people live.",
+      "startSeconds": 19.073999999999998,
+      "endSeconds": 22.494625
+    },
+    {
+      "text": "Smaller points stretch between them.",
+      "startSeconds": 22.654625,
+      "endSeconds": 25.043958333333332
+    },
+    {
+      "text": "Coastlines and rivers emerge from patterns made by human activity.",
+      "startSeconds": 25.203958333333333,
+      "endSeconds": 30.388624999999998
+    },
+    {
+      "text": "Satellite composites reveal these patterns across entire continents.",
+      "startSeconds": 30.548625,
+      "endSeconds": 35.90658333333334
+    },
+    {
+      "text": "These lights are only one layer of the scene.",
+      "startSeconds": 36.306583333333336,
+      "endSeconds": 39.48525
+    },
+    {
+      "text": "Above them, clouds move across the landscape.",
+      "startSeconds": 39.645250000000004,
+      "endSeconds": 42.82458333333334
+    },
+    {
+      "text": "Brief flashes illuminate parts of the cloud cover: lightning, seen from a perspective most of us will never experience directly.",
+      "startSeconds": 42.98458333333334,
+      "endSeconds": 52.13658333333334
+    },
+    {
+      "text": "Then the horizon begins to glow.",
+      "startSeconds": 52.53658333333334,
+      "endSeconds": 55.075250000000004
+    },
+    {
+      "text": "A thin band follows the curve of Earth, separating the dark surface from the blackness beyond it.",
+      "startSeconds": 55.23525000000001,
+      "endSeconds": 61.933916666666676
+    },
+    {
+      "text": "Some of that light is airglow.",
+      "startSeconds": 62.333916666666674,
+      "endSeconds": 64.46725
+    },
+    {
+      "text": "Atoms and molecules in the upper atmosphere release energy as light after being excited by sunlight.",
+      "startSeconds": 64.62725,
+      "endSeconds": 72.26458333333333
+    },
+    {
+      "text": "The night sky is not perfectly dark, even far from a city.",
+      "startSeconds": 72.42458333333333,
+      "endSeconds": 77.11791666666666
+    },
+    {
+      "text": "From this perspective, the atmosphere becomes visible as a layer.",
+      "startSeconds": 77.51791666666666,
+      "endSeconds": 81.99791666666667
+    },
+    {
+      "text": "Clouds occupy the lower part of the scene.",
+      "startSeconds": 82.15791666666667,
+      "endSeconds": 85.22991666666667
+    },
+    {
+      "text": "The glow sits higher.",
+      "startSeconds": 85.38991666666666,
+      "endSeconds": 87.13925
+    },
+    {
+      "text": "Stars appear beyond them, against the darkness of space.",
+      "startSeconds": 87.29925,
+      "endSeconds": 91.50191666666667
+    },
+    {
+      "text": "A bright object rising over the horizon adds another point of reference.",
+      "startSeconds": 91.90191666666666,
+      "endSeconds": 97.26991666666666
+    },
+    {
+      "text": "In this astronaut sequence, it is the Moon.",
+      "startSeconds": 97.42991666666667,
+      "endSeconds": 100.82191666666667
+    },
+    {
+      "text": "Its appearance changes with the camera's exposure, reminding us that a photograph records a view through an instrument.",
+      "startSeconds": 100.98191666666668,
+      "endSeconds": 108.87525000000001
+    },
+    {
+      "text": "The motion in the astronaut recordings is accelerated.",
+      "startSeconds": 109.27525,
+      "endSeconds": 113.30725
+    },
+    {
+      "text": "Individual photographs taken from the International Space Station have been combined into time-lapse sequences.",
+      "startSeconds": 113.46725,
+      "endSeconds": 121.36387500000001
+    },
+    {
+      "text": "Minutes of observation pass in seconds.",
+      "startSeconds": 121.523875,
+      "endSeconds": 124.38254166666667
+    },
+    {
+      "text": "That changes our sense of scale.",
+      "startSeconds": 124.78254166666666,
+      "endSeconds": 127.235875
+    },
+    {
+      "text": "A storm becomes a flicker.",
+      "startSeconds": 127.39587499999999,
+      "endSeconds": 129.59320833333334
+    },
+    {
+      "text": "A city becomes a pattern.",
+      "startSeconds": 129.75320833333333,
+      "endSeconds": 131.843875
+    },
+    {
+      "text": "The atmosphere becomes a delicate boundary against space.",
+      "startSeconds": 132.003875,
+      "endSeconds": 136.109875
+    },
+    {
+      "text": "These images bring different kinds of light together: human activity below, weather in between, and the upper atmosphere responding to energy from the Sun.",
+      "startSeconds": 136.509875,
+      "endSeconds": 147.71720833333333
+    },
+    {
+      "text": "Night does not switch the planet off.",
+      "startSeconds": 148.11720833333334,
+      "endSeconds": 150.655875
+    },
+    {
+      "text": "It gives us another way to see it.",
+      "startSeconds": 150.815875,
+      "endSeconds": 153.35454166666668
+    }
+  ],
+  "captionMethod": "Measured sentence-level synthesized utterance bounds, not ASR or estimated word timestamps"
+}

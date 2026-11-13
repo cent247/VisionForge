@@ -1,0 +1,11 @@
+{
+  "hostArchitecture": "X64",
+  "installExitCode": 0,
+  "installerSha256": "B7993CE012A77E91D3F545643F767682CCED22A5866C9692DF60DC2819213AB8",
+  "installedExecutableFound": true,
+  "uninstallTested": true,
+  "platform": "Microsoft Windows Server 2022 Datacenter",
+  "installer": "VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe",
+  "applicationArchitecture": "x64",
+  "uninstallExitCode": 0
+}

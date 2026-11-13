@@ -1,0 +1,134 @@
+[
+  {
+    "name": "@types/prop-types",
+    "version": "15.7.15",
+    "license": "MIT",
+    "installedPath": "node_modules/@types/prop-types",
+    "licenseFiles": [
+      {
+        "file": "packages/@types/prop-types/LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ]
+  },
+  {
+    "name": "@types/react",
+    "version": "18.3.31",
+    "license": "MIT",
+    "installedPath": "node_modules/@types/react",
+    "licenseFiles": [
+      {
+        "file": "packages/@types/react/LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ]
+  },
+  {
+    "name": "csstype",
+    "version": "3.2.3",
+    "license": "MIT",
+    "installedPath": "node_modules/csstype",
+    "licenseFiles": [
+      {
+        "file": "packages/csstype/LICENSE",
+        "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e"
+      }
+    ]
+  },
+  {
+    "name": "js-tokens",
+    "version": "4.0.0",
+    "license": "MIT",
+    "installedPath": "node_modules/js-tokens",
+    "licenseFiles": [
+      {
+        "file": "packages/js-tokens/LICENSE",
+        "sha256": "2213d91c606205c71eb051a199478cdc2adde945893404d7f1421436dd6d5cc1"
+      }
+    ]
+  },
+  {
+    "name": "loose-envify",
+    "version": "1.4.0",
+    "license": "MIT",
+    "installedPath": "node_modules/loose-envify",
+    "licenseFiles": [
+      {
+        "file": "packages/loose-envify/LICENSE",
+        "sha256": "4eb7543b08d955a6d23fcc224601d43ff566e775be918805e26210d7f6eb4893"
+      }
+    ]
+  },
+  {
+    "name": "lucide-react",
+    "version": "0.468.0",
+    "license": "ISC",
+    "installedPath": "node_modules/lucide-react",
+    "licenseFiles": [
+      {
+        "file": "packages/lucide-react/LICENSE",
+        "sha256": "1e7290b35280a048667bbf0ebabac1c7fd52a75300e8b2946ac165715997f2bc"
+      }
+    ]
+  },
+  {
+    "name": "react",
+    "version": "18.3.1",
+    "license": "MIT",
+    "installedPath": "node_modules/react",
+    "licenseFiles": [
+      {
+        "file": "packages/react/LICENSE",
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      }
+    ]
+  },
+  {
+    "name": "react-dom",
+    "version": "18.3.1",
+    "license": "MIT",
+    "installedPath": "node_modules/react-dom",
+    "licenseFiles": [
+      {
+        "file": "packages/react-dom/LICENSE",
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      }
+    ]
+  },
+  {
+    "name": "scheduler",
+    "version": "0.23.2",
+    "license": "MIT",
+    "installedPath": "node_modules/scheduler",
+    "licenseFiles": [
+      {
+        "file": "packages/scheduler/LICENSE",
+        "sha256": "52412d7bc7ce4157ea628bbaacb8829e0a9cb3c58f57f99176126bc8cf2bfc85"
+      }
+    ]
+  },
+  {
+    "name": "zod",
+    "version": "4.6.7",
+    "license": "MIT",
+    "installedPath": "node_modules/zod",
+    "licenseFiles": [
+      {
+        "file": "packages/zod/LICENSE",
+        "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8"
+      }
+    ]
+  },
+  {
+    "name": "zustand",
+    "version": "5.1.0",
+    "license": "MIT",
+    "installedPath": "node_modules/zustand",
+    "licenseFiles": [
+      {
+        "file": "packages/zustand/LICENSE",
+        "sha256": "c1e6e266563517467b1bf874817d23e426f3149252bd7d42758cd697514b8417"
+      }
+    ]
+  }
+]

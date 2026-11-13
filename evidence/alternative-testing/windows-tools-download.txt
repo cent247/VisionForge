@@ -1,0 +1,23 @@
+{
+  "release": "https://github.com/FFmpeg-Builds/FFmpeg-Builds/releases/tag/latest",
+  "releaseName": "Latest Auto-Build (2026-11-11 12:39)",
+  "assetId": 735544455,
+  "archive": "https://github.com/FFmpeg-Builds/FFmpeg-Builds/releases/download/latest/ffmpeg-n9.0-latest-win64-gpl-9.0.zip",
+  "archiveBytes": 194992550,
+  "archiveSha256": "20158509057316e2cc60393883e6ce1f4370e319c60af0f8a405f89eb6fce76d",
+  "files": [
+    {
+      "file": "ffmpeg.exe",
+      "bytes": 165848576,
+      "sha256": "cd82140337e162f7e93d140f788c3c32c1f6f5d966bfcb845369a14bf13c8b4c",
+      "machine": "AMD64"
+    },
+    {
+      "file": "ffprobe.exe",
+      "bytes": 165647360,
+      "sha256": "fad63852aa46ad1c8152849414f23dfb3407b3d19edba3d0946bb9e82f554cd6",
+      "machine": "AMD64"
+    }
+  ],
+  "verification": "Archive hash and AMD64 executable headers verified. Windows execution not tested. Final GPL corresponding-source/dependency review remains required."
+}

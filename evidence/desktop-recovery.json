@@ -1,0 +1,53 @@
+{
+  "project": "/workspace/scratch/e1abafcae699/restored/visionforge/evidence/Recovered-Desktop-1794439385338/project.vforge",
+  "steps": [
+    {
+      "test": "create-import-offset-audio-save",
+      "status": "passed"
+    },
+    {
+      "test": "single-clock-rendered-playback-and-seek-into-audio-tail",
+      "status": "passed"
+    },
+    {
+      "test": "desktop-preview-export-105-decoded-frames-identical",
+      "status": "passed"
+    },
+    {
+      "test": "visual-end-trim-and-undo",
+      "status": "passed"
+    },
+    {
+      "test": "timeline-edit-invalidates-preview",
+      "status": "passed"
+    },
+    {
+      "test": "edit-and-delete-keyframe-controls",
+      "status": "passed"
+    },
+    {
+      "test": "editable-overlay-and-undo",
+      "status": "passed"
+    },
+    {
+      "test": "save-and-reopen-edited-project",
+      "status": "passed"
+    },
+    {
+      "test": "short-relink-rejected-with-original-media-preserved",
+      "status": "passed"
+    },
+    {
+      "test": "missing-media-relinked-through-validated-ipc",
+      "status": "passed"
+    },
+    {
+      "test": "newer-autosave-recovered-through-application",
+      "status": "passed"
+    },
+    {
+      "test": "damaged-saved-file-recovered-and-restored-through-application",
+      "status": "passed"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+  • electron-builder  version=26.18.0 os=6.18.57
+  • loaded configuration  file=/workspace/scratch/e1abafcae699/restored/visionforge/electron-builder.yml
+  • executing @electron/rebuild  electronVersion=45.3.0 arch=x64 buildFromSource=false workspaceRoot=/workspace/scratch/e1abafcae699/restored/visionforge projectDir=./ appDir=./
+  • installing native dependencies  arch=x64
+  • completed installing native dependencies
+  • packaging       platform=win32 arch=x64 electron=45.3.0 appOutDir=candidate-release/win-unpacked
+  • downloaded      label=electron progress=100%
+  • downloaded electron zip extracted successfully  output=/workspace/scratch/e1abafcae699/restored/visionforge/candidate-release/win-unpacked
+  • searching for node modules  pm=npm searchDir=/workspace/scratch/e1abafcae699/restored/visionforge
+  • duplicate dependency references  dependencies=["react@18.3.1","react@18.3.1","loose-envify@1.4.0","loose-envify@1.4.0","react@18.3.1"]
+  • updating asar integrity executable resource  executablePath=candidate-release/win-unpacked/VisionForge.exe
+  • executable resource editing and code signing skipped — signAndEditExecutable is false. To skip only code signing while keeping icon and metadata applied, use signExecutable: false instead.  exe=candidate-release/win-unpacked/VisionForge.exe
+InvalidConfigurationError: cannot expand pattern "VisionForge-INTERNAL-CANDIDATE-${version}-${arch}-${target}.${ext}": macro target is not defined
+    at /workspace/scratch/e1abafcae699/restored/visionforge/node_modules/app-builder-lib/src/util/macroExpander.ts:63:17
+    at String.replace (<anonymous>)
+    at expandMacro (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/app-builder-lib/src/util/macroExpander.ts:18:18)
+    at WinPackager.expandMacro (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/app-builder-lib/src/platformPackager.ts:739:25)
+    at WinPackager.computeArtifactName (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/app-builder-lib/src/platformPackager.ts:733:17)
+    at WinPackager.expandArtifactNamePattern (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/app-builder-lib/src/platformPackager.ts:715:17)
+    at NsisTarget.buildInstaller (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/app-builder-lib/src/targets/nsis/NsisTarget.ts:307:40)
+    at NsisTarget.finishBuild (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/app-builder-lib/src/targets/nsis/NsisTarget.ts:293:20)
+    at Packager.doBuild (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/app-builder-lib/src/packager.ts:571:20)
+    at executeFinally (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/builder-util/src/promise.ts:12:14)
+    at Packager.build (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/app-builder-lib/src/packager.ts:459:31)
+    at executeFinally (/workspace/scratch/e1abafcae699/restored/visionforge/node_modules/builder-util/src/promise.ts:12:14)
+    at /workspace/scratch/e1abafcae699/restored/visionforge/scripts/build-windows-candidate.cjs:18:28 {
+  code: 'ERR_ELECTRON_BUILDER_MACRO_NOT_DEFINED'
+}

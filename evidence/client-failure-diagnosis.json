@@ -1,0 +1,143 @@
+{
+  "workflow": "https://github.com/cent247/VisionForge/actions/runs/43330182341",
+  "observations": [
+    {
+      "target": "windows10",
+      "summary.json": {
+        "passed": false,
+        "isoSha256": "69efac1df9ec8066341d8c9b62297ddece0e6b805533fdb6dd66bc8034fba27a",
+        "installerSha256": "cbf3eecda878bfa68a425fdb7d637ff6d2248ba337cd06e848a7aaf50fdb87f7",
+        "osTest": "windows10 Enterprise evaluation x64 VM",
+        "physicalHardwareTest": false,
+        "events": [],
+        "updateInputs": [
+          {
+            "file": "KB5015878-x64.msu",
+            "url": "https://catalog.s.download.windowsupdate.com/c/msdownload/update/software/updt/2022/07/windows10.0-kb5015878-x64_3dc7b300371db8672f7fa3b32d4481dccec082b3.msu",
+            "sha256": "16a9b53219e0021afcb5daf1fcf4dc2b68e10d6df7a5d78a7ca33c6ac03ed21b"
+          },
+          {
+            "file": "KB5015684-x64.msu",
+            "url": "https://catalog.s.download.windowsupdate.com/c/upgr/2022/07/windows10.0-kb5015684-x64_523c039b86ca98f2d818c4e6706e2cc94b634c4a.msu",
+            "sha256": "cc1a32fff2700b70c2e6c1a70485f2c0b9c12374f420f13e764850b0a8bf7c89"
+          }
+        ],
+        "acceleration": "kvm",
+        "tpmBackend": [
+          {
+            "model": "tpm-tis",
+            "options": {
+              "type": "emulator",
+              "data": {
+                "chardev": "chrtpm"
+              }
+            },
+            "id": "tpm0"
+          }
+        ],
+        "error": "Guest acceptance deadline reached",
+        "elapsedSeconds": 5401
+      },
+      "host-platform.json": {
+        "acceleration": "kvm",
+        "tpmBackend": [
+          {
+            "model": "tpm-tis",
+            "options": {
+              "type": "emulator",
+              "data": {
+                "chardev": "chrtpm"
+              }
+            },
+            "id": "tpm0"
+          }
+        ],
+        "isoSha256": "69efac1df9ec8066341d8c9b62297ddece0e6b805533fdb6dd66bc8034fba27a",
+        "requestedTarget": "windows10",
+        "physicalHardwareTest": false
+      },
+      "screens": [
+        {
+          "file": "display-000.png",
+          "ocr": "Guest has not initialized the display (yet).\n",
+          "ocrExitCode": 0
+        },
+        {
+          "file": "display-030.png",
+          "ocr": "",
+          "ocrExitCode": 0
+        },
+        {
+          "file": "display-059.png",
+          "ocr": "",
+          "ocrExitCode": 0
+        }
+      ],
+      "qemuLogTail": ""
+    },
+    {
+      "target": "windows11",
+      "summary.json": {
+        "passed": false,
+        "isoSha256": "bc3f24086ebadc94489066b5ad78089e2cf5c3491e90e790bb81a2b199c10e38",
+        "installerSha256": "cbf3eecda878bfa68a425fdb7d637ff6d2248ba337cd06e848a7aaf50fdb87f7",
+        "osTest": "windows11 Enterprise evaluation x64 VM",
+        "physicalHardwareTest": false,
+        "events": [],
+        "updateInputs": [],
+        "acceleration": "kvm",
+        "tpmBackend": [
+          {
+            "model": "tpm-tis",
+            "options": {
+              "type": "emulator",
+              "data": {
+                "chardev": "chrtpm"
+              }
+            },
+            "id": "tpm0"
+          }
+        ],
+        "error": "Guest acceptance deadline reached",
+        "elapsedSeconds": 5401.8
+      },
+      "host-platform.json": {
+        "acceleration": "kvm",
+        "tpmBackend": [
+          {
+            "model": "tpm-tis",
+            "options": {
+              "type": "emulator",
+              "data": {
+                "chardev": "chrtpm"
+              }
+            },
+            "id": "tpm0"
+          }
+        ],
+        "isoSha256": "bc3f24086ebadc94489066b5ad78089e2cf5c3491e90e790bb81a2b199c10e38",
+        "requestedTarget": "windows11",
+        "physicalHardwareTest": false
+      },
+      "screens": [
+        {
+          "file": "display-000.png",
+          "ocr": "Guest has not initialized the display (yet).\n",
+          "ocrExitCode": 0
+        },
+        {
+          "file": "display-030.png",
+          "ocr": "Your device ran into a problem and needs to restart.\n\n100% complete\n\nStop code: SYSTEM_SERVICE EXCEPTION (0x38)\n",
+          "ocrExitCode": 0
+        },
+        {
+          "file": "display-059.png",
+          "ocr": "Your device ran into a problem and needs to restart.\n\n100% complete\n\nStop code: SYSTEM_SERVICE EXCEPTION (0x38)\n",
+          "ocrExitCode": 0
+        }
+      ],
+      "qemuLogTail": ""
+    }
+  ],
+  "limits": "OCR is diagnostic only; no guest application acceptance was reported. Windows11 stop code is 0x3B in the previously inspected original screenshot; OCR misreads it as 0x38."
+}

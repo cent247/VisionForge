@@ -1,0 +1,7 @@
+{
+  "version": "10.0.26200.0",
+  "runner": "windows-11-arm",
+  "applicationArchitecture": "x64",
+  "operatingSystem": "Microsoft Windows 11 Enterprise",
+  "hostArchitecture": "Arm64"
+}

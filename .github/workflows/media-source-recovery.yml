@@ -1,0 +1,67 @@
+name: Recover pinned media source inputs
+on:
+  push:
+    branches: [visionforge-development]
+    paths: ['scripts/recover-media-sources.py', '.github/workflows/media-source-recovery.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  recover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Recover and hash pinned supplier inputs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python scripts/recover-media-sources.py
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: media-source-recovery-record
+          path: |
+            source-recovery/recovery.json
+            source-recovery/ffmpeg-source.tar.gz
+            source-recovery/supplier-build-recipes.tar.gz
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        with:
+          name: media-source-cache-000
+          path: source-recovery/chunks/source-cache.part-000
+          compression-level: 0
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        with:
+          name: media-source-cache-001
+          path: source-recovery/chunks/source-cache.part-001
+          compression-level: 0
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        with:
+          name: media-source-cache-002
+          path: source-recovery/chunks/source-cache.part-002
+          compression-level: 0
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        with:
+          name: media-source-cache-003
+          path: source-recovery/chunks/source-cache.part-003
+          compression-level: 0
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        with:
+          name: media-source-cache-004
+          path: source-recovery/chunks/source-cache.part-004
+          compression-level: 0
+          retention-days: 90
+      - uses: actions/upload-artifact@v4
+        with:
+          name: media-source-cache-005
+          path: source-recovery/chunks/source-cache.part-005
+          compression-level: 0
+          retention-days: 90

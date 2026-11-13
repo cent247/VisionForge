@@ -1,0 +1,571 @@
+﻿2026-11-12T02:33:35.7925771Z Current runner version: '2.338.2'
+2026-11-12T02:33:35.7944992Z ##[group]Runner Image Provisioner
+2026-11-12T02:33:35.7945597Z Hosted Compute Agent
+2026-11-12T02:33:35.7946029Z Version: 20261028.624
+2026-11-12T02:33:35.7946473Z Commit: 54898b74c23fde5556c9b3c3a2290865feef0dfe
+2026-11-12T02:33:35.7946984Z Build Date: 2026-10-28T21:51:42Z
+2026-11-12T02:33:35.7947480Z Worker ID: {f3e5445a-43ee-481c-a2d9-4dca4ccefcbd}
+2026-11-12T02:33:35.7947997Z Region: westus
+2026-11-12T02:33:35.7948361Z Cloud: Azure
+2026-11-12T02:33:35.7948730Z ##[endgroup]
+2026-11-12T02:33:35.7949659Z ##[group]Operating System
+2026-11-12T02:33:35.7950142Z Microsoft Windows Server 2022
+2026-11-12T02:33:35.7950590Z 10.0.20348
+2026-11-12T02:33:35.7950945Z Datacenter
+2026-11-12T02:33:35.7951305Z ##[endgroup]
+2026-11-12T02:33:35.7951727Z ##[group]Runner Image
+2026-11-12T02:33:35.7952132Z Image: windows-2022
+2026-11-12T02:33:35.7952517Z Version: 20261101.353.1
+2026-11-12T02:33:35.7953616Z Included Software: https://github.com/actions/runner-images/blob/win22/20261101.353/images/windows/Windows2022-Readme.md
+2026-11-12T02:33:35.7954733Z Image Release: https://github.com/actions/runner-images/releases/tag/win22%2F20261101.353
+2026-11-12T02:33:35.7955419Z ##[endgroup]
+2026-11-12T02:33:35.7956206Z ##[group]GITHUB_TOKEN Permissions
+2026-11-12T02:33:35.7957650Z Contents: read
+2026-11-12T02:33:35.7958086Z Metadata: read
+2026-11-12T02:33:35.7958508Z ##[endgroup]
+2026-11-12T02:33:35.7960015Z Secret source: Actions
+2026-11-12T02:33:35.7960617Z Cache mode: write
+2026-11-12T02:33:35.7961151Z Prepare workflow directory
+2026-11-12T02:33:35.8212791Z Prepare all required actions
+2026-11-12T02:33:35.8250668Z Getting action download info
+2026-11-12T02:33:36.2751386Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-11-12T02:33:36.3584792Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-11-12T02:33:36.4706256Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+2026-11-12T02:33:36.5807345Z Download action repository 'actions/upload-artifact@v4' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+2026-11-12T02:33:36.8695908Z Complete job name: documentary
+2026-11-12T02:33:37.0107575Z ##[group]Run actions/checkout@v4
+2026-11-12T02:33:37.0108468Z with:
+2026-11-12T02:33:37.0108807Z   repository: cent247/VisionForge
+2026-11-12T02:33:37.0112315Z   token: ***
+2026-11-12T02:33:37.0112650Z   ssh-strict: true
+2026-11-12T02:33:37.0112985Z   ssh-user: git
+2026-11-12T02:33:37.0113328Z   persist-credentials: true
+2026-11-12T02:33:37.0113703Z   clean: true
+2026-11-12T02:33:37.0114042Z   sparse-checkout-cone-mode: true
+2026-11-12T02:33:37.0114437Z   fetch-depth: 1
+2026-11-12T02:33:37.0114763Z   fetch-tags: false
+2026-11-12T02:33:37.0115092Z   show-progress: true
+2026-11-12T02:33:37.0115436Z   lfs: false
+2026-11-12T02:33:37.0115750Z   submodules: false
+2026-11-12T02:33:37.0116089Z   set-safe-directory: true
+2026-11-12T02:33:37.0116491Z   allow-unsafe-pr-checkout: false
+2026-11-12T02:33:37.0117057Z ##[endgroup]
+2026-11-12T02:33:37.1226860Z Syncing repository: cent247/VisionForge
+2026-11-12T02:33:37.1229047Z ##[group]Getting Git version info
+2026-11-12T02:33:37.1230040Z Working directory is 'D:\a\VisionForge\VisionForge'
+2026-11-12T02:33:37.1953970Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-12T02:33:37.4668564Z git version 2.56.0.windows.4
+2026-11-12T02:33:37.4696973Z ##[endgroup]
+2026-11-12T02:33:37.4710949Z Temporarily overriding HOME='D:\a\_temp\1e729a8d-cf37-4169-bd4e-1bd20730abf5' before making global git config changes
+2026-11-12T02:33:37.4712294Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T02:33:37.4719859Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VisionForge\VisionForge
+2026-11-12T02:33:37.5145224Z Deleting the contents of 'D:\a\VisionForge\VisionForge'
+2026-11-12T02:33:37.5149476Z ##[group]Initializing the repository
+2026-11-12T02:33:37.5156219Z [command]"C:\Program Files\Git\bin\git.exe" init D:\a\VisionForge\VisionForge
+2026-11-12T02:33:37.5779048Z Initialized empty Git repository in D:/a/VisionForge/VisionForge/.git/
+2026-11-12T02:33:37.5807523Z [command]"C:\Program Files\Git\bin\git.exe" remote add origin https://github.com/cent247/VisionForge
+2026-11-12T02:33:37.6278728Z ##[endgroup]
+2026-11-12T02:33:37.6279791Z ##[group]Disabling automatic garbage collection
+2026-11-12T02:33:37.6284912Z [command]"C:\Program Files\Git\bin\git.exe" config --local gc.auto 0
+2026-11-12T02:33:37.6504584Z ##[endgroup]
+2026-11-12T02:33:37.6505923Z ##[group]Setting up auth
+2026-11-12T02:33:37.6513248Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T02:33:37.6736413Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-12T02:33:38.8259140Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T02:33:38.8487937Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-12T02:33:39.2080189Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T02:33:39.2309152Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-12T02:33:39.6462308Z [command]"C:\Program Files\Git\bin\git.exe" config --local http.https://github.com/.extraheader "AUTHORIZATION: basic ***"
+2026-11-12T02:33:39.6698524Z ##[endgroup]
+2026-11-12T02:33:39.6699183Z ##[group]Fetching the repository
+2026-11-12T02:33:39.6710951Z [command]"C:\Program Files\Git\bin\git.exe" -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +6bc40a5ee97e597eede1d58fb09b3ea19d168644:refs/remotes/origin/visionforge-development
+2026-11-12T02:33:40.8561312Z From https://github.com/cent247/VisionForge
+2026-11-12T02:33:40.8583574Z  * [new ref]         6bc40a5ee97e597eede1d58fb09b3ea19d168644 -> origin/visionforge-development
+2026-11-12T02:33:40.8585059Z ##[endgroup]
+2026-11-12T02:33:40.8585478Z ##[group]Determining the checkout info
+2026-11-12T02:33:40.8586059Z ##[endgroup]
+2026-11-12T02:33:40.8593917Z [command]"C:\Program Files\Git\bin\git.exe" sparse-checkout disable
+2026-11-12T02:33:40.8984663Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all extensions.worktreeConfig
+2026-11-12T02:33:40.9212201Z ##[group]Checking out the ref
+2026-11-12T02:33:40.9218675Z [command]"C:\Program Files\Git\bin\git.exe" checkout --progress --force -B visionforge-development refs/remotes/origin/visionforge-development
+2026-11-12T02:33:41.0162944Z Switched to a new branch 'visionforge-development'
+2026-11-12T02:33:41.0178472Z branch 'visionforge-development' set up to track 'origin/visionforge-development'.
+2026-11-12T02:33:41.0505055Z ##[endgroup]
+2026-11-12T02:33:41.0512051Z [command]"C:\Program Files\Git\bin\git.exe" log -1 --format=%H
+2026-11-12T02:33:41.0720724Z 6bc40a5ee97e597eede1d58fb09b3ea19d168644
+2026-11-12T02:33:41.1050539Z ##[group]Run actions/setup-node@v4
+2026-11-12T02:33:41.1050804Z with:
+2026-11-12T02:33:41.1050959Z   node-version: 24
+2026-11-12T02:33:41.1051126Z   architecture: x64
+2026-11-12T02:33:41.1051280Z   cache: npm
+2026-11-12T02:33:41.1051425Z   always-auth: false
+2026-11-12T02:33:41.1051589Z   check-latest: false
+2026-11-12T02:33:41.1053646Z   token: ***
+2026-11-12T02:33:41.1053822Z ##[endgroup]
+2026-11-12T02:33:41.2386610Z Found in cache @ C:\hostedtoolcache\windows\node\24.22.2\x64
+2026-11-12T02:33:41.2391890Z (node:7192) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T02:33:41.2396416Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T02:33:41.2399618Z ##[group]Environment details
+2026-11-12T02:33:44.8584328Z node: v24.22.2
+2026-11-12T02:33:44.8584542Z npm: 11.19.1
+2026-11-12T02:33:44.8584685Z yarn: 1.22.22
+2026-11-12T02:33:44.8585243Z ##[endgroup]
+2026-11-12T02:33:44.9084454Z [command]C:\Windows\system32\cmd.exe /D /S /C "C:\hostedtoolcache\windows\node\24.22.2\x64\npm.cmd config get cache"
+2026-11-12T02:33:45.2794561Z C:\npm\cache
+2026-11-12T02:33:45.6520750Z Cache hit for: node-cache-Windows-x64-npm-f01bae8b2afa62bf776a11803cf1b736dd495a95a11a9e98447723248fdf63fd
+2026-11-12T02:33:45.6604282Z (node:7192) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-12T02:33:46.9743036Z Received 46308524 of 46308524 (100.0%), 41.8 MBs/sec
+2026-11-12T02:33:46.9745671Z Cache Size: ~44 MB (46308524 B)
+2026-11-12T02:33:46.9774321Z [command]"C:\Program Files\Git\usr\bin\tar.exe" -xf D:/a/_temp/5d449b23-6011-409d-8ebb-a300b3152fcf/cache.tzst -P -C D:/a/VisionForge/VisionForge --force-local --use-compress-program "zstd -d"
+2026-11-12T02:33:48.7266073Z Cache restored successfully
+2026-11-12T02:33:48.7299589Z Cache restored from key: node-cache-Windows-x64-npm-f01bae8b2afa62bf776a11803cf1b736dd495a95a11a9e98447723248fdf63fd
+2026-11-12T02:33:48.7550828Z ##[group]Run actions/setup-python@v5
+2026-11-12T02:33:48.7551119Z with:
+2026-11-12T02:33:48.7551286Z   python-version: 3.12
+2026-11-12T02:33:48.7551462Z   check-latest: false
+2026-11-12T02:33:48.7553491Z   token: ***
+2026-11-12T02:33:48.7553654Z   update-environment: true
+2026-11-12T02:33:48.7553840Z   allow-prereleases: false
+2026-11-12T02:33:48.7554007Z   freethreaded: false
+2026-11-12T02:33:48.7554184Z ##[endgroup]
+2026-11-12T02:33:48.8751349Z ##[group]Installed versions
+2026-11-12T02:33:48.8870044Z (node:6104) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T02:33:48.8871013Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T02:33:48.8871588Z Successfully set up CPython (3.12.10)
+2026-11-12T02:33:48.8872069Z ##[endgroup]
+2026-11-12T02:33:48.9057632Z ##[group]Run New-Item -ItemType Directory -Force evidence
+2026-11-12T02:33:48.9058019Z [36;1mNew-Item -ItemType Directory -Force evidence[0m
+2026-11-12T02:33:48.9247358Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:33:48.9247634Z env:
+2026-11-12T02:33:48.9247851Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:48.9248227Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:33:48.9248575Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:48.9248896Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:48.9249185Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:48.9249438Z ##[endgroup]
+2026-11-12T02:33:49.2351158Z 
+2026-11-12T02:33:49.2357613Z     Directory: D:\a\VisionForge\VisionForge
+2026-11-12T02:33:49.2358313Z 
+2026-11-12T02:33:49.2360449Z [32;1mMode   [0m[32;1m              LastWriteTime[0m [32;1;3m        Length[0m[32;1m Name[0m
+2026-11-12T02:33:49.2361417Z [32;1m----   [0m [32;1m             -------------[0m [32;1m        ------[0m [32;1m----[0m
+2026-11-12T02:33:49.2490536Z d----          11/12/2026  2:33 AM                [44;1mevidence[0m
+2026-11-12T02:33:49.2512098Z 
+2026-11-12T02:33:49.2955734Z ##[group]Run npm ci
+2026-11-12T02:33:49.2955968Z [36;1mnpm ci[0m
+2026-11-12T02:33:49.2984851Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:33:49.2985110Z env:
+2026-11-12T02:33:49.2985467Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:49.2985816Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:33:49.2986156Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:49.2986460Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:49.2986763Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:49.2986999Z ##[endgroup]
+2026-11-12T02:33:52.2783072Z npm warn deprecated inflight@1.0.6: This module is not supported, and leaks memory. Do not use it. Check out lru-cache if you want a good and tested way to coalesce async requests by a key value, which is much more comprehensive and powerful.
+2026-11-12T02:33:52.3342841Z npm warn deprecated rimraf@2.6.3: Rimraf versions prior to v4 are no longer supported
+2026-11-12T02:33:52.3927436Z npm warn deprecated glob@7.2.3: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+2026-11-12T02:33:52.7958499Z npm warn deprecated boolean@3.2.0: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+2026-11-12T02:33:56.7755138Z 
+2026-11-12T02:33:56.7756035Z added 358 packages, and audited 359 packages in 7s
+2026-11-12T02:33:56.7756412Z 
+2026-11-12T02:33:56.7756788Z 54 packages are looking for funding
+2026-11-12T02:33:56.7757162Z   run `npm fund` for details
+2026-11-12T02:33:56.7767878Z 
+2026-11-12T02:33:56.7768087Z found 0 vulnerabilities
+2026-11-12T02:33:56.7779375Z npm warn install-scripts 2 packages have install scripts not yet covered by allowScripts:
+2026-11-12T02:33:56.7779966Z npm warn install-scripts   electron-winstaller@5.4.0 (install: node ./script/select-7z-arch.js)
+2026-11-12T02:33:56.7780788Z npm warn install-scripts   esbuild@0.25.12 (postinstall: node install.js)
+2026-11-12T02:33:56.7781115Z npm warn install-scripts
+2026-11-12T02:33:56.7781576Z npm warn install-scripts Run `npm install-scripts ls` to review, or `npm install-scripts approve <pkg>` to allow.
+2026-11-12T02:33:57.7408721Z ##[group]Run node node_modules/electron/install.js
+2026-11-12T02:33:57.7409083Z [36;1mnode node_modules/electron/install.js[0m
+2026-11-12T02:33:57.7438896Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:33:57.7439163Z env:
+2026-11-12T02:33:57.7439380Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:57.7439747Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:33:57.7440091Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:57.7440397Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:57.7440703Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:33:57.7440969Z ##[endgroup]
+2026-11-12T02:34:02.1262369Z ##[group]Run python scripts/fetch-windows-tools.py tool-stage
+2026-11-12T02:34:02.1263065Z [36;1mpython scripts/fetch-windows-tools.py tool-stage[0m
+2026-11-12T02:34:02.1294997Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:34:02.1295261Z env:
+2026-11-12T02:34:02.1295480Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:02.1295839Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:34:02.1296572Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:02.1296887Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:02.1297188Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:02.1297425Z ##[endgroup]
+2026-11-12T02:34:10.4011221Z {"pinnedArchiveSha256": "20158509057316e2cc60393883e6ce1f4370e319c60af0f8a405f89eb6fce76d", "executablesVerified": 2, "metadataApiRequired": false}
+2026-11-12T02:34:10.5001447Z ##[group]Run Copy-Item tool-stage/verified/* resources/tools/win-x64/ -Force
+2026-11-12T02:34:10.5001944Z [36;1mCopy-Item tool-stage/verified/* resources/tools/win-x64/ -Force[0m
+2026-11-12T02:34:10.5002395Z [36;1m"$pwd\resources\tools\win-x64" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append[0m
+2026-11-12T02:34:10.5033869Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:34:10.5034146Z env:
+2026-11-12T02:34:10.5034368Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:10.5034727Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:34:10.5035087Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:10.5035398Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:10.5035706Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:10.5035968Z ##[endgroup]
+2026-11-12T02:34:10.8657409Z ##[group]Run npm run typecheck
+2026-11-12T02:34:10.8657689Z [36;1mnpm run typecheck[0m
+2026-11-12T02:34:10.8687071Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:34:10.8687338Z env:
+2026-11-12T02:34:10.8687564Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:10.8687926Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:34:10.8688276Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:10.8688588Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:10.8688894Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:10.8689137Z ##[endgroup]
+2026-11-12T02:34:11.3509273Z 
+2026-11-12T02:34:11.3509678Z > visionforge@0.1.0 typecheck
+2026-11-12T02:34:11.3510002Z > tsc --noEmit -p tsconfig.json
+2026-11-12T02:34:11.3510145Z 
+2026-11-12T02:34:13.4224726Z ##[group]Run npm test
+2026-11-12T02:34:13.4224998Z [36;1mnpm test[0m
+2026-11-12T02:34:13.4254491Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:34:13.4254768Z env:
+2026-11-12T02:34:13.4254987Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:13.4255345Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:34:13.4255691Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:13.4256002Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:13.4256306Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:13.4256549Z ##[endgroup]
+2026-11-12T02:34:13.9083081Z 
+2026-11-12T02:34:13.9083563Z > visionforge@0.1.0 test
+2026-11-12T02:34:13.9083929Z > npm run test:compile && node --test tests/*.test.mjs
+2026-11-12T02:34:13.9084126Z 
+2026-11-12T02:34:14.1095010Z 
+2026-11-12T02:34:14.1095666Z > visionforge@0.1.0 test:compile
+2026-11-12T02:34:14.1099248Z > tsc src/main/render.ts src/main/project-storage.ts src/main/services.ts src/main/preview.ts src/main/media-protocol.ts src/main/media-management.ts --allowJs --outDir test-build --target ES2022 --module commonjs --esModuleInterop --skipLibCheck && tsc src/renderer/src/store.ts --outDir test-store --target ES2022 --module commonjs --esModuleInterop --skipLibCheck
+2026-11-12T02:34:14.1100278Z 
+2026-11-12T02:34:16.2653613Z ✔ keyframe interpolation holds endpoints and interpolates positions (1.2263ms)
+2026-11-12T02:34:16.2654750Z ✔ fade envelope matches timeline endpoints (0.2359ms)
+2026-11-12T02:34:16.2770916Z ✔ SRT round trips multiline captions (0.9036ms)
+2026-11-12T02:34:16.2790958Z ✔ SRT rejects backwards timing and malformed timestamps (0.4158ms)
+2026-11-12T02:34:16.2806124Z ✔ undo redo, branch edit, and new project history isolation (0.9176ms)
+2026-11-12T02:34:18.2042762Z ✔ batch import rolls back valid staged media when another source is corrupt (1861.0418ms)
+2026-11-12T02:34:18.2831641Z ✔ invalid replacement cannot overwrite a working project media file (78.4085ms)
+2026-11-12T02:34:18.4179523Z ✔ shorter relink is rejected before overwriting media used by a longer timeline clip (131.8146ms)
+2026-11-12T02:34:18.5459679Z ✔ audio with embedded cover art imports as audio without video dimensions (129.6334ms)
+2026-11-12T02:34:18.5542917Z ✔ media protocol serves byte ranges for seeking and rejects invalid ranges (141.6638ms)
+2026-11-12T02:34:18.5543893Z ✔ storyboard retains original narration and matches imported footage (1.9001ms)
+2026-11-12T02:34:18.5544704Z ✔ reviewed plans reject unavailable visuals and invalid times (0.4143ms)
+2026-11-12T02:34:19.6058407Z ✔ single compositor includes embedded audio, leading silence, delayed narration and audio-only tail (2121.1885ms)
+2026-11-12T02:34:19.6059119Z ✔ preview/export decoded frames match and edits invalidate cached movie (1080.7422ms)
+2026-11-12T02:34:20.2762943Z ✔ audio-only timeline renders black picture and mute removes embedded sound (669.6176ms)
+2026-11-12T02:34:20.2765039Z ﹣ renderer rejects symlink media escaping project before publishing (0.1806ms) # Native reparse-point fixture requires Windows privilege setup
+2026-11-12T02:34:20.7325021Z ✔ interrupted in-flight render leaves previous output intact and removes partial files (456.5071ms)
+2026-11-12T02:34:20.8145287Z ✔ export cannot overwrite project data or imported media (82.0345ms)
+2026-11-12T02:34:21.2416370Z ✔ caption rendering works in a project folder containing spaces and an apostrophe (426.7909ms)
+2026-11-12T02:34:21.5440938Z ✔ a2x speed change preserves narration pitch while shortening duration (302.4242ms)
+2026-11-12T02:34:22.0757040Z ✔ preview and export reject an external media-folder symlink or Windows junction (531.3977ms)
+2026-11-12T02:34:22.0838258Z ✔ serialized saves preserve submission order and reject invalid documents without changing saved data (471.5771ms)
+2026-11-12T02:34:22.0842079Z ✔ autosave recovery only offers newer validated documents with the same project identity (98.7296ms)
+2026-11-12T02:34:22.0843433Z ✔ force-killing a saving process leaves a complete saved document and permits a subsequent save (163.043ms)
+2026-11-12T02:34:22.0844241Z ✔ a damaged saved document can recover from a validated autosave without replacing either file (49.1871ms)
+2026-11-12T02:34:22.0844999Z ✔ a disk-full failure during temporary-file writing preserves the completed project and cleans the partial write (21.2331ms)
+2026-11-12T02:34:22.0845560Z ✔ valid document round trips through JSON (1.6264ms)
+2026-11-12T02:34:22.0845985Z ✔ rejects path traversal (0.2875ms)
+2026-11-12T02:34:22.0846693Z ✔ rejects invalid fps (0.1052ms)
+2026-11-12T02:34:22.0847138Z ✔ rejects odd dimensions (0.1086ms)
+2026-11-12T02:34:22.0847430Z ✔ rejects negative source trim (0.108ms)
+2026-11-12T02:34:22.0847699Z ✔ rejects duplicate media IDs (0.1092ms)
+2026-11-12T02:34:22.0847956Z ✔ rejects missing media (0.0958ms)
+2026-11-12T02:34:22.0848223Z ✔ rejects source overrun (0.0909ms)
+2026-11-12T02:34:22.0848478Z ✔ rejects duplicate clips (0.2197ms)
+2026-11-12T02:34:22.0848888Z ✔ split preserves source and timeline continuity (0.4348ms)
+2026-11-12T02:34:22.0849211Z ✔ split rejects boundaries (0.1424ms)
+2026-11-12T02:34:22.0849404Z {
+2026-11-12T02:34:22.0849566Z   "duration": "2.500000",
+2026-11-12T02:34:22.0849738Z   "streams": [
+2026-11-12T02:34:22.0849889Z     {
+2026-11-12T02:34:22.0850059Z       "type": "video",
+2026-11-12T02:34:22.0850302Z       "codec": "h264"
+2026-11-12T02:34:22.0850548Z     },
+2026-11-12T02:34:22.0850718Z     {
+2026-11-12T02:34:22.0850851Z       "type": "audio",
+2026-11-12T02:34:22.0851008Z       "codec": "aac"
+2026-11-12T02:34:22.0851162Z     },
+2026-11-12T02:34:22.0851289Z     {
+2026-11-12T02:34:22.0851424Z       "type": "subtitle",
+2026-11-12T02:34:22.0851600Z       "codec": "mov_text"
+2026-11-12T02:34:22.0851755Z     }
+2026-11-12T02:34:22.0851878Z   ],
+2026-11-12T02:34:22.0852062Z   "messages": [
+2026-11-12T02:34:22.0852247Z     "Rendering timeline",
+2026-11-12T02:34:22.0852606Z     "Rendering timeline 100%",
+2026-11-12T02:34:22.0852793Z     "Rendering captions",
+2026-11-12T02:34:22.0852973Z     "Rendering captions 100%",
+2026-11-12T02:34:22.0853146Z     "Export complete"
+2026-11-12T02:34:22.0853304Z   ]
+2026-11-12T02:34:22.0853428Z }
+2026-11-12T02:34:22.0853818Z ✔ application renderer exports image, gap, and two offset audio layers (1378.6716ms)
+2026-11-12T02:34:22.0854364Z ✔ service configuration rejects unsafe endpoints and embedded credentials (1.3774ms)
+2026-11-12T02:34:22.0854926Z ✔ explicit service requests validate plans, inspect speech and require timed SRT (234.3189ms)
+2026-11-12T02:34:22.0855506Z ✔ caption service rejects an external media-folder junction before transmitting bytes (7.6276ms)
+2026-11-12T02:34:22.0856270Z ✔ duration includes audio tails and captions, rounded up to a complete frame (0.6821ms)
+2026-11-12T02:34:22.0857177Z ✔ split preserves animation, speed, source position and fade envelopes (0.8406ms)
+2026-11-12T02:34:22.0858603Z ✔ nested slices retain original envelope and interpolate new keyframe boundaries (0.1976ms)
+2026-11-12T02:34:22.0859327Z ℹ tests 44
+2026-11-12T02:34:22.0859592Z ℹ suites 0
+2026-11-12T02:34:22.0859834Z ℹ pass 43
+2026-11-12T02:34:22.0860071Z ℹ fail 0
+2026-11-12T02:34:22.0860325Z ℹ cancelled 0
+2026-11-12T02:34:22.0860575Z ℹ skipped 1
+2026-11-12T02:34:22.0860806Z ℹ todo 0
+2026-11-12T02:34:22.0861103Z ℹ duration_ms 5890.7209
+2026-11-12T02:34:22.1496534Z ##[group]Run npm run build
+2026-11-12T02:34:22.1496892Z [36;1mnpm run build[0m
+2026-11-12T02:34:22.1528857Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:34:22.1529123Z env:
+2026-11-12T02:34:22.1529338Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:22.1529709Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:34:22.1530067Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:22.1530394Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:22.1530706Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:22.1530961Z ##[endgroup]
+2026-11-12T02:34:22.9242300Z 
+2026-11-12T02:34:22.9242750Z > visionforge@0.1.0 build
+2026-11-12T02:34:22.9243080Z > electron-vite build
+2026-11-12T02:34:22.9243445Z 
+2026-11-12T02:34:23.7753960Z [36mvite v6.4.6 [32mbuilding SSR bundle for production...[36m[39m
+2026-11-12T02:34:23.8180787Z transforming...
+2026-11-12T02:34:23.9174189Z [32m✓[39m 14 modules transformed.
+2026-11-12T02:34:23.9425334Z rendering chunks...
+2026-11-12T02:34:23.9457800Z [2mout/main/[22m[36mindex.js  [39m[1m[2m44.56 kB[22m[1m[22m
+2026-11-12T02:34:23.9459120Z [32m✓ built in 152ms[39m
+2026-11-12T02:34:23.9494750Z [36mvite v6.4.6 [32mbuilding SSR bundle for production...[36m[39m
+2026-11-12T02:34:23.9523175Z transforming...
+2026-11-12T02:34:23.9541374Z [32m✓[39m 1 modules transformed.
+2026-11-12T02:34:23.9573147Z rendering chunks...
+2026-11-12T02:34:23.9580546Z [2mout/preload/[22m[36mindex.js  [39m[1m[2m1.74 kB[22m[1m[22m
+2026-11-12T02:34:23.9581002Z [32m✓ built in 8ms[39m
+2026-11-12T02:34:23.9615107Z [36mvite v6.4.6 [32mbuilding for production...[36m[39m
+2026-11-12T02:34:23.9769108Z transforming...
+2026-11-12T02:34:25.5129021Z [32m✓[39m 1588 modules transformed.
+2026-11-12T02:34:25.5793243Z rendering chunks...
+2026-11-12T02:34:25.5842673Z [2m../../out/renderer/[22m[32mindex.html                 [39m[1m[2m  0.36 kB[22m[1m[22m
+2026-11-12T02:34:25.5843628Z [2m../../out/renderer/[22m[35massets/index-AwFfBdi5.css  [39m[1m[2m  7.06 kB[22m[1m[22m
+2026-11-12T02:34:25.5844314Z [2m../../out/renderer/[22m[36massets/index-DkpqMH6e.js   [39m[1m[2m304.64 kB[22m[1m[22m
+2026-11-12T02:34:25.5845114Z [32m✓ built in 1.62s[39m
+2026-11-12T02:34:25.6620966Z ##[group]Run node scripts/build-windows-native.cjs
+2026-11-12T02:34:25.6621326Z [36;1mnode scripts/build-windows-native.cjs[0m
+2026-11-12T02:34:25.6650970Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:34:25.6651234Z env:
+2026-11-12T02:34:25.6651443Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:25.6651795Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:34:25.6652133Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:25.6652443Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:25.6652738Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:34:25.6652976Z ##[endgroup]
+2026-11-12T02:34:26.3405387Z   • electron-builder  version=26.18.0 os=10.0.20348
+2026-11-12T02:34:26.3476076Z   • loaded configuration  file=D:\a\VisionForge\VisionForge\electron-builder.yml
+2026-11-12T02:34:26.9914467Z   • executing @electron/rebuild  electronVersion=45.3.0 arch=x64 buildFromSource=false workspaceRoot=D:\a\VisionForge\VisionForge projectDir=./ appDir=./
+2026-11-12T02:34:26.9915607Z   • installing native dependencies  arch=x64
+2026-11-12T02:34:27.1447842Z   • completed installing native dependencies
+2026-11-12T02:34:27.1498979Z   • packaging       platform=win32 arch=x64 electron=45.3.0 appOutDir=release\win-unpacked
+2026-11-12T02:34:27.2290724Z   • downloaded      label=electron progress=100%
+2026-11-12T02:34:29.9270336Z   • downloaded electron zip extracted successfully  output=D:\a\VisionForge\VisionForge\release\win-unpacked
+2026-11-12T02:34:29.9393684Z   • searching for node modules  pm=npm searchDir=D:\a\VisionForge\VisionForge
+2026-11-12T02:34:33.0042105Z   • duplicate dependency references  dependencies=["react@18.3.1","react@18.3.1","loose-envify@1.4.0","loose-envify@1.4.0","react@18.3.1"]
+2026-11-12T02:34:39.4009969Z   • updating asar integrity executable resource  executablePath=release\win-unpacked\VisionForge.exe
+2026-11-12T02:34:39.7126815Z   • file signing skipped via signExecutable configuration  file=release\win-unpacked\VisionForge.exe
+2026-11-12T02:34:39.7137326Z   • building        target=nsis file=release\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe archs=x64 oneClick=false perMachine=false
+2026-11-12T02:34:39.9790689Z   • downloaded      label=7zip-win-x64.tar.gz progress=100%
+2026-11-12T02:35:34.1545823Z   • downloaded      label=nsis-3.0.4.1.7z progress=100%
+2026-11-12T02:35:35.0527670Z   • downloaded      label=nsis-resources-3.4.1.7z progress=100%
+2026-11-12T02:35:36.5797646Z   • file signing skipped via signExecutable configuration  file=release\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.__uninstaller.exe
+2026-11-12T02:35:38.6614335Z   • file signing skipped via signExecutable configuration  file=release\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe
+2026-11-12T02:35:38.6618172Z   • building block map  blockMapFile=release\VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe.blockmap
+2026-11-12T02:35:45.6601814Z ##[group]Run ./scripts/windows-install-check.ps1 install
+2026-11-12T02:35:45.6602256Z [36;1m./scripts/windows-install-check.ps1 install[0m
+2026-11-12T02:35:45.6633180Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:35:45.6633460Z env:
+2026-11-12T02:35:45.6633685Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:35:45.6634057Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:35:45.6634403Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:35:45.6634710Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:35:45.6635018Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:35:45.6635271Z ##[endgroup]
+2026-11-12T02:36:02.5585411Z ##[group]Run python scripts/prepare-windows-documentary.py
+2026-11-12T02:36:02.5585816Z [36;1mpython scripts/prepare-windows-documentary.py[0m
+2026-11-12T02:36:02.5614430Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:36:02.5614825Z env:
+2026-11-12T02:36:02.5615038Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:02.5615387Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:36:02.5615727Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:02.5616045Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:02.5616341Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:02.5616658Z   VF_TEST_EXECUTABLE: D:\a\_temp\VisionForgeAcceptance\VisionForge.exe
+2026-11-12T02:36:02.5616925Z ##[endgroup]
+2026-11-12T02:36:04.4935342Z ground-stars.mp4 25137220
+2026-11-12T02:36:05.0816195Z night-lights.mp4 49735282
+2026-11-12T02:36:05.1040681Z five-minutes-orbit.mp4 104930762
+2026-11-12T02:36:05.1925410Z airglow-broll.mp4 53559266
+2026-11-12T02:36:05.2940408Z earth-expedition42.mp4 7367057
+2026-11-12T02:36:05.3056160Z Pinned footage and original narration prepared. No AI model installation is needed.
+2026-11-12T02:36:05.4106877Z ##[group]Run node tests/windows-documentary.cjs
+2026-11-12T02:36:05.4107382Z [36;1mnode tests/windows-documentary.cjs[0m
+2026-11-12T02:36:05.4146184Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:36:05.4146467Z env:
+2026-11-12T02:36:05.4146682Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:05.4147055Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:36:05.4147410Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:05.4147723Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:05.4148020Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:05.4148354Z   VF_TEST_EXECUTABLE: D:\a\_temp\VisionForgeAcceptance\VisionForge.exe
+2026-11-12T02:36:05.4148622Z ##[endgroup]
+2026-11-12T02:36:05.8972301Z (node:2924) [DEP0190] DeprecationWarning: Passing args to a child process with shell option true can lead to security vulnerabilities, as the arguments are not escaped, only concatenated.
+2026-11-12T02:36:05.8973800Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T02:36:06.5148371Z installed-Windows-application-with-bundled-tools {
+2026-11-12T02:36:06.5148883Z   packaged: true,
+2026-11-12T02:36:06.5149302Z   resources: 'D:\\a\\_temp\\VisionForgeAcceptance\\resources',
+2026-11-12T02:36:06.5149903Z   executable: 'D:\\a\\_temp\\VisionForgeAcceptance\\VisionForge.exe',
+2026-11-12T02:36:06.5150523Z   tools: 'D:\\a\\_temp\\VisionForgeAcceptance\\resources\\tools\\win-x64',
+2026-11-12T02:36:06.5151086Z   fonts: 'D:\\a\\_temp\\VisionForgeAcceptance\\resources\\fonts',
+2026-11-12T02:36:06.5151564Z   searchPath: 'C:\\Windows\\System32;C:\\Windows'
+2026-11-12T02:36:06.5151920Z }
+2026-11-12T02:36:07.9347209Z import-original-neural-narration-through-Windows-application 
+2026-11-12T02:36:10.1561596Z import-review-assemble-original-script-footage-and-measured-timed-captions { visualClips: 22, captions: 36, duration: 160.6545416666667 }
+2026-11-12T02:36:10.7912783Z AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+2026-11-12T02:36:10.7913358Z + actual - expected
+2026-11-12T02:36:10.7913469Z 
+2026-11-12T02:36:10.7913765Z + 'From the ground, night can make the world feel smaller. A window. A street. A circle of light.\n' +
+2026-11-12T02:36:10.7914108Z +   '\n' +
+2026-11-12T02:36:10.7915385Z +   'From orbit, the view changes. Darkness reveals a planet that is still moving, still active, and still connected.\n' +
+2026-11-12T02:36:10.7916037Z +   '\n' +
+2026-11-12T02:36:10.7917399Z +   'Look first at the surface. Clusters of light trace places where people live. Smaller points stretch between them. Coastlines and rivers emerge from patterns made by human activity. Satellite composites reveal these patterns across entire continents.\n' +
+2026-11-12T02:36:10.7918221Z +   '\n' +
+2026-11-12T02:36:10.7919820Z +   'These lights are only one layer of the scene. Above them, clouds move across the landscape. Brief flashes illuminate parts of the cloud cover: lightning, seen from a perspective most of us will never experience directly.\n' +
+2026-11-12T02:36:10.7920698Z +   '\n' +
+2026-11-12T02:36:10.7921173Z +   'Then the horizon begins to glow. A thin band follows the curve of Earth, separating the dark surface from the blackness beyond it.\n' +
+2026-11-12T02:36:10.7921589Z +   '\n' +
+2026-11-12T02:36:10.7922223Z +   'Some of that light is airglow. Atoms and molecules in the upper atmosphere release energy as light after being excited by sunlight. The night sky is not perfectly dark, even far from a city.\n' +
+2026-11-12T02:36:10.7922778Z +   '\n' +
+2026-11-12T02:36:10.7923399Z +   'From this perspective, the atmosphere becomes visible as a layer. Clouds occupy the lower part of the scene. The glow sits higher. Stars appear beyond them, against the darkness of space.\n' +
+2026-11-12T02:36:10.7923948Z +   '\n' +
+2026-11-12T02:36:10.7926049Z +   "A bright object rising over the horizon adds another point of reference. In this astronaut sequence, it is the Moon. Its appearance changes with the camera's exposure, reminding us that a photograph records a view through an instrument.\n" +
+2026-11-12T02:36:10.7926815Z +   '\n' +
+2026-11-12T02:36:10.7927546Z +   'The motion in the astronaut recordings is accelerated. Individual photographs taken from the International Space Station have been combined into time-lapse sequences. Minutes of observation pass in seconds.\n' +
+2026-11-12T02:36:10.7928173Z +   '\n' +
+2026-11-12T02:36:10.7928672Z +   'That changes our sense of scale. A storm becomes a flicker. A city becomes a pattern. The atmosphere becomes a delicate boundary against space.\n' +
+2026-11-12T02:36:10.7929116Z +   '\n' +
+2026-11-12T02:36:10.7929657Z +   'These images bring different kinds of light together: human activity below, weather in between, and the upper atmosphere responding to energy from the Sun.\n' +
+2026-11-12T02:36:10.7930147Z +   '\n' +
+2026-11-12T02:36:10.7930515Z - 'From the ground, night can make the world feel smaller. A window. A street. A circle of light.\r\n' +
+2026-11-12T02:36:10.7930912Z -   '\r\n' +
+2026-11-12T02:36:10.7931339Z -   'From orbit, the view changes. Darkness reveals a planet that is still moving, still active, and still connected.\r\n' +
+2026-11-12T02:36:10.7931722Z -   '\r\n' +
+2026-11-12T02:36:10.7932576Z -   'Look first at the surface. Clusters of light trace places where people live. Smaller points stretch between them. Coastlines and rivers emerge from patterns made by human activity. Satellite composites reveal these patterns across entire continents.\r\n' +
+2026-11-12T02:36:10.7933294Z -   '\r\n' +
+2026-11-12T02:36:10.7934040Z -   'These lights are only one layer of the scene. Above them, clouds move across the landscape. Brief flashes illuminate parts of the cloud cover: lightning, seen from a perspective most of us will never experience directly.\r\n' +
+2026-11-12T02:36:10.7934689Z -   '\r\n' +
+2026-11-12T02:36:10.7935154Z -   'Then the horizon begins to glow. A thin band follows the curve of Earth, separating the dark surface from the blackness beyond it.\r\n' +
+2026-11-12T02:36:10.7935597Z -   '\r\n' +
+2026-11-12T02:36:10.7936256Z -   'Some of that light is airglow. Atoms and molecules in the upper atmosphere release energy as light after being excited by sunlight. The night sky is not perfectly dark, even far from a city.\r\n' +
+2026-11-12T02:36:10.7936827Z -   '\r\n' +
+2026-11-12T02:36:10.7937464Z -   'From this perspective, the atmosphere becomes visible as a layer. Clouds occupy the lower part of the scene. The glow sits higher. Stars appear beyond them, against the darkness of space.\r\n' +
+2026-11-12T02:36:10.7938013Z -   '\r\n' +
+2026-11-12T02:36:10.7938794Z -   "A bright object rising over the horizon adds another point of reference. In this astronaut sequence, it is the Moon. Its appearance changes with the camera's exposure, reminding us that a photograph records a view through an instrument.\r\n" +
+2026-11-12T02:36:10.7939586Z -   '\r\n' +
+2026-11-12T02:36:10.7940302Z -   'The motion in the astronaut recordings is accelerated. Individual photographs taken from the International Space Station have been combined into time-lapse sequences. Minutes of observation pass in seconds.\r\n' +
+2026-11-12T02:36:10.7940952Z -   '\r\n' +
+2026-11-12T02:36:10.7941445Z -   'That changes our sense of scale. A storm becomes a flicker. A city becomes a pattern. The atmosphere becomes a delicate boundary against space.\r\n' +
+2026-11-12T02:36:10.7941893Z -   '\r\n' +
+2026-11-12T02:36:10.7942429Z -   'These images bring different kinds of light together: human activity below, weather in between, and the upper atmosphere responding to energy from the Sun.\r\n' +
+2026-11-12T02:36:10.7942909Z -   '\r\n' +
+2026-11-12T02:36:10.7943170Z     'Night does not switch the planet off. It gives us another way to see it.'
+2026-11-12T02:36:10.7943393Z 
+2026-11-12T02:36:10.7944024Z     at D:\a\VisionForge\VisionForge\tests\windows-documentary.cjs:12:2087 {
+2026-11-12T02:36:10.7944325Z   generatedMessage: true,
+2026-11-12T02:36:10.7944522Z   code: 'ERR_ASSERTION',
+2026-11-12T02:36:10.7944894Z   actual: 'From the ground, night can make the world feel smaller. A window. A street. A circle of light.\n' +
+2026-11-12T02:36:10.7945246Z     '\n' +
+2026-11-12T02:36:10.7945626Z     'From orbit, the view changes. Darkness reveals a planet that is still moving, still active, and still connected.\n' +
+2026-11-12T02:36:10.7946006Z     '\n' +
+2026-11-12T02:36:10.7946767Z     'Look first at the surface. Clusters of light trace places where people live. Smaller points stretch between them. Coastlines and rivers emerge from patterns made by human activity. Satellite composites reveal these patterns across entire continents.\n' +
+2026-11-12T02:36:10.7947496Z     '\n' +
+2026-11-12T02:36:10.7948160Z     'These lights are only one layer of the scene. Above them, clouds move across the landscape. Brief flashes illuminate parts of the cloud cover: lightning, seen from a perspective most of us will never experience directly.\n' +
+2026-11-12T02:36:10.7948795Z     '\n' +
+2026-11-12T02:36:10.7949198Z     'Then the horizon begins to glow. A thin band follows the curve of Earth, separating the dark surface from the blackness beyond it.\n' +
+2026-11-12T02:36:10.7949615Z     '\n' +
+2026-11-12T02:36:10.7949749Z     '...',
+2026-11-12T02:36:10.7950087Z   expected: 'From the ground, night can make the world feel smaller. A window. A street. A circle of light.\r\n' +
+2026-11-12T02:36:10.7950436Z     '\r\n' +
+2026-11-12T02:36:10.7950821Z     'From orbit, the view changes. Darkness reveals a planet that is still moving, still active, and still connected.\r\n' +
+2026-11-12T02:36:10.7951194Z     '\r\n' +
+2026-11-12T02:36:10.7951970Z     'Look first at the surface. Clusters of light trace places where people live. Smaller points stretch between them. Coastlines and rivers emerge from patterns made by human activity. Satellite composites reveal these patterns across entire continents.\r\n' +
+2026-11-12T02:36:10.7952700Z     '\r\n' +
+2026-11-12T02:36:10.7953361Z     'These lights are only one layer of the scene. Above them, clouds move across the landscape. Brief flashes illuminate parts of the cloud cover: lightning, seen from a perspective most of us will never experience directly.\r\n' +
+2026-11-12T02:36:10.7953992Z     '\r\n' +
+2026-11-12T02:36:10.7954394Z     'Then the horizon begins to glow. A thin band follows the curve of Earth, separating the dark surface from the blackness beyond it.\r\n' +
+2026-11-12T02:36:10.7954802Z     '\r\n' +
+2026-11-12T02:36:10.7955269Z     '...',
+2026-11-12T02:36:10.7955589Z   operator: 'strictEqual',
+2026-11-12T02:36:10.7956580Z   diff: 'simple'
+2026-11-12T02:36:10.7956827Z }
+2026-11-12T02:36:10.8776745Z ##[error]Process completed with exit code 1.
+2026-11-12T02:36:10.8894937Z ##[group]Run ./scripts/windows-install-check.ps1 uninstall
+2026-11-12T02:36:10.8895483Z [36;1m./scripts/windows-install-check.ps1 uninstall[0m
+2026-11-12T02:36:10.8924776Z shell: C:\Program Files\PowerShell\7\pwsh.EXE -command ". '{0}'"
+2026-11-12T02:36:10.8925047Z env:
+2026-11-12T02:36:10.8925258Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:10.8925612Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:36:10.8925956Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:10.8926261Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:10.8926556Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:10.8926873Z   VF_TEST_EXECUTABLE: D:\a\_temp\VisionForgeAcceptance\VisionForge.exe
+2026-11-12T02:36:10.8927138Z ##[endgroup]
+2026-11-12T02:36:12.3589961Z ##[group]Run actions/upload-artifact@v4
+2026-11-12T02:36:12.3590232Z with:
+2026-11-12T02:36:12.3590396Z   name: windows-documentary-evidence
+2026-11-12T02:36:12.3590764Z   path: production/night-side/windows/evidence/
+evidence/windows-installer.json
+
+2026-11-12T02:36:12.3591093Z   retention-days: 14
+2026-11-12T02:36:12.3591260Z   if-no-files-found: warn
+2026-11-12T02:36:12.3591432Z   compression-level: 6
+2026-11-12T02:36:12.3591588Z   overwrite: false
+2026-11-12T02:36:12.3591748Z   include-hidden-files: false
+2026-11-12T02:36:12.3591918Z env:
+2026-11-12T02:36:12.3592124Z   pythonLocation: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:12.3592473Z   PKG_CONFIG_PATH: C:\hostedtoolcache\windows\Python\3.12.10\x64/lib/pkgconfig
+2026-11-12T02:36:12.3592816Z   Python_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:12.3593113Z   Python2_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:12.3593434Z   Python3_ROOT_DIR: C:\hostedtoolcache\windows\Python\3.12.10\x64
+2026-11-12T02:36:12.3593748Z   VF_TEST_EXECUTABLE: D:\a\_temp\VisionForgeAcceptance\VisionForge.exe
+2026-11-12T02:36:12.3594009Z ##[endgroup]
+2026-11-12T02:36:12.4976281Z (node:3820) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-11-12T02:36:12.4976902Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-11-12T02:36:12.5031868Z Multiple search paths detected. Calculating the least common ancestor of all paths
+2026-11-12T02:36:12.5034326Z The least common ancestor is D:\a\VisionForge\VisionForge. This will be the root directory of the artifact
+2026-11-12T02:36:12.5034914Z With the provided path, there will be 4 files uploaded
+2026-11-12T02:36:12.5038472Z Artifact name is valid!
+2026-11-12T02:36:12.5039854Z Root directory input is valid!
+2026-11-12T02:36:12.8599101Z Beginning upload of artifact content to blob storage
+2026-11-12T02:36:12.8813334Z (node:3820) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-11-12T02:36:13.1323598Z Uploaded bytes 5941
+2026-11-12T02:36:13.2021925Z Finished uploading artifact content to blob storage!
+2026-11-12T02:36:13.2023288Z SHA256 digest of uploaded artifact zip is 1ecd17eb5aa64be4ff026607db5f4ed61fad0b06819c5579687d3e13f2f8bc54
+2026-11-12T02:36:13.2025606Z Finalizing artifact upload
+2026-11-12T02:36:13.5904520Z Artifact windows-documentary-evidence.zip successfully finalized. Artifact ID 13909937929
+2026-11-12T02:36:13.5905848Z Artifact windows-documentary-evidence has been successfully uploaded! Final size is 5941 bytes. Artifact ID is 13909937929
+2026-11-12T02:36:13.5913650Z Artifact download URL: https://github.com/cent247/VisionForge/actions/runs/43142250715/artifacts/13909937929
+2026-11-12T02:36:13.6176392Z Post job cleanup.
+2026-11-12T02:36:13.7751365Z [command]"C:\Program Files\Git\bin\git.exe" version
+2026-11-12T02:36:13.7982461Z git version 2.56.0.windows.4
+2026-11-12T02:36:13.8030133Z Temporarily overriding HOME='D:\a\_temp\aecc24a4-cb3a-4920-b243-c9ec6f292394' before making global git config changes
+2026-11-12T02:36:13.8031363Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-12T02:36:13.8041083Z [command]"C:\Program Files\Git\bin\git.exe" config --global --add safe.directory D:\a\VisionForge\VisionForge
+2026-11-12T02:36:13.8333909Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp core\.sshCommand
+2026-11-12T02:36:13.8609991Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :\""
+2026-11-12T02:36:14.2844513Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-12T02:36:14.3053295Z http.https://github.com/.extraheader
+2026-11-12T02:36:14.3082458Z [command]"C:\Program Files\Git\bin\git.exe" config --local --unset-all http.https://github.com/.extraheader
+2026-11-12T02:36:14.3323496Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "sh -c \"git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :\""
+2026-11-12T02:36:14.7416695Z [command]"C:\Program Files\Git\bin\git.exe" config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-12T02:36:14.7677314Z [command]"C:\Program Files\Git\bin\git.exe" submodule foreach --recursive "git config --local --show-origin --name-only --get-regexp remote.origin.url"
+2026-11-12T02:36:15.1755027Z Cleaning up orphan processes
+2026-11-12T02:36:15.2102054Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, actions/upload-artifact@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

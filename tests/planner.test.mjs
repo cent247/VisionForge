@@ -1,0 +1,4 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {planScript,validatePlan} from '../src/shared/planner.mjs';
+const media=[{id:'rain',name:'rain.mp4',mediaType:'video'},{id:'sun',name:'sunshine.mp4',mediaType:'video'}];
+test('storyboard retains original narration and matches imported footage',()=>{const p=planScript('Rain falls on a river.\n\nSunshine warms the surface.',media);assert.equal(p[0].narration,'Rain falls on a river.');assert.equal(p[0].mediaId,'rain');assert.equal(p[1].mediaId,'sun');assert.equal(validatePlan(p,media),p);});
+test('reviewed plans reject unavailable visuals and invalid times',()=>{const p=planScript('Rain falls.',media);p[0].mediaId='missing';assert.throws(()=>validatePlan(p,media));p[0].mediaId='rain';p[0].durationSeconds=-1;assert.throws(()=>validatePlan(p,media));});

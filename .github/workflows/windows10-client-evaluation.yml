@@ -1,0 +1,85 @@
+name: Windows 10 22H2 x64 evaluation client acceptance
+on:
+  push:
+    branches: [visionforge-development]
+    paths: ['scripts/windows10-evaluation-updates.ps1', '.github/workflows/windows10-client-evaluation.yml']
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: write
+concurrency:
+  group: windows10-client-evaluation-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  windows10-x64:
+    runs-on: ubuntu-latest
+    timeout-minutes: 130
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cancel superseded evaluation attempts
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const {data} = await github.rest.actions.listWorkflowRuns({owner:context.repo.owner,repo:context.repo.repo,workflow_id:'windows10-client-evaluation.yml',branch:'visionforge-development',per_page:30});
+            for (const run of data.workflow_runs) {
+              if (run.id < context.runId && ['queued','in_progress','waiting','requested'].includes(run.status)) {
+                await github.rest.actions.cancelWorkflowRun({owner:context.repo.owner,repo:context.repo.repo,run_id:run.id});
+              }
+            }
+      - name: Free unused runner SDK space
+        run: sudo rm -rf /usr/local/lib/android /usr/share/dotnet /opt/ghc
+      - name: Install VM tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qemu-system-x86 qemu-utils ovmf swtpm xorriso
+          if [ -e /dev/kvm ]; then sudo chmod a+rw /dev/kvm; fi
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: npm ci --ignore-scripts
+      - name: Parse guest scripts
+        shell: pwsh
+        run: |
+          foreach ($file in @('scripts/windows-client-guest.ps1','scripts/windows10-evaluation-updates.ps1')) {
+            $tokens=$null; $parseErrors=$null
+            [System.Management.Automation.Language.Parser]::ParseFile((Join-Path $pwd $file),[ref]$tokens,[ref]$parseErrors) | Out-Null
+            if ($parseErrors.Count) { throw ($parseErrors | Out-String) }
+          }
+      - uses: actions/download-artifact@v4
+        with:
+          github-token: ${{ github.token }}
+          run-id: 43196669781
+          name: windows-verification-evidence-server-2022-x64
+          path: client-candidate
+      - name: Evaluate official Windows 10 media and signed 22H2 updates
+        run: |
+          installer=$(find client-candidate/release -maxdepth 1 -name '*.exe' -print -quit)
+          test -n "$installer"
+          mkdir -p evidence/client-evaluation
+          nohup python3 scripts/windows-client-evaluation.py --installer "$installer" --work "$RUNNER_TEMP/vf-windows10-client" --target windows10 --timeout-minutes 90 > evidence/client-evaluation/session.log 2>&1 < /dev/null &
+          echo $! > evidence/client-evaluation/host.pid
+      - name: Initial installation checkpoint
+        run: python3 scripts/wait-client-evaluation.py --minutes 3 --after-boot
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows10-x64-initial-checkpoint
+          path: evidence/client-evaluation/
+          retention-days: 7
+      - name: Installation progress checkpoint
+        run: python3 scripts/wait-client-evaluation.py --minutes 4
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows10-x64-installation-checkpoint
+          path: evidence/client-evaluation/
+          retention-days: 7
+      - name: Wait for client acceptance
+        run: python3 scripts/wait-client-evaluation.py --minutes 95 --final
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows10-x64-evaluation-evidence
+          path: evidence/client-evaluation/
+          retention-days: 30

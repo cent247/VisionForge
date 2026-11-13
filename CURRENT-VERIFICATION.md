@@ -1,0 +1,89 @@
+# VisionForge — Windows verification and remaining release gates
+
+**An unsigned 0.1.1 candidate is available for the owner-requested trial. Final release remains pending.** Target: Windows 10/11 x64. No finished-release or 100% completion claim.
+
+Successful matrix run: https://github.com/cent247/VisionForge/actions/runs/43139240640  
+Tested revision: `d782ad37f58e5dc09dcdef05b0be6b409c3fa857`  
+Development PR: https://github.com/cent247/VisionForge/pull/1
+
+## Version 0.1.1 — owner-reported inert interface
+
+The owner reported that the installed 0.1.0 interface appeared unresponsive. A confirmed defect was decorative sidebar entries with no click handlers. Version 0.1.1 replaces them with accessible navigation controls, opens and focuses the requested editor sections, gives New/Open dialogs an owning window, and displays a startup-failure screen when the desktop bridge or React startup fails. The complete owner-device issue is not yet confirmed resolved.
+
+The exact downloadable 0.1.1 candidate passed source, packaged and installed workflows, startup/navigation checks, security, keyboard, stock fixtures, runtime notices, and install/uninstall on both Windows Server 2022 x64 and Windows 11 ARM using x64 emulation:
+https://github.com/cent247/VisionForge/actions/runs/43336244847
+
+Trial download: https://github.com/cent247/VisionForge/actions/runs/43336244847/artifacts/13997247602
+
+A separate acceptance job passed project settings, clip effects, adding audio tracks and captions, and saved-value checks against that same downloaded installer (no application rebuild):
+https://github.com/cent247/VisionForge/actions/runs/43337572084
+
+Clean Windows 10 and native Intel/AMD Windows 11 acceptance remain open. Earlier evaluation guests timed out or crashed without app acceptance events; see evidence/client-failure-diagnosis.json. Hosted AI and authenticated Pexels acceptance, full media-tool corresponding-source review/delivery, and final release acceptance remain open.
+
+## Earlier continuation — stock, keyboard and source recovery
+
+Current source adds optional explicit Pexels VIDEO search and selected MP4 import, bounded provider/download requests, saved creator/source/hash provenance and protection against late responses after project switching. Keys remain in session and are excluded from saved project metadata and CDN requests. Real Pexels authentication/quota/CDN acceptance remains open without a live credential; provider responses in tests were fixtures. See evidence/stock-review.md.
+
+Integrated Linux verification passed 49 automated tests, the 13-check editor workflow, security regression, seven keyboard checks and four stock UI checks. Timeline clips now support native keyboard selection, named controls, visible focus and status announcements. Media inspection and compositor input protocols are restricted to local files/pipes; an adversarial playlist triggered no network requests. Active cancellation of a 60-second 720p timeline at 57% of composition and 17% of caption encoding preserved the previous export, removed staging files and allowed a fully decoded retry. Physical power-loss/abrupt-app-termination and broad assistive-technology acceptance are not established.
+
+Windows rerun: https://github.com/cent247/VisionForge/actions/runs/43196669781 (tested revision 39bd0fe97c71bf616c70b30af49d1cfcb07884c7). Both Windows Server 2022 x64 and Windows 11 ARM/x64-emulation passed the source/packaged/installed editor, security/license and new installed keyboard/stock UI workflows, plus installation/uninstallation. Each automated suite recorded 48 passes, zero failures and one skipped privileged symlink fixture. Evidence: evidence/continued-windows-verification.json. Initial run 43195814366 found a stock-test save synchronization race; the test now waits for the editor's save-complete acknowledgement before reading the file. That failed run is not counted as a pass.
+
+Source recovery succeeded: https://github.com/cent247/VisionForge/actions/runs/43196339870. Recovered supplier recipe commit c9fe5114060e507409f7ee07edfd82efaf25d767, FFmpeg source c179411bbb2864cc71323d3055acda25d5c2aace, and the 2,243,239,670-byte supplier cache matching SHA256 078e955870c12f8c73d3e4a8e23da975b61d1f6edc6b28a09dab18a7a16beb16. Inspection recorded 129 source archives and 129 active cache aliases; recovered x264/libass Git heads match the pinned recipes. All 127 source-download stage definitions have matching recovered cache aliases; seven configuration-only stages perform no source download (evidence/source-stage-coverage.json). Source candidates are split into six ordered segments with a separate records archive; all seven files have been saved persistently. The records archive contains reconstruction instructions and source hashes. This closes discovery/recovery of those inputs, not the review of every configured component/build/runtime prerequisite or durable public source delivery alongside the final installer. See evidence/media-source-recovery.json and evidence/source-inspection.json.
+
+## Latest parallel review — Linux and hosted Windows reruns passed
+
+The subsequent security fixes pass `npm run verify` on Linux: 45 automated tests, 13 desktop workflow checks, and the dedicated Electron security regression. The overlay import now checks canonical media containment and exclusive creation; preview caches reject redirected directories and non-regular entries. Production renderer CSP and default permission denial are enabled. This targeted review does not establish a comprehensive security audit or protection from concurrent hostile filesystem races.
+
+The fresh npm audit reports zero known advisories. Verbatim runtime notices for 11 dependency packages are generated, hash checked and included in packaging configuration. The Windows workflow now checks the installed license payload and runs the new security regression. The new installers passed that workflow on both Windows Server 2022 x64 and Windows 11 ARM with the x64 app under emulation: https://github.com/cent247/VisionForge/actions/runs/43146735998 (tested revision 0b86cb36740e511a918eaeb38e7e21f10a4a4de0). Each recorded 44 automated passes, zero failures and one skipped privileged fixture, plus source/packaged/installed editor checks, installed security regressions, 11 packaged license-text hash checks, installation and uninstallation. Evidence: evidence/windows-parallel-review-success.json. The first attempt failed due to checkout line-ending conversion of notices; byte-preserving attributes fixed it, and that failed attempt is not counted as a pass.
+
+A five-minute, 60-cut captioned timeline passed low-resolution full decoding, unchanged-preview reuse and caption-boundary export cancellation/retry. A separate 30-second 1920x1080/24fps six-cut moving-source fixture with audio, captions and effects passed all 720 decoded frames (45.101 seconds including source generation, render and decode). See evidence/reliability-review.md for measured results and exact limits; this does not establish prolonged high-resolution GUI performance or physical power-loss durability.
+
+The installed Windows documentary run has also passed: https://github.com/cent247/VisionForge/actions/runs/43142851730 (tested source dd5419768c63504cea2f87b3a007daf63d6bd36f). It assembled/exported the 160.666667-second film with 22 visual clips and 36 captions; full decoding, 4,820 matching preview/export frames, four narration timing samples within 10ms, -16.6 LUFS and -1.88 dBTP passed. Original narration was imported, not synthesized by that run. This predates the new security changes.
+
+**Release remains held:** the exact complete corresponding-source/dependency/build distribution for the GPL media binaries is incomplete. Clean Windows 10/native Intel/AMD Windows 11 acceptance, devices/human listening, broader reliability/accessibility, comprehensive security and provider/stock work remain open. See evidence/security-review.md and evidence/licensing-review.md. Historical matrix results below apply to their recorded revision; the new rerun above covers the subsequent security and packaging changes.
+
+## Measured Windows coverage
+
+| Environment | Process target | Automated suite | Desktop/source | Packaged app | Installed app | Install/uninstall |
+|---|---|---|---|---|---|---|
+| Windows Server 2022 Datacenter, build 20348, x64 host | x64, native execution | 43 passed, 0 failed, 1 skipped | 13 passed | 14 passed | 14 passed | Both exit 0; installed executable found and subsequently removed |
+| Windows 11 Enterprise, build 26200, ARM64 host | x64 under Windows emulation | 43 passed, 0 failed, 1 skipped | 13 passed | 14 passed | 14 passed | Both exit 0; installed executable found and subsequently removed |
+
+The Windows 11 result is client-OS compatibility coverage under emulation. **It is not a native Intel/AMD Windows 11 result, a Windows 10 result, or a pristine owner-PC/device test.** Setup Node explicitly selects x64 and the installer build targets x64. Actual OS/host architecture is recorded separately in windows-platform.json and installer records.
+
+Each desktop workflow performs real import/metadata, preview playback, audio-tail seeking, MP4 export (105 matching decoded preview/export frames), trim/undo, text/keyframe edits, save/reopen, invalid/missing-media relinking and autosave/damaged-project recovery. Each app form completes 20 play/pause/seek cycles: 60 cycles per OS, 120 across this matrix. File-picker choices are fixture supplied. No physical speaker/audio-device quality claim is made. The one skipped test on each OS is a privileged single-file symlink fixture; directory-junction containment and blocked-upload fixtures run and pass.
+
+## Packaged runtime isolation
+
+For unpacked and installed app launches, the harness removes inherited Node/Python configuration, development PATH entries, renderer URL and source tool/font overrides. The app's child PATH is exactly `C:\Windows\System32;C:\Windows` in both recorded runs. The main process reports packaged execution and points to FFmpeg/FFprobe and fonts inside its own resources folder; file existence and containment are asserted before the import/preview/export workflow runs.
+
+The parent test driver still uses development tools to generate fixtures and automate the app. Other software remains installed on the hosted OS image. This check proves operation with restricted executable lookup and bundled media components; it does not establish absence of every possible system dependency on a clean client PC.
+
+## Exact evidence
+
+Evidence is retained in `evidence/github-windows/client-matrix/server-2022-x64/` and `evidence/github-windows/client-matrix/windows-11-arm-x64-emulated/`: actual platform JSON, separate source/packaged/installed desktop JSON (including packagedRuntime), unit-test output, dependency audit and installer records. Successful job logs and matrix job metadata accompany them. ZIP evidence entries were extracted with CRC validation; the full artifact archives were not independently downloaded/hashed here.
+
+| Internal candidate build | Windows-recorded installer SHA256 | GitHub artifact |
+|---|---|---|
+| Server 2022 x64 | b7993ce012a77e91d3f545643f767682cced22a5866c9692df60dc2819213ab8 | 13908423398 |
+| Windows 11 ARM host, x64 target | d75079cc4fd8eb8ad0c88d6394d46ea82523eaab07aa99a18f2adf1117f06be2 | 13909655839 |
+
+Both installers are unsigned internal candidates. They have the same target architecture; build artifact hashes differ and are tracked separately. Neither is presented as an owner-ready release.
+
+Both Windows dependency audits report zero known npm advisories. Existing Linux source verification reports 44 passed tests and 13 desktop checks; the latest test-harness regression also passes (evidence/isolated-runtime-linux-regression.txt). Zero known advisories is not a complete security audit.
+
+## Existing documentary
+
+NIGHT SIDE was assembled, saved/reopened, previewed and exported through VisionForge on Linux: 160.666667 seconds, original script/neural narration/music, NASA footage and B-roll, two timeline audio layers, captions, motion/fades, titles and credits. Records include full decoding, 4820 matching preview/export frames and sampled narration alignment within 10ms. Source/license metadata and validation remain in production/night-side. The original matrix exports short test projects; the subsequent documentary workflow described above covers the complete Windows film. Full human auditory review remains open.
+
+## Remaining gates
+
+The remaining x64 client-OS test environment is not connected. Official Windows 11 Enterprise x64 evaluation media is reachable, but Microsoft lists registration and legitimate evaluation installation/activation handling as prerequisites. No registration, account use, terms acceptance or guest installation was performed. QEMU software emulation is technically possible without KVM; it would still not establish physical hardware/device acceptance. The available older Windows 10 evaluation link identifies 21H2 rather than the required 22H2. Details and official references: evidence/windows-evaluation-qemu-route.md.
+
+
+- Clean Windows 10 x64 and native Intel/AMD Windows 11 client acceptance, physical audio/display/device and native interactive-dialog checks, and privileged path/reparse-point coverage. Supplier minimum Windows 10 22H2; earlier versions are not covered.
+- Final GPL corresponding-source/build-dependency redistribution review, complete license notices and comprehensive security review.
+- Broader long-project/preview-performance/memory, physical full-disk/power-loss, malformed-media, usability/accessibility and live-provider acceptance. Preview requires rendered preparation, some editing controls remain basic, and live-provider acceptance is still open; optional remote stock video search/import is now implemented.
+- Final accepted installer and installation/user-guide validation. No owner dependency installation, troubleshooting or interim testing is requested.
+
+Earlier failed setup, API-rate-limit and seek attempts remain recorded. They are not passes. The old failed run's packaged JSON copied from source is invalid as packaged evidence. Current source/packaged/installed results are captured separately.

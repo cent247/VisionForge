@@ -1,0 +1,9 @@
+{
+  "uninstallTested": true,
+  "platform": "Windows Server 2022 hosted runner",
+  "installExitCode": 0,
+  "installerSha256": "089FFD7767CE8971F433660AAA509B68AD1D1053B7C561065BCCC5A3140D4897",
+  "installer": "VisionForge-INTERNAL-CANDIDATE-Setup-0.1.0-x64.exe",
+  "installedExecutableFound": true,
+  "uninstallExitCode": 0
+}

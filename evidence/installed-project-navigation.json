@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "workflow": "https://github.com/cent247/VisionForge/actions/runs/43337572084",
+  "jobId": 131597537589,
+  "applicationVersion": "0.1.1",
+  "installerSourceRun": 43336244847,
+  "host": "Windows Server 2022 x64",
+  "windowSize": {
+    "width": 1366,
+    "height": 768
+  },
+  "checks": [
+    "Create project through New",
+    "Open settings via sidebar and set export width to 1920",
+    "Create overlay and change brightness through clip-effects navigation",
+    "Add an audio track through timeline controls",
+    "Apply captions through caption-editor navigation",
+    "Save and inspect persisted project settings, clip transform, audio tracks and captions"
+  ],
+  "limits": [
+    "Uses controlled file-dialog selection; not a human native-dialog usability assessment",
+    "Owner-device result and native Windows10/11 x64 compatibility remain unresolved"
+  ]
+}

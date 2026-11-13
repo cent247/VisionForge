@@ -1,0 +1,42 @@
+[
+  {
+    "id": 13909655839,
+    "node_id": "MDg6QXJ0aWZhY3QxMzkwOTY1NTgzOQ==",
+    "name": "windows-verification-evidence-windows-11-arm-x64-emulated",
+    "size_in_bytes": 220984292,
+    "url": "https://api.github.com/repos/cent247/VisionForge/actions/artifacts/13909655839",
+    "archive_download_url": "https://api.github.com/repos/cent247/VisionForge/actions/artifacts/13909655839/zip",
+    "expired": false,
+    "digest": "sha256:2cd7552fbe5028010e5d99b8809083fd879fce79af2b559d842dbbe1a860e3ef",
+    "created_at": "2026-11-12T02:15:14Z",
+    "updated_at": "2026-11-12T02:15:14Z",
+    "expires_at": "2026-11-26T02:15:06Z",
+    "workflow_run": {
+      "id": 43139240640,
+      "repository_id": 1454620658,
+      "head_repository_id": 1454620658,
+      "head_branch": "visionforge-development",
+      "head_sha": "d782ad37f58e5dc09dcdef05b0be6b409c3fa857"
+    }
+  },
+  {
+    "id": 13908423398,
+    "node_id": "MDg6QXJ0aWZhY3QxMzkwODQyMzM5OA==",
+    "name": "windows-verification-evidence-server-2022-x64",
+    "size_in_bytes": 220984288,
+    "url": "https://api.github.com/repos/cent247/VisionForge/actions/artifacts/13908423398",
+    "archive_download_url": "https://api.github.com/repos/cent247/VisionForge/actions/artifacts/13908423398/zip",
+    "expired": false,
+    "digest": "sha256:7dc3c9e31f8b50dc9085258a5a6067f690e0ae8588c1f5ca7395d9578a0a6d64",
+    "created_at": "2026-11-12T02:11:59Z",
+    "updated_at": "2026-11-12T02:11:59Z",
+    "expires_at": "2026-11-26T02:11:51Z",
+    "workflow_run": {
+      "id": 43139240640,
+      "repository_id": 1454620658,
+      "head_repository_id": 1454620658,
+      "head_branch": "visionforge-development",
+      "head_sha": "d782ad37f58e5dc09dcdef05b0be6b409c3fa857"
+    }
+  }
+]

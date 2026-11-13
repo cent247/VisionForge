@@ -1,0 +1,18 @@
+appId: com.visionforge.editor
+productName: VisionForge
+directories: { output: release }
+files: [out/**, package.json]
+win:
+  icon: build/icon.ico
+  target: [{target: nsis, arch: [x64]}]
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+
+extraResources:
+  - from: resources/tools/win-x64
+    to: tools/win-x64
+  - from: resources/fonts
+    to: fonts
+  - from: resources/legal
+    to: legal

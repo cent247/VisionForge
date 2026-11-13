@@ -1,0 +1,7 @@
+{
+  "applicationArchitecture": "x64",
+  "hostArchitecture": "X64",
+  "runner": "windows-2022",
+  "operatingSystem": "Microsoft Windows Server 2022 Datacenter",
+  "version": "10.0.20348.0"
+}

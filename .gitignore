@@ -1,0 +1,14 @@
+node_modules/
+out/
+release/
+candidate-release/
+test-build/
+test-store/
+.env
+*.log
+
+resources/tools/win-x64/*.exe
+tool-stage/
+production/night-side/windows/
+production/night-side/assets/*
+!production/night-side/assets/Generated narration.mp3
