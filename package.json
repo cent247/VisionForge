@@ -1,6 +1,6 @@
 {
   "name": "visionforge",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "main": "out/main/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "test": "npm run test:compile && node --test tests/*.test.mjs",
     "test:compile": "tsc src/main/stock.ts src/main/render.ts src/main/project-storage.ts src/main/services.ts src/main/preview.ts src/main/media-protocol.ts src/main/media-management.ts --allowJs --outDir test-build --target ES2022 --module commonjs --esModuleInterop --skipLibCheck && tsc src/renderer/src/store.ts --outDir test-store --target ES2022 --module commonjs --esModuleInterop --skipLibCheck",
     "test:desktop": "npm run build && node tests/parity-desktop.cjs",
-    "verify": "npm run typecheck && npm test && npm run build && node tests/parity-desktop.cjs && node tests/security-desktop.cjs && node tests/keyboard-desktop.cjs && node tests/stock-desktop.cjs",
+    "verify": "npm run typecheck && npm test && npm run build && node tests/startup-desktop.cjs && node tests/parity-desktop.cjs && node tests/security-desktop.cjs && node tests/keyboard-desktop.cjs && node tests/stock-desktop.cjs",
     "test:security": "npm run build && node tests/security-desktop.cjs",
     "test:keyboard": "npm run build && node tests/keyboard-desktop.cjs",
     "test:stock": "npm run build && node tests/stock-desktop.cjs"

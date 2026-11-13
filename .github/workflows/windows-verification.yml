@@ -110,6 +110,7 @@ jobs:
       - name: Installed keyboard and stock UI regressions
         shell: pwsh
         run: |
+          node tests/startup-desktop.cjs
           node tests/keyboard-desktop.cjs
           node tests/stock-desktop.cjs
       - name: Preserve installed desktop evidence

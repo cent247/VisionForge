@@ -13,3 +13,6 @@ main{overflow:auto}.upper{height:330px;min-height:330px}.screen{min-height:0}.ti
 button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,summary:focus-visible{outline:3px solid #ffdc73;outline-offset:2px}
 .clip .clip-select{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:4px;width:100%;height:100%;padding:0 3px;border:0;border-radius:0;background:transparent;text-align:left;min-width:0;cursor:pointer}
 .clip .clip-select strong{max-width:100%}.clip:focus-within{overflow:visible;z-index:3}.clip .clip-select:focus-visible{outline:3px solid #ffdc73;outline-offset:3px}
+
+/* Workspace entries are real keyboard-accessible navigation controls. */
+aside nav{display:flex;flex-direction:column;gap:8px;margin-top:14px}aside nav button{width:100%;text-align:left;justify-content:flex-start;background:transparent;border-color:transparent;font-size:12px;padding:12px 10px}aside nav button.active{background:#302c42;color:#c9bdff;border-color:#514675}aside nav button:hover{background:#292b34}
